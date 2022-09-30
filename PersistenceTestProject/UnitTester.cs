@@ -6,8 +6,6 @@ namespace PersistenceTestProject
     [TestClass]
     public class UnitTester
     {
-        string projectFolderPath = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\";
-
         [TestMethod]
         public void CheckPersonConstructor () {
             // #### ARRANGE ####
@@ -23,18 +21,18 @@ namespace PersistenceTestProject
         [TestMethod]
         public void CheckDataHandlerConstructor () {
             // #### ARRANGE ####
-            DataHandler handler = new DataHandler(projectFolderPath + "Data.txt");
+            DataHandler handler = new DataHandler(@"..\..\..\Data.txt");
 
             // #### ACT ####
 
             // #### ASSERT ####
-            Assert.AreEqual(projectFolderPath + "Data.txt", handler.DataFileName);
+            Assert.AreEqual(@"..\..\..\Data.txt", handler.DataFileName);
         }
 
         [TestMethod]
         public void CheckDataHandlerSaveAndLoad () {
             // #### ARRANGE ####
-            DataHandler handler = new DataHandler(projectFolderPath + "Data.txt");
+            DataHandler handler = new DataHandler(@"..\..\..\Data.txt");
             Person person = new Person("Anders Andersen", new DateTime(1975, 8, 24), 175.9, true, 3);
 
             // #### ACT ####
@@ -54,7 +52,7 @@ namespace PersistenceTestProject
         [TestMethod]
         public void CheckDataHandlerSaveAndLoadManyPersons () {
             // #### ARRANGE ####
-            DataHandler handler = new DataHandler(projectFolderPath + "Data.txt");
+            DataHandler handler = new DataHandler(@"..\..\..\Data.txt");
             Person[] persons = new Person[]
             {
                 new Person("William Jensen", new DateTime(1975, 8, 24), 175.9, false, 2),

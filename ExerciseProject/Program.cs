@@ -423,11 +423,9 @@ namespace ExerciseProject
 
             #region Exercise 11 - Persistence
             if (exercise11) {
-                string exercise11FolderPath = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + @"\Exercise11And12\";
-
                 Person person = new Person("Ander Andersen", new DateTime(1975, 8, 24), 175.9, true, 3);
 
-                DataHandler handler = new DataHandler(exercise11FolderPath + "Data.txt");
+                DataHandler handler = new DataHandler(@"..\..\..\Exercise11And12\Data.txt");
                 handler.SavePerson(person);
 
                 Console.Write("Writing Person: ");
