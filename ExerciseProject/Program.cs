@@ -424,7 +424,7 @@ namespace ExerciseProject
             if (exercise11) {
                 Person person = new Person("Ander Andersen", new DateTime(1975, 8, 24), 175.9, true, 3);
 
-                DataHandler handler = new DataHandler(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + @"/Exercise11/Data.txt");
+                DataHandler handler = new DataHandler(@"..\..\..\Exercise11\Data.txt");
                 handler.SavePerson(person);
 
                 Console.Write("Writing Person: ");
