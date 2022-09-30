@@ -7,7 +7,6 @@ namespace ExerciseProject
     public class Program
     {
         static void Main (string[] args) {
-
             // exercise1 ~ not implemented
             // exercise2 ~ not implemented
             bool exercise3 = false;
@@ -16,9 +15,11 @@ namespace ExerciseProject
             bool exercise6 = false;
             bool exercise7 = false;
             // exercise8 ~ not implemented
-            // exercise9 ~ in folder with exercise 10
-            // exercise10 ~ in folder with exercise 9
+            // exercise9 ~ in folder Exercise9And10
+            // exercise10 ~ in folder Exercise9And10
             bool exercise11 = true;
+            // exercise12 ~ in folder Exercise11And12
+            // exercise13 ~ implemented as one or multiple methods
 
 
             #region Exercise 3 - C# Data
@@ -440,11 +441,6 @@ namespace ExerciseProject
                 Console.ReadLine();
             }
             #endregion
-
-            #region Exercise 12 - Persistence
-
-
-            #endregion
         }
 
         #region General helper method(s)
@@ -546,6 +542,37 @@ namespace ExerciseProject
             }
 
             return candlesBlown;
+        }
+        #endregion
+
+        #region Exercise 13 - Tigger and Winnie the Pooh
+        public static string JumpTiggerAndVinnie (int tiggerPos, int tiggerVelocity, int vinniePos, int vinnieVelocity) {
+            if (tiggerPos > 10000 || tiggerVelocity > 10000 || vinniePos > 10000 || vinnieVelocity > 10000)
+                return "NO";
+            
+            if (tiggerPos == vinniePos)
+                return tiggerPos + "," + vinniePos;
+
+            if (tiggerPos < vinniePos)
+                return FindCollision(tiggerPos, tiggerVelocity, vinniePos, vinnieVelocity);
+            else
+                return FindCollision(vinniePos, vinnieVelocity, tiggerPos, tiggerVelocity);
+        }
+
+        private static string FindCollision (int x1Pos, int x1Vel, int x2Pos, int x2Vel) {
+            int i = 0;
+            
+            while (x1Pos < x2Pos) {
+
+                x1Pos += x1Vel;
+                x2Pos += x2Vel;
+                i += 1;
+
+                if (x1Pos == x2Pos)
+                    return x1Pos + "," + x2Pos;
+            }
+
+            return "NO";
         }
         #endregion
     }
