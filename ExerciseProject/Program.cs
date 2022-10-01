@@ -560,6 +560,10 @@ namespace ExerciseProject
         private static string FindCollision (int x1Pos, int x1Vel, int x2Pos, int x2Vel) {
             int i = 0;
             
+            if (x1Vel < x2Vel) {
+                return "NO";
+            }
+
             while (x1Pos < x2Pos) {
 
                 x1Pos += x1Vel;
