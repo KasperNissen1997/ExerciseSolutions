@@ -20,6 +20,7 @@ namespace ExerciseProject
             bool exercise11 = true;
             // exercise12 ~ in folder Exercise11And12
             // exercise13 ~ implemented as one or multiple methods
+            // exercise14 ~ in folder Exercise14
 
 
             #region Exercise 3 - C# Data
