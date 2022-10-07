@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciseProject", "Exercise
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheHundredAcreWoodTestProject", "TheHundredAcreWoodTestProject\TheHundredAcreWoodTestProject.csproj", "{36B42E67-197E-4BCC-A480-9D5AA1702DB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBankTest", "SimpleBankTest\SimpleBankTest.csproj", "{8C7AB1D9-EC6B-4F72-BC7A-F4E074F89E0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBankTest", "SimpleBankTest\SimpleBankTest.csproj", "{8C7AB1D9-EC6B-4F72-BC7A-F4E074F89E0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisaheimTestProject", "DisaheimTestProject\DisaheimTestProject.csproj", "{8059CAB5-6FB0-4024-A29D-E46D5ABB189A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8C7AB1D9-EC6B-4F72-BC7A-F4E074F89E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C7AB1D9-EC6B-4F72-BC7A-F4E074F89E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C7AB1D9-EC6B-4F72-BC7A-F4E074F89E0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8059CAB5-6FB0-4024-A29D-E46D5ABB189A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8059CAB5-6FB0-4024-A29D-E46D5ABB189A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8059CAB5-6FB0-4024-A29D-E46D5ABB189A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8059CAB5-6FB0-4024-A29D-E46D5ABB189A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
