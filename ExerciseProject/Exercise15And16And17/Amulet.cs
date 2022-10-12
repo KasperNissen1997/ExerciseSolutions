@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace ExerciseProject.Exercise15And16And17
 {
-    public class Amulet
+    public class Amulet : Merchandise
     {
-        public string ItemId { get; set; }
         public string Design { get; set; }
         public Level Quality { get; set; }
 
-        public Amulet (string itemId, Level quality, string design) {
+        public Amulet (string itemId, Level quality, string design) : base () {
             ItemId = itemId;
             Design = design;
             Quality = quality;
