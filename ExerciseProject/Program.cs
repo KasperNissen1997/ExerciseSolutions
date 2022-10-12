@@ -1,6 +1,8 @@
 ﻿using ExerciseProject.Exercise11And12;
 using ExerciseProject.Exercise5;
 using ExerciseProject.Exercise7;
+using System.Speech.AudioFormat;
+using System.Speech.Synthesis;
 
 namespace ExerciseProject
 {
@@ -17,7 +19,7 @@ namespace ExerciseProject
             // exercise8 ~ not implemented
             // exercise9 ~ in folder Exercise9And10
             // exercise10 ~ in folder Exercise9And10
-            bool exercise11 = true;
+            bool exercise11 = false;
             // exercise12 ~ in folder Exercise11And12
             // exercise13 ~ implemented as one or multiple methods
             // exercise14 ~ in folder Exercise14
@@ -434,13 +436,31 @@ namespace ExerciseProject
                 Console.WriteLine(person.MakeTitle());
 
                 EndExercise();
-
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("All done! Press enter to exit...");
-                Console.ResetColor();
-                Console.ReadLine();
             }
             #endregion
+
+            SpeechSynthesizer speakSynth = new SpeechSynthesizer();
+            speakSynth.SetOutputToDefaultAudioDevice();
+
+            string[] names = {
+                "Jonas",
+                "Matias",
+                "Jonathan",
+                "Alexander",
+                "Casper"
+            };
+
+            foreach (string name in names) {
+                speakSynth.Speak("Fuck you " + name);
+            }
+
+            speakSynth.Speak("You all suck at table football haha \n" +
+                "Suck it boys");
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("All done! Continue to end the program...");
+            Console.ResetColor();
+            Console.Read();
         }
 
         #region General helper method(s)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExerciseProject.Exercise15And16
+namespace ExerciseProject.Exercise15And16And17
 {
     public class Amulet
     {
