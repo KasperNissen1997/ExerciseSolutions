@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ExerciseProject.Exercise15And16And17;
 
-namespace ExerciseProject.Exercise15And16And17
+namespace UtilityLib
 {
     public class Utility
     {
@@ -23,6 +19,14 @@ namespace ExerciseProject.Exercise15And16And17
                 default:
                     return 0;
             }
+        }
+
+        public double GetValueOfCourse (Course course) {
+            double hourlyRate = 875;
+
+            return (course.DurationInMinutes % 60 == 0) ? 
+                hourlyRate * (course.DurationInMinutes / 60) : 
+                hourlyRate * (course.DurationInMinutes / 60 + 1);
         }
     }
 }

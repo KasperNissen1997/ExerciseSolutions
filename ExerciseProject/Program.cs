@@ -23,8 +23,9 @@ namespace ExerciseProject
             // exercise12 ~ in folder Exercise11And12
             // exercise13 ~ implemented as one or multiple methods
             // exercise14 ~ in folder Exercise14
-            // exercise15 ~ in folder Exercise15And16
-            // exercise16 ~ in folder Exercise15And16
+            // exercise15 ~ in folder Exercise15And16And17
+            // exercise16 ~ in folder Exercise15And16And17
+            // exercise17 ~ in folder Exercise15And16And17
 
             #region Exercise 3 - C# Data
             if (exercise3) {
