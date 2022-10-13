@@ -2,21 +2,29 @@
 {
     public class Utility
     {
-        public double GetValueOfBook (Book book) {
-            return book.Price;
-        }
+        public double GetValueOfMerchandise (Merchandise merchandise) {
+            if (merchandise is Amulet) {
+                Amulet amulet = (Amulet) merchandise;
 
-        public double GetValueOfAmulet (Amulet amulet) {
-            switch (amulet.Quality) {
-                case Level.low:
-                    return 12.5;
-                case Level.medium:
-                    return 20;
-                case Level.high:
-                    return 27.5;
-                default:
-                    return 0;
+                switch (amulet.Quality) {
+                    case Level.low:
+                        return 12.5;
+                    case Level.medium:
+                        return 20;
+                    case Level.high:
+                        return 27.5;
+                    default:
+                        return 0;
+                }
             }
+
+            if (merchandise is Book) {
+                Book book = (Book) merchandise;
+
+                return book.Price;
+            }
+
+            return 0;
         }
 
         public double GetValueOfCourse (Course course) {
