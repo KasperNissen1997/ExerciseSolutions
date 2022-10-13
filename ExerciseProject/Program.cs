@@ -17,15 +17,16 @@ namespace ExerciseProject
             bool exercise6 = false;
             bool exercise7 = false;
             // exercise8 ~ not implemented
-            // exercise9 ~ in folder Exercise9And10
-            // exercise10 ~ in folder Exercise9And10
+            // exercise9 ~ in folder Exercise9x10
+            // exercise10 ~ in folder Exercise9x10
             bool exercise11 = false;
-            // exercise12 ~ in folder Exercise11And12
+            // exercise12 ~ in folder Exercise11x12
             // exercise13 ~ implemented as one or multiple methods
             // exercise14 ~ in folder Exercise14
-            // exercise15 ~ in folder Exercise15And16And17
-            // exercise16 ~ in folder Exercise15And16And17
-            // exercise17 ~ in folder Exercise15And16And17
+            // exercise15 ~ in folder Exercise15x16x17x18
+            // exercise16 ~ in folder Exercise15x16x17x18
+            // exercise17 ~ in folder Exercise15x16x17x18
+
 
             #region Exercise 3 - C# Data
             if (exercise3) {

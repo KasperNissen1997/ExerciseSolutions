@@ -1,6 +1,4 @@
-﻿using ExerciseProject.Exercise15x16x17;
-
-namespace UtilityLib
+﻿namespace ExerciseProject.Exercise15x16x17x18
 {
     public class Utility
     {
