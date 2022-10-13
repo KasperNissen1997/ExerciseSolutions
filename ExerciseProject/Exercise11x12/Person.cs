@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ExerciseProject.Exercise11And12
+﻿namespace ExerciseProject.Exercise11x12
 {
     public class Person
     {

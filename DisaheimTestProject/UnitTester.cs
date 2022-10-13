@@ -1,4 +1,4 @@
-using ExerciseProject.Exercise15And16And17;
+using ExerciseProject.Exercise15x16x17;
 
 namespace DisaheimTestProject
 {

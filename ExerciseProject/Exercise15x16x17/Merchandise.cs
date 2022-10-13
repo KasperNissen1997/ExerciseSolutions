@@ -1,4 +1,4 @@
-﻿namespace ExerciseProject.Exercise15And16And17
+﻿namespace ExerciseProject.Exercise15x16x17
 {
     public abstract class Merchandise
     {

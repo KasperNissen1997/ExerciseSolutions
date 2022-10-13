@@ -1,9 +1,4 @@
-﻿using ExerciseProject.Exercise15And16And17;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ExerciseProject.Exercise15x16x17;
 
 namespace DisaheimTestProject
 {

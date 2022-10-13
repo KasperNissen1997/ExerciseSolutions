@@ -1,4 +1,4 @@
-using ExerciseProject.Exercise9And10;
+using ExerciseProject.Exercise9x10;
 
 namespace OrangeTreeTestProject
 {
