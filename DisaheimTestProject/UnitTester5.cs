@@ -2,7 +2,8 @@
 
 namespace DisaheimTestProject
 {
-    internal class UnitTester5
+    [TestClass]
+    public class UnitTester5
     {
         Book b1, b2, b3;
         Amulet a1, a2, a3;

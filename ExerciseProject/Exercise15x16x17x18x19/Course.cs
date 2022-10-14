@@ -15,7 +15,7 @@
         public Course (string name) : this (name, 0) { }
 
         public override string ToString () {
-            return "Name: " + Name + ", Duration in Minutes: " + DurationInMinutes;
+            return "Name: " + Name + ", Duration in Minutes: " + DurationInMinutes + ", Value: " + GetValue();
         }
 
         public double GetValue () {

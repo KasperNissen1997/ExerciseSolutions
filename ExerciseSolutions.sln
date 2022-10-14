@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorTestProject", "TestExerciseSolutions\CalculatorTestProject.csproj", "{295A00E2-5733-4791-85A4-4108AF3D2A1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorTestProject", "CalculatorTestProject\CalculatorTestProject.csproj", "{295A00E2-5733-4791-85A4-4108AF3D2A1B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrangeTreeTestProject", "OrangeTreeTestProject\OrangeTreeTestProject.csproj", "{7D1B8980-2F68-42AC-B083-5339A2087813}"
 EndProject
