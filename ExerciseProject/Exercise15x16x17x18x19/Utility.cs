@@ -1,18 +1,23 @@
-﻿namespace ExerciseProject.Exercise15x16x17x18
+﻿namespace ExerciseProject.Exercise15x16x17x18x19
 {
     public class Utility
     {
+        public double LowQualityValue { get; set; } = 12.5;
+        public double MediumQualityValue { get; set; } = 20.0;
+        public double HighQualityValue { get; set; } = 27.5;
+        public double CourseHourValue { get; set; } = 875.0;
+
         public double GetValueOfMerchandise (Merchandise merchandise) {
             if (merchandise is Amulet) {
                 Amulet amulet = (Amulet) merchandise;
 
                 switch (amulet.Quality) {
                     case Level.low:
-                        return 12.5;
+                        return LowQualityValue;
                     case Level.medium:
-                        return 20;
+                        return MediumQualityValue;
                     case Level.high:
-                        return 27.5;
+                        return HighQualityValue;
                     default:
                         return 0;
                 }
@@ -28,7 +33,7 @@
         }
 
         public double GetValueOfCourse (Course course) {
-            double hourlyRate = 875;
+            double hourlyRate = CourseHourValue;
 
             return (course.DurationInMinutes % 60 == 0) ? 
                 hourlyRate * (course.DurationInMinutes / 60) : 

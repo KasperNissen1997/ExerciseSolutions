@@ -23,10 +23,11 @@ namespace ExerciseProject
             // exercise12 ~ in folder Exercise11x12
             // exercise13 ~ implemented as one or multiple methods
             // exercise14 ~ in folder Exercise14
-            // exercise15 ~ in folder Exercise15x16x17x18
-            // exercise16 ~ in folder Exercise15x16x17x18
-            // exercise17 ~ in folder Exercise15x16x17x18
-
+            // exercise15 ~ in folder Exercise15x16x17x18x19
+            // exercise16 ~ in folder Exercise15x16x17x18x19
+            // exercise17 ~ in folder Exercise15x16x17x18x19
+            // exercise18 ~ in folder Exercise15x16x17x18x19
+            // exercise19 ~ in folder Exercise15x16x17x18x19
 
             #region Exercise 3 - C# Data
             if (exercise3) {

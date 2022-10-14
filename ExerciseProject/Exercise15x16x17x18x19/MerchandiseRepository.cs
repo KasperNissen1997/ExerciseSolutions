@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExerciseProject.Exercise15x16x17x18
+namespace ExerciseProject.Exercise15x16x17x18x19
 {
     public class MerchandiseRepository
     {
