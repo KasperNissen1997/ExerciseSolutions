@@ -5,7 +5,7 @@
         public double LowQualityValue { get; set; } = 12.5;
         public double MediumQualityValue { get; set; } = 20.0;
         public double HighQualityValue { get; set; } = 27.5;
-        public double CourseHourValue { get; set; } = 875.0;
+        
 
         public double GetValueOfMerchandise (Merchandise merchandise) {
             if (merchandise is Amulet) {

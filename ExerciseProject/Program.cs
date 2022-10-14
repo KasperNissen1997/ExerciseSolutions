@@ -442,6 +442,7 @@ namespace ExerciseProject
             }
             #endregion
 
+            #region Lololol
             SpeechSynthesizer speakSynth = new SpeechSynthesizer();
             speakSynth.SetOutputToDefaultAudioDevice();
 
@@ -459,6 +460,7 @@ namespace ExerciseProject
 
             speakSynth.Speak("You all suck at table football haha \n" +
                 "Suck it boys");
+            #endregion
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("All done! Continue to end the program...");

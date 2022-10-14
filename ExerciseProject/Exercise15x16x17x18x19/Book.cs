@@ -18,5 +18,9 @@
         public string ToString () {
             return "ItemId: " + ItemId + ", Title: " + Title + ", Price: " + Price;
         }
+
+        public override double GetValue () {
+            return Price;
+        }
     }
 }
