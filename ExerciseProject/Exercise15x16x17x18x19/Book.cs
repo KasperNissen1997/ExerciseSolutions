@@ -15,7 +15,7 @@
 
         public Book (string itemId) : this (itemId, "", 0) { }
         
-        public string ToString () {
+        public override string ToString () {
             return "ItemId: " + ItemId + ", Title: " + Title + ", Price: " + Price;
         }
 
