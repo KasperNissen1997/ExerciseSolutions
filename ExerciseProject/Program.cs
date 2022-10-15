@@ -1,7 +1,7 @@
-﻿using ExerciseProject.Exercise11x12;
+﻿using ExerciseFlowLib;
+using ExerciseProject.Exercise11x12;
 using ExerciseProject.Exercise5;
 using ExerciseProject.Exercise7;
-using System.Speech.AudioFormat;
 using System.Speech.Synthesis;
 
 namespace ExerciseProject
@@ -46,6 +46,8 @@ namespace ExerciseProject
 
                 Console.WriteLine("The area of the rectangle is " + (height * width) + ".");
                 Console.WriteLine();
+
+                ExerciseFlow.FinishTask();
                 #endregion
 
                 #region Exercise 3.2
@@ -74,7 +76,11 @@ namespace ExerciseProject
                 Console.WriteLine("(3, 3), (5, 5) = " + CalculateSlope((3, 3), (5, 5)) + ".");
                 Console.WriteLine("(3, 3), (5, 4) = " + CalculateSlope((3, 3), (5, 4)) + ".");
                 Console.WriteLine();
+
+                ExerciseFlow.FinishTask();
                 #endregion
+
+                ExerciseFlow.FinishExercise("exercise 3 - C# Data");
             }
             #endregion
 
@@ -113,7 +119,7 @@ namespace ExerciseProject
                 }
                 Console.WriteLine();
 
-                EndExercise();
+                ExerciseFlow.FinishTask();
                 #endregion
 
                 #region Exercise 2.4
@@ -127,7 +133,7 @@ namespace ExerciseProject
                     userInput[1], userInput[3], userInput[5]);
                 Console.WriteLine();
 
-                EndExercise();
+                ExerciseFlow.FinishTask();
                 #endregion
 
                 #region Exercise 2.5
@@ -141,7 +147,7 @@ namespace ExerciseProject
                 }
                 Console.WriteLine();
 
-                EndExercise();
+                ExerciseFlow.FinishTask();
                 #endregion
 
                 #region Exercise 2.6
@@ -156,7 +162,7 @@ namespace ExerciseProject
                 while (stringIndexCount < userInput.Length);
                 Console.WriteLine();
 
-                EndExercise();
+                ExerciseFlow.FinishTask();
                 #endregion
 
                 #region Exercise 2.7
@@ -178,8 +184,10 @@ namespace ExerciseProject
                     + "The remainder of the division: " + (a % b));
                 Console.WriteLine();
 
-                EndExercise();
+                ExerciseFlow.FinishTask();
                 #endregion
+
+                ExerciseFlow.FinishExercise("exercise 4 - Loops");
             }
             #endregion
 
@@ -242,6 +250,8 @@ namespace ExerciseProject
 
                     Console.Clear();
                 } while (keepRunning);
+
+                ExerciseFlow.FinishExercise("exercise 5 - Methods");
             }
             #endregion
 
@@ -272,7 +282,7 @@ namespace ExerciseProject
                 Console.WriteLine("Den gennemsnitlige alder er " + averageAge + " år.");
                 Console.WriteLine();
 
-                EndExercise();
+                ExerciseFlow.FinishTask();
                 #endregion
 
                 #region Exercise 3.3
@@ -314,7 +324,7 @@ namespace ExerciseProject
                     Console.WriteLine("Alderen findes ikke i vores array.");
                 Console.WriteLine();
 
-                EndExercise();
+                ExerciseFlow.FinishTask();
                 #endregion
 
                 #region Exercise 3.4
@@ -357,7 +367,7 @@ namespace ExerciseProject
                 Console.WriteLine("The average age is: " + sum / ages.Length);
                 Console.WriteLine();
 
-                EndExercise();
+                ExerciseFlow.FinishTask();
                 #endregion
 
                 #region Exercise 4.1
@@ -366,7 +376,7 @@ namespace ExerciseProject
                 Console.WriteLine("The above should result in \"4\".");
                 Console.WriteLine();
 
-                EndExercise();
+                ExerciseFlow.FinishTask();
                 #endregion
 
                 #region Exercise 4.2
@@ -375,8 +385,10 @@ namespace ExerciseProject
                 Console.WriteLine("The above should result in \"2\".");
                 Console.WriteLine();
 
-                EndExercise();
+                ExerciseFlow.FinishTask();
                 #endregion
+
+                ExerciseFlow.FinishExercise("exercise 6 - Arrays");
             }
             #endregion
 
@@ -423,8 +435,10 @@ namespace ExerciseProject
                     }
                 } while (runMenu);
 
-                EndExercise();
+                ExerciseFlow.FinishTask();
                 #endregion
+
+                ExerciseFlow.FinishExercise("exercise 7 - Menu");
             }
             #endregion
 
@@ -438,7 +452,7 @@ namespace ExerciseProject
                 Console.Write("Writing Person: ");
                 Console.WriteLine(person.MakeTitle());
 
-                EndExercise();
+                ExerciseFlow.FinishExercise("exercise 11 - Persistence");
             }
             #endregion
 
@@ -462,21 +476,8 @@ namespace ExerciseProject
                 "Suck it boys");
             #endregion
 
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("All done! Continue to end the program...");
-            Console.ResetColor();
-            Console.Read();
+            ExerciseFlow.EndProgram();
         }
-
-        #region General helper method(s)
-        public static void EndExercise() {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("Press enter to continue...");
-            Console.ResetColor();
-            Console.ReadLine();
-            Console.WriteLine();
-        }
-        #endregion
 
         #region Exercise 3 - helper method(s)
         public static double CalculateSlope ((double, double) firstCoordinate, (double, double) secondCoordinate) {

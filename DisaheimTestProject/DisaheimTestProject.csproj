@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ExerciseProject\ExerciseProject.csproj" />
-    <ProjectReference Include="..\UtilityLib\UtilityLib.csproj" />
   </ItemGroup>
 
 </Project>
