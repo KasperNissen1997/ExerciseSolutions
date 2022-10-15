@@ -43,25 +43,9 @@ namespace DisaheimTestProject
         }
 
         [TestMethod]
-        public void TestBookList () {
+        public void TestValuableRepositoryList () {
             // Assert
-            Assert.AreEqual(b3, controller.Books[2]);
+            Assert.AreEqual(9, controller.ValuableRepo.Count());
         }
-
-        [TestMethod]
-        public void TestAmuletList () {
-            // Assert
-            Assert.AreEqual(a1, controller.Amulets[0]);
-        }
-
-        [TestMethod]
-        public void TestCourseList () {
-            // Assert
-            Assert.AreEqual(c1, controller.Courses[0]);
-            Assert.AreEqual(c2, controller.Courses[1]);
-            Assert.AreEqual(c3, controller.Courses[2]);
-        }
-
     }
-
 }

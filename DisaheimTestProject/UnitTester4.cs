@@ -9,8 +9,7 @@ namespace DisaheimTestProject
         Amulet a1, a2, a3;
         Course c1, c2;
 
-        CourseRepository courses;
-        MerchandiseRepository merchandises;
+        ValuableRepository valuables;
 
         [TestInitialize]
         public void Init () {
@@ -26,46 +25,40 @@ namespace DisaheimTestProject
             c1 = new Course("Eufori med røg");
             c2 = new Course("Nuru Massage using Chia Oil", 157);
 
-            courses = new CourseRepository();
-            merchandises = new MerchandiseRepository();
+            valuables = new ValuableRepository();
 
             // Act
-            merchandises.AddMerchandise(b1);
-            merchandises.AddMerchandise(b2);
-            merchandises.AddMerchandise(b3);
+            valuables.AddValuable(b1);
+            valuables.AddValuable(b2);
+            valuables.AddValuable(b3);
 
-            merchandises.AddMerchandise(a1);
-            merchandises.AddMerchandise(a2);
-            merchandises.AddMerchandise(a3);
+            valuables.AddValuable(a1);
+            valuables.AddValuable(a2);
+            valuables.AddValuable(a3);
 
-            courses.AddCourse(c1);
-            courses.AddCourse(c2);
+            valuables.AddValuable(c1);
+            valuables.AddValuable(c2);
         }
 
         [TestMethod]
         public void TestGetBook () {
             // Assert
-            Assert.AreEqual(b2, merchandises.GetMerchandise("2"));
+            Assert.AreEqual(b2, valuables.GetValuable("2"));
         }
         [TestMethod]
         public void TestGetAmulet () {
             // Assert
-            Assert.AreEqual(a3, merchandises.GetMerchandise("13"));
+            Assert.AreEqual(a3, valuables.GetValuable("13"));
         }
         [TestMethod]
         public void TestGetCourse () {
             // Assert
-            Assert.AreEqual(c1, courses.GetCourse("Eufori med røg"));
+            Assert.AreEqual(c1, valuables.GetValuable("Eufori med røg"));
         }
         [TestMethod]
         public void TestGetTotalValueForMerchandise () {
             // Assert
-            Assert.AreEqual((123.55 + 60.0), merchandises.GetTotalValue()); // 123.55 for books, 60.0 for amulets
-        }
-        [TestMethod]
-        public void TestGetTotalValueForCourse () {
-            // Assert
-            Assert.AreEqual(2625.0, courses.GetTotalValue());
+            Assert.AreEqual((123.55 + 60.0 + 2625.0), valuables.GetTotalValue()); // 123.55 for books, 60.0 for amulets, 2625.0 for courses
         }
     }
 

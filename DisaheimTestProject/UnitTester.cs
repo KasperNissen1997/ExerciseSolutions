@@ -63,17 +63,17 @@ namespace DisaheimTestProject
         [TestMethod]
         public void CourseConstructorWithOneParameter () {
             // Assert
-            Assert.AreEqual("Name: Spådomskunst for nybegyndere, Duration in Minutes: 0", c1.ToString());
+            Assert.AreEqual("Name: Spådomskunst for nybegyndere, Duration in Minutes: 0, Value: 0", c1.ToString());
         }
         [TestMethod]
         public void CourseConstructorWithTwoParameters1 () {
             // Assert
-            Assert.AreEqual("Name: Magi – når videnskaben stopper, Duration in Minutes: 157", c2.ToString());
+            Assert.AreEqual("Name: Magi – når videnskaben stopper, Duration in Minutes: 157, Value: 2625", c2.ToString());
         }
         [TestMethod]
         public void CourseConstructorWithTwoParameters2 () {
             // Assert
-            Assert.AreEqual("Name: Et indblik I Helleristning, Duration in Minutes: 180", c3.ToString());
+            Assert.AreEqual("Name: Et indblik I Helleristning, Duration in Minutes: 180, Value: 2625", c3.ToString());
         }
 
         [TestMethod]
@@ -103,7 +103,7 @@ namespace DisaheimTestProject
             c2.DurationInMinutes = 413;
 
             // Assert
-            Assert.AreEqual("Name: How to Ying-Yang, Duration in Minutes: 413", c2.ToString());
+            Assert.AreEqual("Name: How to Ying-Yang, Duration in Minutes: 413, Value: 6125", c2.ToString());
         }
     }
 }
