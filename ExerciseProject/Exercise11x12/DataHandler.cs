@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace ExerciseProject.Exercise11And12
+﻿namespace ExerciseProject.Exercise11x12
 {
     public class DataHandler
     {

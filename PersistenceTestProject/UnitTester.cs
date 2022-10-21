@@ -1,5 +1,4 @@
-using System;
-using ExerciseProject.Exercise11And12;
+using ExerciseProject.Exercise11x12;
 
 namespace PersistenceTestProject
 {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorTestProject", "TestExerciseSolutions\CalculatorTestProject.csproj", "{295A00E2-5733-4791-85A4-4108AF3D2A1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorTestProject", "CalculatorTestProject\CalculatorTestProject.csproj", "{295A00E2-5733-4791-85A4-4108AF3D2A1B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrangeTreeTestProject", "OrangeTreeTestProject\OrangeTreeTestProject.csproj", "{7D1B8980-2F68-42AC-B083-5339A2087813}"
 EndProject
@@ -11,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistenceTestProject", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciseProject", "ExerciseProject\ExerciseProject.csproj", "{6E1D7EA6-B06A-4034-B84B-48D2D001CF1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheHundredAcreWoodTestProject", "TheHundredAcreWoodTestProject\TheHundredAcreWoodTestProject.csproj", "{36B42E67-197E-4BCC-A480-9D5AA1702DB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheHundredAcreWoodTestProject", "TheHundredAcreWoodTestProject\TheHundredAcreWoodTestProject.csproj", "{36B42E67-197E-4BCC-A480-9D5AA1702DB4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBankTest", "SimpleBankTest\SimpleBankTest.csproj", "{8C7AB1D9-EC6B-4F72-BC7A-F4E074F89E0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DisaheimTestProject", "DisaheimTestProject\DisaheimTestProject.csproj", "{8059CAB5-6FB0-4024-A29D-E46D5ABB189A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciseFlowLib", "ExerciseFlowLib\ExerciseFlowLib.csproj", "{A657F7B6-7298-4FF6-AC3D-6BFEF1E3B511}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{36B42E67-197E-4BCC-A480-9D5AA1702DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36B42E67-197E-4BCC-A480-9D5AA1702DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36B42E67-197E-4BCC-A480-9D5AA1702DB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C7AB1D9-EC6B-4F72-BC7A-F4E074F89E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7AB1D9-EC6B-4F72-BC7A-F4E074F89E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7AB1D9-EC6B-4F72-BC7A-F4E074F89E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7AB1D9-EC6B-4F72-BC7A-F4E074F89E0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8059CAB5-6FB0-4024-A29D-E46D5ABB189A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8059CAB5-6FB0-4024-A29D-E46D5ABB189A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8059CAB5-6FB0-4024-A29D-E46D5ABB189A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8059CAB5-6FB0-4024-A29D-E46D5ABB189A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A657F7B6-7298-4FF6-AC3D-6BFEF1E3B511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A657F7B6-7298-4FF6-AC3D-6BFEF1E3B511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A657F7B6-7298-4FF6-AC3D-6BFEF1E3B511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A657F7B6-7298-4FF6-AC3D-6BFEF1E3B511}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
