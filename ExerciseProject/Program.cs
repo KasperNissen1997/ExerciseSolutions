@@ -504,7 +504,8 @@ namespace ExerciseProject
                 Console.WriteLine("Currently, the flowerTypeRepo contains " + controller.flowerTypeRepo.Count() + " elements.\n" +
                     "Now we attempt to register a new flower type...\n");
 
-                controller.RegisterNewFlowerType("African Marigold", "african-marigold.png", 30, 120, 0.0225);
+                string imageFolderPath = @"..\..\..\Exercise21-Tusindfryd\Images\";
+                controller.RegisterNewFlowerType("African Marigold", imageFolderPath + "african-marigold.png", 30, 120, 0.0225);
 
                 Console.WriteLine("After calling the \"RegisterNewFlowerType\" method with appropriate parameters, the flowerTypeRepo now contains " + controller.flowerTypeRepo.Count() + " elements.\n");
                 #endregion

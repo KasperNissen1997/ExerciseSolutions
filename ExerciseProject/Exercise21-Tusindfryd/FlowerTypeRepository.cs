@@ -22,18 +22,18 @@
         }
 
         public void Remove (FlowerType flowerType) {
-            throw new NotImplementedException();
+            flowerTypes.Remove(flowerType);
         }
 
         public int Count () {
             return flowerTypes.Count;
         }
 
-        public void Save (string filePath = "defaultFilePath.txt") {
+        public void Save (string filePath = @"..\..\..\Exercise21-Tusindfryd\flowerTypeRepository.txt") {
             throw new NotImplementedException();
         }
 
-        public void Load (string filePath = "defaultFilePath.txt") {
+        public void Load (string filePath = @"..\..\..\Exercise21-Tusindfryd\flowerTypeRepository.txt") {
             throw new NotImplementedException();
         }
     }
