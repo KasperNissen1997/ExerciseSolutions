@@ -2,6 +2,7 @@
 using ExerciseProject.Exercise11x12;
 using ExerciseProject.Exercise5;
 using ExerciseProject.Exercise7;
+using ExerciseProject.Exercise21_Tusindfryd;
 using TotallySafeLib;
 using System.Speech.Synthesis;
 using CustomExceptionHandling;
@@ -462,6 +463,7 @@ namespace ExerciseProject
 
             #region Exercise 21 - Custom exception handling
             if (exercise21) {
+                #region Exercise 2.1, 2.2, 2.3, 2.4, 2.5
                 int testInt = 0;
                 double testDouble = 0;
 
@@ -494,7 +496,21 @@ namespace ExerciseProject
                 Console.WriteLine();
 
                 ExerciseFlow.FinishTask();
-            } 
+                #endregion
+
+                #region Exercise 3.3
+                Controller controller = new Controller();
+
+                Console.WriteLine("Currently, the flowerTypeRepo contains " + controller.flowerTypeRepo.Count() + " elements.\n" +
+                    "Now we attempt to register a new flower type...\n");
+
+                controller.RegisterNewFlowerType("African Marigold", "african-marigold.png", 30, 120, 0.0225);
+
+                Console.WriteLine("After calling the \"RegisterNewFlowerType\" method with appropriate parameters, the flowerTypeRepo now contains " + controller.flowerTypeRepo.Count() + " elements.\n");
+                #endregion
+
+                ExerciseFlow.FinishExercise("exercise 21 - Custom exception handling");
+            }
             #endregion
 
             #region Lololol
