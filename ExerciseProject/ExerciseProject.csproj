@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ExerciseFlowLib\ExerciseFlowLib.csproj" />
+    <ProjectReference Include="..\TotallySafeLib\TotallySafeLib.csproj" />
   </ItemGroup>
 
 </Project>

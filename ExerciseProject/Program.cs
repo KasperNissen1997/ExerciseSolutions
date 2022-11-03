@@ -2,7 +2,9 @@
 using ExerciseProject.Exercise11x12;
 using ExerciseProject.Exercise5;
 using ExerciseProject.Exercise7;
+using TotallySafeLib;
 using System.Speech.Synthesis;
+using CustomExceptionHandling;
 
 namespace ExerciseProject
 {
@@ -28,6 +30,8 @@ namespace ExerciseProject
             // exercise17 ~ in folder Exercise15x16x17x18x19
             // exercise18 ~ in folder Exercise15x16x17x18x19
             // exercise19 ~ in folder Exercise15x16x17x18x19
+            // exercise20 ~ solved elsewhere
+            bool exercise21 = true; // also related to the project "Tusindfryd"
 
             #region Exercise 3 - C# Data
             if (exercise3) {
@@ -456,24 +460,61 @@ namespace ExerciseProject
             }
             #endregion
 
+            #region Exercise 21 - Custom exception handling
+            if (exercise21) {
+                int testInt = 0;
+                double testDouble = 0;
+
+                try {
+                    testDouble = TotallySafe.Divider(0);
+
+                    Console.WriteLine(testDouble);
+                } catch (DivideByZeroException ex) {
+                    Console.WriteLine(ex.Message);
+                }
+
+                try {
+                    testInt = TotallySafe.StringToInt("fem");
+
+                    Console.WriteLine(testInt);
+                } catch (FormatException ex) {
+                    Console.WriteLine(ex.Message);
+                }
+
+                try {
+                    testInt = TotallySafe.GetValueAtPosition(-2);
+
+                    Console.WriteLine(testInt);
+                } catch (IndexOutOfRangeException ex) {
+                    Console.WriteLine(ex.Message);
+                } catch (NegativeIndexOutOfRangeException ex) {
+                    Console.WriteLine(ex.Message);
+                }
+
+                Console.WriteLine();
+
+                ExerciseFlow.FinishTask();
+            } 
+            #endregion
+
             #region Lololol
-            SpeechSynthesizer speakSynth = new SpeechSynthesizer();
-            speakSynth.SetOutputToDefaultAudioDevice();
+            //SpeechSynthesizer speakSynth = new SpeechSynthesizer();
+            //speakSynth.SetOutputToDefaultAudioDevice();
 
-            string[] names = {
-                "Jonas",
-                "Matias",
-                "Jonathan",
-                "Alexander",
-                "Casper"
-            };
+            //string[] names = {
+            //    "Jonas",
+            //    "Matias",
+            //    "Jonathan",
+            //    "Alexander",
+            //    "Casper"
+            //};
 
-            foreach (string name in names) {
-                speakSynth.Speak("Fuck you " + name);
-            }
+            //foreach (string name in names) {
+            //    speakSynth.Speak("Fuck you " + name);
+            //}
 
-            speakSynth.Speak("You all suck at table football haha \n" +
-                "Suck it boys");
+            //speakSynth.Speak("You all suck at table football haha \n" +
+            //    "Suck it boys");
             #endregion
 
             ExerciseFlow.EndProgram();
