@@ -32,7 +32,7 @@ namespace ExerciseProject
             // exercise18 ~ in folder Exercise15x16x17x18x19
             // exercise19 ~ in folder Exercise15x16x17x18x19
             // exercise20 ~ solved elsewhere
-            bool exercise21 = true; // also related to the project "Tusindfryd"
+            bool exercise21 = true; // also in folder Exercise21-Tusindfryd
 
             #region Exercise 3 - C# Data
             if (exercise3) {
