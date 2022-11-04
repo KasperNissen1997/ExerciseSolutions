@@ -29,11 +29,11 @@
             return flowerTypes.Count;
         }
 
-        public void Save (string filePath = @"..\..\..\Exercise21-Tusindfryd\flowerTypeRepository.txt") {
+        public void Save (string filePath = @"..\..\..\Exercise21x22-Tusindfryd\flowerTypeRepository.txt") {
             throw new NotImplementedException();
         }
 
-        public void Load (string filePath = @"..\..\..\Exercise21-Tusindfryd\flowerTypeRepository.txt") {
+        public void Load (string filePath = @"..\..\..\Exercise21x22-Tusindfryd\flowerTypeRepository.txt") {
             throw new NotImplementedException();
         }
     }

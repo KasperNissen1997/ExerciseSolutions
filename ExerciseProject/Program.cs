@@ -32,7 +32,8 @@ namespace ExerciseProject
             // exercise18 ~ in folder Exercise15x16x17x18x19
             // exercise19 ~ in folder Exercise15x16x17x18x19
             // exercise20 ~ solved elsewhere
-            bool exercise21 = true; // also in folder Exercise21-Tusindfryd
+            bool exercise21 = true; // also in folder Exercise21x22-Tusindfryd
+            bool exercise22 = true; // also in folder Exercise21x22-Tusindfryd
 
             #region Exercise 3 - C# Data
             if (exercise3) {
@@ -501,16 +502,46 @@ namespace ExerciseProject
                 #region Exercise 3.3
                 Controller controller = new Controller();
 
-                Console.WriteLine("Currently, the flowerTypeRepo contains " + controller.flowerTypeRepo.Count() + " elements.\n" +
+                Console.WriteLine("Currently, the flowerTypeRepo contains " + controller.FlowerTypeRepo.Count() + " elements.\n" +
                     "Now we attempt to register a new flower type...\n");
 
-                string imageFolderPath = @"..\..\..\Exercise21-Tusindfryd\Images\";
+                string imageFolderPath = @"..\..\..\Exercise21x22-Tusindfryd\Images\";
                 controller.RegisterNewFlowerType("African Marigold", imageFolderPath + "african-marigold.png", 30, 120, 0.0225);
 
-                Console.WriteLine("After calling the \"RegisterNewFlowerType\" method with appropriate parameters, the flowerTypeRepo now contains " + controller.flowerTypeRepo.Count() + " elements.\n");
+                Console.WriteLine("After calling the \"RegisterNewFlowerType\" method with appropriate parameters, the flowerTypeRepo now contains " + controller.FlowerTypeRepo.Count() + " elements.\n");
                 #endregion
 
                 ExerciseFlow.FinishExercise("exercise 21 - Custom exception handling");
+            }
+            #endregion
+
+            #region Exercise 22 - Resource management
+            if (exercise22) {
+                #region Exercise 3.3
+                Controller controller = new Controller();
+
+                controller.GreenhouseRepo.Add(new Greenhouse("A"));
+                controller.GreenhouseRepo.Add(new Greenhouse("B"));
+                controller.GreenhouseRepo.Add(new Greenhouse("C"));
+
+                controller.ProductionTrayRepo.Add(new ProductionTray("A1", 300));
+                controller.ProductionTrayRepo.Add(new ProductionTray("A2", 150));
+
+                string imageFolderPath = @"..\..\..\Exercise21x22-Tusindfryd\Images\";
+                controller.RegisterNewFlowerType("African Marigold", imageFolderPath + "african-marigold.png", 30, 120, 0.0225);
+
+                Console.WriteLine("Before starting a new production, the amount of productions is: " + controller.ProductionRepo.Count() + ".");
+
+                controller.StartProduction("A", "A1", "African Marigold", 250, new DateOnly(2022, 11, 4));
+
+                Console.WriteLine("After the production has been starter, the amount of productions is: " + controller.ProductionRepo.Count() + ".\n");
+                Console.WriteLine("The information associated with the production is shown below:\n");
+                Console.WriteLine(controller.ProductionRepo.Get(1).ToString());
+
+                Console.WriteLine();
+                #endregion
+
+                ExerciseFlow.FinishExercise("exercise 22 - Resource management");
             }
             #endregion
 
