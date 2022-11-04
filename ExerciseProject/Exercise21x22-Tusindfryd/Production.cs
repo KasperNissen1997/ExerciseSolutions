@@ -12,7 +12,6 @@
         public Greenhouse Greenhouse { get; set; }
         public ProductionTray ProductionTray { get; set; }
         public FlowerType FlowerType { get; set; }
-        public List<Counting> Countings { get; set; }
 
         public Production (int ID, DateOnly date, int startAmount, Greenhouse greenhouse, ProductionTray productionTray, FlowerType flowerType) {
             this.ID = ID;
@@ -28,7 +27,7 @@
         }
 
         int CalculateExpectedAmount () {
-            return (int) (StartAmount * 0.88);
+            return (int) (StartAmount * 0.88); // return 88% of StartAmount, since I don't know how else to implement this...
         }
 
         public void Finish () {

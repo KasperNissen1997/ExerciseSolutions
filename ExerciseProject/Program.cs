@@ -521,11 +521,8 @@ namespace ExerciseProject
                 Controller controller = new Controller();
 
                 controller.GreenhouseRepo.Add(new Greenhouse("A"));
-                controller.GreenhouseRepo.Add(new Greenhouse("B"));
-                controller.GreenhouseRepo.Add(new Greenhouse("C"));
 
                 controller.ProductionTrayRepo.Add(new ProductionTray("A1", 300));
-                controller.ProductionTrayRepo.Add(new ProductionTray("A2", 150));
 
                 string imageFolderPath = @"..\..\..\Exercise21x22-Tusindfryd\Images\";
                 controller.RegisterNewFlowerType("African Marigold", imageFolderPath + "african-marigold.png", 30, 120, 0.0225);
