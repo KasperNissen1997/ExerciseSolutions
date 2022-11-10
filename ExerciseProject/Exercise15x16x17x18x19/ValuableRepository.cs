@@ -43,11 +43,7 @@ namespace ExerciseProject.Exercise15x16x17x18x19
             return valuables.Count;
         }
 
-        public void Save () {
-            Save(@"..\..\..\ValuableRepository.txt");
-        }
-
-        public void Save (string fileName) {
+        public void Save (string fileName = @"..\..\..\ValuableRepository.txt") {
             if (!File.Exists(fileName)) // does the file exist?
                 File.Create(fileName).Close(); // if not, create it, and close the fileStream
 
@@ -73,11 +69,7 @@ namespace ExerciseProject.Exercise15x16x17x18x19
             }
         }
 
-        public void Load () {
-            Load(@"..\..\..\ValuableRepository.txt");
-        }
-
-        public void Load (string fileName) {
+        public void Load (string fileName = @"..\..\..\ValuableRepository.txt") {
             try {
                 using (StreamReader sr = new StreamReader(fileName)) {
                     while (!sr.EndOfStream) {
