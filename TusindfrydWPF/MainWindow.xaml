@@ -10,7 +10,7 @@
         <StackPanel>
             <Label x:Name="FlowerSortPanel" Content="Blomstersort" HorizontalContentAlignment="Center"/>
             <TextBlock x:Name="FlowerSortListingTextBox" TextWrapping="Wrap" Background="#FFE6E6E6" Height="150" Margin="10,10,10,10"/>
-            <Button x:Name="RegisterFlowerSortButton" Content="Opret blomstersort" Margin="25,0,25,0" Click="registerFlowerSortButton_Click"/>
+            <Button x:Name="RegisterFlowerSortButton" Content="Opret blomstersort" Margin="25,0,25,0" Click="registerFlowerSortButton_Click" IsDefault="True"/>
         </StackPanel>
 
     </Grid>
