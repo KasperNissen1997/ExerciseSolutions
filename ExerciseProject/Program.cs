@@ -12,19 +12,19 @@ namespace ExerciseProject
     public class Program
     {
         static void Main (string[] args) {
-            // exercise1 ~ not implemented
-            // exercise2 ~ not implemented
+            // exercise1 ~ not solved
+            // exercise2 ~ not solved
             bool exercise3 = false;
             bool exercise4 = false;
             bool exercise5 = false;
             bool exercise6 = false;
             bool exercise7 = false;
-            // exercise8 ~ not implemented
+            // exercise8 ~ not solved
             // exercise9 ~ in folder Exercise9x10
             // exercise10 ~ in folder Exercise9x10
             bool exercise11 = false;
             // exercise12 ~ in folder Exercise11x12
-            // exercise13 ~ implemented as one or multiple methods
+            // exercise13 ~ solved as one or multiple methods
             // exercise14 ~ in folder Exercise14
             // exercise15 ~ in folder Exercise15x16x17x18x19
             // exercise16 ~ in folder Exercise15x16x17x18x19
@@ -32,8 +32,11 @@ namespace ExerciseProject
             // exercise18 ~ in folder Exercise15x16x17x18x19
             // exercise19 ~ in folder Exercise15x16x17x18x19
             // exercise20 ~ solved elsewhere
-            bool exercise21 = true; // also in folder Exercise21x22-Tusindfryd
-            bool exercise22 = true; // also in folder Exercise21x22-Tusindfryd
+            bool exercise21 = true; // also in folder Exercise21x22x23-Tusindfryd
+            bool exercise22 = true; // also in folder Exercise21x22x23-Tusindfryd
+            // exercise23 ~ in folder Exercise21x22x23-Tusindfryd
+            // exercise24 ~ solved as one or multiple projects (WPFSimpleGUI & WPFInteractiveGUI)
+            // exercise25 ~ solved as one or multiple projects (TusindfrydWPF)
 
             #region Exercise 3 - C# Data
             if (exercise3) {
@@ -505,7 +508,7 @@ namespace ExerciseProject
                 Console.WriteLine("Currently, the flowerTypeRepo contains " + controller.FlowerTypeRepo.Count() + " elements.\n" +
                     "Now we attempt to register a new flower type...\n");
 
-                string imageFolderPath = @"..\..\..\Exercise21x22-Tusindfryd\Images\";
+                string imageFolderPath = @"..\..\..\Exercise21x22x23-Tusindfryd\Images\";
                 controller.RegisterNewFlowerType("African Marigold", imageFolderPath + "african-marigold.png", 30, 120, 0.0225);
 
                 Console.WriteLine("After calling the \"RegisterNewFlowerType\" method with appropriate parameters, the flowerTypeRepo now contains " + controller.FlowerTypeRepo.Count() + " elements.\n");
@@ -524,7 +527,7 @@ namespace ExerciseProject
 
                 controller.ProductionTrayRepo.Add(new ProductionTray("A1", 300));
 
-                string imageFolderPath = @"..\..\..\Exercise21x22-Tusindfryd\Images\";
+                string imageFolderPath = @"..\..\..\Exercise21x22x23-Tusindfryd\Images\";
                 controller.RegisterNewFlowerType("African Marigold", imageFolderPath + "african-marigold.png", 30, 120, 0.0225);
 
                 Console.WriteLine("Before starting a new production, the amount of productions is: " + controller.ProductionRepo.Count() + ".");
@@ -540,26 +543,6 @@ namespace ExerciseProject
 
                 ExerciseFlow.FinishExercise("exercise 22 - Resource management");
             }
-            #endregion
-
-            #region Lololol
-            //SpeechSynthesizer speakSynth = new SpeechSynthesizer();
-            //speakSynth.SetOutputToDefaultAudioDevice();
-
-            //string[] names = {
-            //    "Jonas",
-            //    "Matias",
-            //    "Jonathan",
-            //    "Alexander",
-            //    "Casper"
-            //};
-
-            //foreach (string name in names) {
-            //    speakSynth.Speak("Fuck you " + name);
-            //}
-
-            //speakSynth.Speak("You all suck at table football haha \n" +
-            //    "Suck it boys");
             #endregion
 
             ExerciseFlow.EndProgram();
