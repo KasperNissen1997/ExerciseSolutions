@@ -37,6 +37,7 @@ namespace ExerciseProject
             // exercise23 ~ in folder Exercise21x22x23-Tusindfryd
             // exercise24 ~ solved as one or multiple projects (WPFSimpleGUI & WPFInteractiveGUI)
             // exercise25 ~ solved as one or multiple projects (TusindfrydWPF)
+            // exercise26 ~ solved as one or multiple projects (WPFAndMVVM1)
 
             #region Exercise 3 - C# Data
             if (exercise3) {
