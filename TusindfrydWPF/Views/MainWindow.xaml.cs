@@ -12,30 +12,34 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TusindfrydWPF.ViewModels;
 
-namespace TusindfrydWPF
+namespace TusindfrydWPF.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<FlowerSort> FlowerSorts { get; set; }
+        MainViewModel MainVM { get; set; }
 
         public MainWindow () {
             InitializeComponent();
 
-            FlowerSorts = new List<FlowerSort>();
+            MainVM = new MainViewModel();
+            DataContext = MainVM;
         }
 
-        private void registerFlowerSortButton_Click (object sender, RoutedEventArgs e) {
-            CreateFlowerSortDialogue dialogue = new CreateFlowerSortDialogue();
+        private void RegisterFlowerSortButton_Click (object sender, RoutedEventArgs e) {
+            CreateFlowerSortDialogue dialogue = new CreateFlowerSortDialogue(MainVM);
+            dialogue.ShowDialog();
+        }
+
+        private void StartProductionButton_Click (object sender, RoutedEventArgs e) {
+            StartProductionDialogue dialogue = new StartProductionDialogue(MainVM);
 
             if (dialogue.ShowDialog() == true) {
-                FlowerSort flowerSort = dialogue.FlowerSort;
 
-                FlowerSorts.Add(flowerSort);
-                FlowerSortListingTextBox.Text += flowerSort.ToString() + "\n";
             }
         }
     }

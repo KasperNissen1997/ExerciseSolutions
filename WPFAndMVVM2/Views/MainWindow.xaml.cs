@@ -25,10 +25,10 @@ namespace WPFAndMVVM2
 
         public MainWindow()
         {
-            InitializeComponent();
-
             mainVM = new MainViewModel();
             DataContext = mainVM;
+
+            InitializeComponent();
         }
 
         private void AddButton_Click (object sender, RoutedEventArgs e) {

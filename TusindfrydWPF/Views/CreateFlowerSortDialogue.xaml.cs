@@ -13,18 +13,21 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TusindfrydWPF.ViewModels;
 
-namespace TusindfrydWPF
+namespace TusindfrydWPF.Views
 {
     /// <summary>
     /// Interaction logic for CreateFlowerSortDialogue.xaml
     /// </summary>
     public partial class CreateFlowerSortDialogue : Window
     {
-        public FlowerSort FlowerSort { get; private set; }
+        public MainViewModel MainVM { get; set; }
 
-        public CreateFlowerSortDialogue () {
+        public CreateFlowerSortDialogue (MainViewModel mainVM) {
             InitializeComponent();
+
+            MainVM = mainVM;
         }
 
         private void CheckEnableOkButton () {
@@ -48,7 +51,7 @@ namespace TusindfrydWPF
             if (!double.TryParse(SizeTextBox.Text, out double size))
                 Trace.WriteLine("Size assigned value 0, as it couldn't be parsed properly.");
 
-            FlowerSort = new FlowerSort(
+            MainVM.CreateFlowerSort(
                 NameTextBox.Text,
                 PicturePathTextBox.Text,
                 productionTime,
