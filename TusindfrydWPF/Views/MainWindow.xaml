@@ -11,10 +11,11 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         
         <Label x:Name="FlowerSortPanel" Content="Blomstersorter" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -30,8 +31,23 @@
         <Button x:Name="RegisterFlowerSortButton" Grid.Row="2" Content="Opret blomstersort" Margin="5" Click="RegisterFlowerSortButton_Click"/>
         
         <Label x:Name="ProductionPanel" Grid.Column="1" Content="Produktioner" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBlock x:Name="ProductionListingTextBox" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Background="#FFE6E6E6" Margin="10"/>
+        <ListBox x:Name="ProductionListingTextBox" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ProductionVMs}" Background="#FFE6E6E6" Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Date}"/>
+                        <Label Content="{Binding StartAmount}"/>
+                        <Label Content="{Binding ExpectedAmount}"/>
+                        <Label Content="{Binding IsFinished}"/>
+                        <Label Content="{Binding FlowerSort.Name}"/>
+                        <Label Content="{Binding Tray.Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button x:Name="StartProductionButton" Grid.Row="2" Grid.Column="1" Content="Start produktion" Margin="5" Click="StartProductionButton_Click"/>
+
+        <Button x:Name="SaveChanges" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10,2,10,2" Content="Gem data" Click="SaveChanges_Click"/>
 
     </Grid>
 </Window>

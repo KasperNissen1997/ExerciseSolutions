@@ -13,9 +13,13 @@ namespace TusindfrydWPF.Models
 
         private List<ProductionTray> productionTrays;
 
-        public ProductionTrayRepository()
+        private GreenhouseRepository greenhouseRepo;
+
+        public ProductionTrayRepository(GreenhouseRepository greenhouseRepo)
         {
             productionTrays = new List<ProductionTray>();
+
+            this.greenhouseRepo = greenhouseRepo;
 
             Load();
         }

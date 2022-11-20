@@ -13,8 +13,14 @@ namespace TusindfrydWPF.Models
 
         private List<Production> productions;
 
-        public ProductionRepository()
+        private FlowerSortRepository flowerSortRepo;
+        private ProductionTrayRepository trayRepo;
+
+        public ProductionRepository(FlowerSortRepository flowerSortRepo, ProductionTrayRepository trayRepo)
         {
+            this.flowerSortRepo = flowerSortRepo;
+            this.trayRepo = trayRepo;
+
             productions = new List<Production>();
 
             Load();
@@ -34,8 +40,10 @@ namespace TusindfrydWPF.Models
                     int startAmount = int.Parse(readLine[1]);
                     int expectedAmount = int.Parse(readLine[2]);
                     bool isFinished = bool.Parse(readLine[3]);
+                    FlowerSort flowerSort = flowerSortRepo.Retrieve(int.Parse(readLine[4]));
+                    ProductionTray tray = trayRepo.Retrieve(int.Parse(readLine[5]));
 
-                    Create(date, startAmount, expectedAmount, isFinished);
+                    Create(date, startAmount, expectedAmount, isFinished, flowerSort, tray);
                 }
             }
         }
@@ -52,9 +60,9 @@ namespace TusindfrydWPF.Models
         }
 
         #region CRUD
-        public Production Create(DateOnly date, int startAmount, int expectedAmount, bool isFinished)
+        public Production Create(DateOnly date, int startAmount, int expectedAmount, bool isFinished, FlowerSort flowerSort, ProductionTray tray)
         {
-            Production newProduction = new Production(date, startAmount, expectedAmount, isFinished);
+            Production newProduction = new Production(date, startAmount, expectedAmount, isFinished, flowerSort, tray);
 
             productions.Add(newProduction);
 

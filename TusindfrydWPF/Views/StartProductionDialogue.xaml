@@ -21,16 +21,16 @@
         </Grid.ColumnDefinitions>
 
         <Label Content="Dato:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <DatePicker x:Name="DatePicker" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Vælg dato..."/>
+        <DatePicker x:Name="DatePicker" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Vælg dato..." SelectedDateChanged="DatePicker_SelectedDateChanged"/>
 
         <Label Grid.Row="1" Content="Start antal:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBox x:Name="StartAmountTextBox" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        <TextBox x:Name="StartAmountTextBox" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextChanged="StartAmountTextBox_TextChanged"/>
 
         <Label Grid.Row="2" Content="Forventet slutantal:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBox x:Name="ExpectedAmountTextBox" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        <TextBox x:Name="ExpectedAmountTextBox" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextChanged="ExpectedAmountTextBox_TextChanged"/>
         
         <Label Grid.Row="3" Content="Blomstersort:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <ComboBox x:Name="FlowerSortDropDown" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding FlowerSortVMs}">
+        <ComboBox x:Name="FlowerSortDropDown" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding FlowerSortVMs}" SelectedItem="{Binding SelectedFlowerSort, Mode=TwoWay}" SelectionChanged="FlowerSortDropDown_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -41,7 +41,7 @@
         </ComboBox>
         
         <Label Grid.Row="4" Content="Produktions bakke:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <ComboBox x:Name="ProductionTrayDropDown" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding ProductionTrayVMs}">
+        <ComboBox x:Name="ProductionTrayDropDown" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding ProductionTrayVMs}" SelectedItem="{Binding SelectedProductionTray, Mode=TwoWay}" SelectionChanged="ProductionTrayDropDown_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

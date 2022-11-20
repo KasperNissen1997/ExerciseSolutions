@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,10 +38,11 @@ namespace TusindfrydWPF.Views
 
         private void StartProductionButton_Click (object sender, RoutedEventArgs e) {
             StartProductionDialogue dialogue = new StartProductionDialogue(MainVM);
+            dialogue.ShowDialog();
+        }
 
-            if (dialogue.ShowDialog() == true) {
-
-            }
+        private void SaveChanges_Click (object sender, RoutedEventArgs e) {
+            MainVM.SaveAllRepositories();
         }
     }
 }

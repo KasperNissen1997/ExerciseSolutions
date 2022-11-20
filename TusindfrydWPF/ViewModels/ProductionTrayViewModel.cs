@@ -9,14 +9,14 @@ namespace TusindfrydWPF.ViewModels
 {
     public class ProductionTrayViewModel
     {
-        private ProductionTray productionTray; 
+        public ProductionTray Source { get; private set; } 
 
         public string Name { get; set; }
         public int Capacity { get; set; }
 
         public ProductionTrayViewModel(ProductionTray productionTray)
         {
-            this.productionTray = productionTray;
+            Source = productionTray;
 
             Name = productionTray.Name;
             Capacity = productionTray.Capacity;

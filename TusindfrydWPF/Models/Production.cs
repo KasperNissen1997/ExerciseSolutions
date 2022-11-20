@@ -16,7 +16,7 @@ namespace TusindfrydWPF.Models
         public int ExpectedAmount { get; set; }
         public bool IsFinished { get; set; }
 
-        public Production (DateOnly date, int startAmount, int expectedAmount, bool isFinished)
+        public Production (DateOnly date, int startAmount, int expectedAmount, bool isFinished, FlowerSort flowerSort, ProductionTray tray)
         {
             ID = iDCount++;
 
@@ -24,11 +24,14 @@ namespace TusindfrydWPF.Models
             StartAmount = startAmount;
             ExpectedAmount = expectedAmount;
             IsFinished = isFinished;
+
+            FlowerSort = flowerSort;
+            Tray = tray;
         }
 
         public string GetTitle()
         {
-            return string.Format($"{Date.ToString("dd-MM-yyyy")};{StartAmount};{ExpectedAmount};{IsFinished}");
+            return string.Format($"{Date.ToString("dd-MM-yyyy")};{StartAmount};{ExpectedAmount};{IsFinished};{FlowerSort.ID};{Tray.ID}");
         }
     }
 }

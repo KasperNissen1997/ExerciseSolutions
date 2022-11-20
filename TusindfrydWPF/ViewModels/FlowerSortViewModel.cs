@@ -9,7 +9,7 @@ namespace TusindfrydWPF.ViewModels
 {
     public class FlowerSortViewModel
     {
-        private FlowerSort flowerSort;
+        public FlowerSort Source { get; private set; }
 
         public string Name { get; set; }
         public string PicturePath { get; set; }
@@ -18,7 +18,7 @@ namespace TusindfrydWPF.ViewModels
         public double Size { get; set; }
 
         public FlowerSortViewModel (FlowerSort flowerSort) {
-            this.flowerSort = flowerSort;
+            this.Source = flowerSort;
             
             Name = flowerSort.Name;
             PicturePath = flowerSort.PicturePath;
