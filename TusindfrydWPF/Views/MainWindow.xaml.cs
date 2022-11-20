@@ -21,7 +21,7 @@ namespace TusindfrydWPF.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainViewModel MainVM { get; set; }
+        public MainViewModel MainVM { get; set; }
 
         public MainWindow () {
             InitializeComponent();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,8 +27,20 @@ namespace TusindfrydWPF.Views
             InitializeComponent();
 
             MainVM = mainVM;
+            DataContext = MainVM;
+
+            CalendarDateRange cdr = new CalendarDateRange(DateTime.MinValue, DateTime.Today);
+            DatePicker.BlackoutDates.Add(cdr);
         }
 
+        private void OkButton_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void AbortButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -8,16 +8,25 @@ namespace TusindfrydWPF.Models
 {
     public class ProductionTray
     {
-        private Greenhouse greenhouse;
+        private static int iDCount = 0;
+
+        public int ID { get; private set; }
+
+        public Greenhouse Greenhouse { get; set; }
 
         public string Name { get; set; }
         public int Capacity { get; set; }
 
-        public ProductionTray (Greenhouse greenhouse, string name, int capacity) {
-            this.greenhouse = greenhouse;
+        public ProductionTray (string name, int capacity) {
+            ID = iDCount++;
 
             Name = name;
             Capacity = capacity;
+        }
+
+        public string GetTitle()
+        {
+            return string.Format($"{Name};{Capacity}");
         }
     }
 }

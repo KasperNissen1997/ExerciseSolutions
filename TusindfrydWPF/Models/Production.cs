@@ -1,20 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TusindfrydWPF.Models
 {
     public class Production
     {
-        public int Id { get; private set; }
+        private static int iDCount = 0;
+
+        public int ID { get; private set; }
+
+        public ProductionTray Tray { get; set; }
+        public FlowerSort FlowerSort { get; set; }
 
         public DateOnly Date { get; set; }
         public int StartAmount { get; set; }
-        public int ExpectedAmount { get; private set; }
-        public bool Finished { get; set; }
+        public int ExpectedAmount { get; set; }
+        public bool IsFinished { get; set; }
 
-        
+        public Production (DateOnly date, int startAmount, int expectedAmount, bool isFinished)
+        {
+            ID = iDCount++;
+
+            Date = date;
+            StartAmount = startAmount;
+            ExpectedAmount = expectedAmount;
+            IsFinished = isFinished;
+        }
+
+        public string GetTitle()
+        {
+            return string.Format($"{Date.ToString("dd-MM-yyyy")};{StartAmount};{ExpectedAmount};{IsFinished}");
+        }
     }
 }

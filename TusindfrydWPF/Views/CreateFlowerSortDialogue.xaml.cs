@@ -69,7 +69,7 @@ namespace TusindfrydWPF.Views
         private void PicturePathTextBox_LostFocus (object sender, RoutedEventArgs e) {
             try {
                 // first, find the path to the referenced file
-                Uri pictureURI = new Uri(System.IO.Path.GetFullPath(@"..\..\..\Images\") + PicturePathTextBox.Text);
+                Uri pictureURI = new Uri(System.IO.Path.GetFullPath(@"..\..\..\Data\Images\") + PicturePathTextBox.Text);
                 FlowerSortImage.Source = new BitmapImage(pictureURI);
             } catch (FileNotFoundException ex) {
                 Trace.WriteLine(ex.Message);
