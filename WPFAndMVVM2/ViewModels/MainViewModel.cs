@@ -37,14 +37,14 @@ namespace WPFAndMVVM2.ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged (string propertyName) {
+        protected void OnPropertyChanged (string propertyName) 
+        {
             PropertyChangedEventHandler propertyChanged = PropertyChanged;
 
-            if (propertyChanged != null) {
+            if (propertyChanged != null) 
                 propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
         }
+
 
         public void AddDefaultPerson () {
             Person person = personRepo.Add("Specify FirstName", "Specify LastName", 0, "Specify Phone");

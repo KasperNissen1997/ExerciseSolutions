@@ -41,8 +41,7 @@ namespace WPFAndMVVM2
         }
 
         private void PersonsListBox_SelectionChanged (object sender, SelectionChangedEventArgs e) {
-            if (PersonsListBox.SelectedItem != null) {
-                mainVM.SelectedPerson = (PersonViewModel) PersonsListBox.SelectedItem;
+            if (mainVM.SelectedPerson != null) {
                 DeleteButton.IsEnabled = true;
             }
             else {

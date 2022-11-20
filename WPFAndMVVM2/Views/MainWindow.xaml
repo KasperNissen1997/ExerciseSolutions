@@ -21,7 +21,8 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="{Binding FullName}"/>
+                            <Label Content="{Binding FirstName}"/>
+                            <Label Content="{Binding LastName}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
