@@ -38,6 +38,8 @@ namespace ExerciseProject
             // exercise24 ~ solved as one or multiple projects (WPFSimpleGUI & WPFInteractiveGUI)
             // exercise25 ~ solved as one or multiple projects (TusindfrydWPF)
             // exercise26 ~ solved as one or multiple projects (WPFAndMVVM1)
+            // exercise27 ~ solved as one or multiple projects (WPFAndMVVM2)
+            // exercise27 ~ solved as one or multiple projects (TusindfrydWPF)
 
             #region Exercise 3 - C# Data
             if (exercise3) {
