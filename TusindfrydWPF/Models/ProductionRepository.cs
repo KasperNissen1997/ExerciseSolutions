@@ -9,7 +9,7 @@ namespace TusindfrydWPF.Models
 {
     public class ProductionRepository
     {
-        private string filePath = System.IO.Path.GetFullPath(@"..\..\..\Data\Productions.csv");
+        private string filePath = Path.GetFullPath(@"..\..\..\Data\Productions.csv");
 
         private List<Production> productions;
 
