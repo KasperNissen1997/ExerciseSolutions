@@ -41,7 +41,7 @@ namespace ExerciseProject
             // exercise27 ~ solved as one or multiple projects (WPFAndMVVM2)
             // exercise28 ~ solved as one or multiple projects (TusindfrydWPF)
             // exercise29 ~ not solved
-            // exercise30 ~ solved as one or multiple projects (TusindfrydWPF & WPFAndMVVM2)
+            // exercise30 ~ solved as one or multiple projects (TusindfrydWPF & WPFAndMVVM2 & WPFCommandBinding)
 
             #region Exercise 3 - C# Data
             if (exercise3) {
