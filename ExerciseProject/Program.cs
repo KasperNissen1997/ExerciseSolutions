@@ -32,14 +32,16 @@ namespace ExerciseProject
             // exercise18 ~ in folder Exercise15x16x17x18x19
             // exercise19 ~ in folder Exercise15x16x17x18x19
             // exercise20 ~ solved elsewhere
-            bool exercise21 = true; // also in folder Exercise21x22x23-Tusindfryd
-            bool exercise22 = true; // also in folder Exercise21x22x23-Tusindfryd
+            bool exercise21 = false; // also in folder Exercise21x22x23-Tusindfryd
+            bool exercise22 = false; // also in folder Exercise21x22x23-Tusindfryd
             // exercise23 ~ in folder Exercise21x22x23-Tusindfryd
             // exercise24 ~ solved as one or multiple projects (WPFSimpleGUI & WPFInteractiveGUI)
-            // exercise25 ~ solved as one or multiple projects (TusindfrydWPF)
+            // exercise25 ~ solved as one or multiple projects (Older version of TusindfrydWPF - see git commit history)
             // exercise26 ~ solved as one or multiple projects (WPFAndMVVM1)
             // exercise27 ~ solved as one or multiple projects (WPFAndMVVM2)
             // exercise28 ~ solved as one or multiple projects (TusindfrydWPF)
+            // exercise29 ~ not solved
+            // exercise30 ~ solved as one or multiple projects (TusindfrydWPF & WPFAndMVVM2)
 
             #region Exercise 3 - C# Data
             if (exercise3) {

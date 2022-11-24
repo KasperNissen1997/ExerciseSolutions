@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
         
         <Label x:Name="FlowerSortPanel" Content="Blomstersorter" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <ListBox x:Name="FlowerSortListingTextBox" Grid.Row="1" ItemsSource="{Binding FlowerSortVMs}" Background="#FFE6E6E6" Margin="10">
+        <ListBox x:Name="FlowerSortListingTextBox" Grid.Row="1" ItemsSource="{Binding FlowerSortVMs}" Background="#FFE6E6E6" Margin="10" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -28,10 +28,10 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="RegisterFlowerSortButton" Grid.Row="2" Content="Opret blomstersort" Margin="5" Click="RegisterFlowerSortButton_Click"/>
+        <Button x:Name="RegisterFlowerSortButton" Grid.Row="2" Content="Opret blomstersort" Margin="5" Command="{Binding CreateFlowerSortCommand}" CommandParameter="{Binding}"/>
         
         <Label x:Name="ProductionPanel" Grid.Column="1" Content="Produktioner" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <ListBox x:Name="ProductionListingTextBox" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ProductionVMs}" Background="#FFE6E6E6" Margin="10">
+        <ListBox x:Name="ProductionListingTextBox" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ProductionVMs}" Background="#FFE6E6E6" Margin="10" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -45,9 +45,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="StartProductionButton" Grid.Row="2" Grid.Column="1" Content="Start produktion" Margin="5" Click="StartProductionButton_Click"/>
+        <Button x:Name="StartProductionButton" Grid.Row="2" Grid.Column="1" Content="Start produktion" Margin="5" Command="{Binding CreateProductionCommand}" CommandParameter="{Binding}"/>
 
-        <Button x:Name="SaveChanges" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10,2,10,2" Content="Gem data" Click="SaveChanges_Click"/>
+        <Button x:Name="SaveChanges" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10,2,10,2" Content="Gem data" Command="{Binding SaveDataCommand}" CommandParameter="{Binding}"/>
 
     </Grid>
 </Window>

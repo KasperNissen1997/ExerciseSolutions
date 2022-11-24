@@ -5,7 +5,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TusindfrydWPF.Commands;
 using TusindfrydWPF.Models;
+using TusindfrydWPF.Views;
 
 namespace TusindfrydWPF.ViewModels
 {
@@ -41,6 +43,12 @@ namespace TusindfrydWPF.ViewModels
                 OnPropertyChanged(nameof(SelectedProductionTray));
             }
         }
+
+        #region Commands
+        public SaveDataCommand SaveDataCommand { get; } = new SaveDataCommand();
+        public CreateFlowerSortCommand CreateFlowerSortCommand { get; } = new CreateFlowerSortCommand();
+        public CreateProductionCommand CreateProductionCommand { get; } = new CreateProductionCommand();
+        #endregion
 
         public MainViewModel () {
             flowerSortRepo = new FlowerSortRepository();

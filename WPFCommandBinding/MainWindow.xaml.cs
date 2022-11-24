@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,22 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TusindfrydWPF.ViewModels;
 
-namespace TusindfrydWPF.Views
+namespace WPFCommandBinding
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainViewModel MainVM { get; set; }
-
         public MainWindow () {
             InitializeComponent();
-
-            MainVM = new MainViewModel();
-            DataContext = MainVM;
         }
     }
 }

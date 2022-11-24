@@ -36,10 +36,6 @@ namespace WPFAndMVVM2
             PersonsListBox.ScrollIntoView(mainVM.SelectedPerson);
         }
 
-        private void DeleteButton_Click (object sender, RoutedEventArgs e) {
-            mainVM.DeleteSelectedPerson();
-        }
-
         private void PersonsListBox_SelectionChanged (object sender, SelectionChangedEventArgs e) {
             if (mainVM.SelectedPerson != null) {
                 DeleteButton.IsEnabled = true;

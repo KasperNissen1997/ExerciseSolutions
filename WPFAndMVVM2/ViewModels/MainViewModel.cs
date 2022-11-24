@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows.Controls;
 using WPFAndMVVM2.Models;
+using WPFAndMVVM2.Commands;
 
 namespace WPFAndMVVM2.ViewModels
 {
@@ -27,6 +28,10 @@ namespace WPFAndMVVM2.ViewModels
                 OnPropertyChanged("SelectedPerson");
             } 
         }
+
+        #region Commands
+        public DeleteSelectedPersonCommand DeleteSelectedPersonCommand { get; } = new DeleteSelectedPersonCommand();
+        #endregion
 
         public MainViewModel () {
             PersonsVM = new ObservableCollection<PersonViewModel>();

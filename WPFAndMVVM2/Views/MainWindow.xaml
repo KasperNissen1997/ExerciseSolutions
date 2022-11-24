@@ -29,7 +29,7 @@
             </ListBox>
             <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Button x:Name="AddButton" Margin="5" HorizontalAlignment="Left" Click="AddButton_Click">New</Button>
-                <Button x:Name="DeleteButton" Margin="5" HorizontalAlignment="Right" Click="DeleteButton_Click" IsEnabled="False">Delete</Button>
+                <Button x:Name="DeleteButton" Margin="5" HorizontalAlignment="Right" Command="{Binding DeleteSelectedPersonCommand}" CommandParameter="{Binding}" IsEnabled="False">Delete</Button>
             </StackPanel>
         </Grid>
 

@@ -18,12 +18,12 @@ namespace WPFAndMVVM2.Models
         {
             try
             {   // Open the text file using a stream reader.
-                using (StreamReader sr = new StreamReader("Persons.csv"))
+                using (StreamReader sr = new StreamReader(System.IO.Path.GetFullPath(@"..\..\..\Data\Persons.csv"))) 
                 {
                     // Read the stream to a string, and instantiate a Person object
                     String line = sr.ReadLine();
 
-                    while (line != null)
+                    while (line != null) 
                     {
                         string[] parts = line.Split(',');
 
