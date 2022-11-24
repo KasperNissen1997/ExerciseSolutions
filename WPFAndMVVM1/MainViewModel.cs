@@ -31,10 +31,10 @@ namespace WPFAndMVVM1
             }
         }
 
-        public event PropertyChangedEventHandler? propertyChangeed;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void OnPropertyChanged (string propertyName) {
-            PropertyChangedEventHandler propertyChanged = propertyChangeed;
+            PropertyChangedEventHandler propertyChanged = PropertyChanged;
 
             if (propertyChanged != null) {
                 propertyChanged(this, new PropertyChangedEventArgs(propertyName));
