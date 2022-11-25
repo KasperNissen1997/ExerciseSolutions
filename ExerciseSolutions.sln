@@ -37,9 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFAndMVVM1", "WPFAndMVVM1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFAndMVVM2", "WPFAndMVVM2\WPFAndMVVM2.csproj", "{74FE099E-3776-4BB5-B2A7-E01F162AF1B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFCommandBinding", "WPFCommandBinding\WPFCommandBinding.csproj", "{688E3EE9-A8AB-41BA-9E07-DAD7C4CAAF3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFCommandBinding", "WPFCommandBinding\WPFCommandBinding.csproj", "{688E3EE9-A8AB-41BA-9E07-DAD7C4CAAF3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverPatternTestProject", "ObserverPatternTestProject\ObserverPatternTestProject.csproj", "{14F299E3-74EA-4351-8C38-1D255E971BA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverPatternTestProject", "ObserverPatternTestProject\ObserverPatternTestProject.csproj", "{14F299E3-74EA-4351-8C38-1D255E971BA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
