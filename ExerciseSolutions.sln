@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFAndMVVM2", "WPFAndMVVM2\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFCommandBinding", "WPFCommandBinding\WPFCommandBinding.csproj", "{688E3EE9-A8AB-41BA-9E07-DAD7C4CAAF3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverPatternTestProject", "ObserverPatternTestProject\ObserverPatternTestProject.csproj", "{14F299E3-74EA-4351-8C38-1D255E971BA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{688E3EE9-A8AB-41BA-9E07-DAD7C4CAAF3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{688E3EE9-A8AB-41BA-9E07-DAD7C4CAAF3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{688E3EE9-A8AB-41BA-9E07-DAD7C4CAAF3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F299E3-74EA-4351-8C38-1D255E971BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F299E3-74EA-4351-8C38-1D255E971BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F299E3-74EA-4351-8C38-1D255E971BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F299E3-74EA-4351-8C38-1D255E971BA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,6 +130,7 @@ Global
 		{42D1A933-6541-4C33-8FB9-D69AFFDCB8B4} = {7A0EF2CE-69EF-43F5-A9C1-79F57160BD01}
 		{74FE099E-3776-4BB5-B2A7-E01F162AF1B6} = {7A0EF2CE-69EF-43F5-A9C1-79F57160BD01}
 		{688E3EE9-A8AB-41BA-9E07-DAD7C4CAAF3C} = {7A0EF2CE-69EF-43F5-A9C1-79F57160BD01}
+		{14F299E3-74EA-4351-8C38-1D255E971BA0} = {9007DD22-50A2-4904-8FFC-9ADB4CBE1975}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F022833-9C96-4457-9B80-2F9F0FB52353}

@@ -6,6 +6,7 @@ using ExerciseProject.Exercise21_Tusindfryd;
 using TotallySafeLib;
 using System.Speech.Synthesis;
 using CustomExceptionHandling;
+using ExerciseProject.Exercise31;
 
 namespace ExerciseProject
 {
@@ -42,6 +43,7 @@ namespace ExerciseProject
             // exercise28 ~ solved as one or multiple projects (TusindfrydWPF)
             // exercise29 ~ not solved
             // exercise30 ~ solved as one or multiple projects (TusindfrydWPF & WPFAndMVVM2 & WPFCommandBinding)
+            bool exercise31 = true; // alse in folder Exercise31
 
             #region Exercise 3 - C# Data
             if (exercise3) {
@@ -547,6 +549,30 @@ namespace ExerciseProject
                 #endregion
 
                 ExerciseFlow.FinishExercise("exercise 22 - Resource management");
+            }
+            #endregion
+
+            #region Exercise 31 - Observer Pattern
+            if (exercise31) {
+                #region Exercise 4
+                var p = new Academy("UCL");
+
+                var s1 = new Student(p, "Jens");
+                var s2 = new Student(p, "Niels");
+                var s3 = new Student(p, "Susan");
+
+                p.Attach(s1);
+                p.Attach(s2);
+                p.Attach(s3);
+
+                p.Message = "Så er der julefrokost!";
+
+                p.Detach(s2);
+
+                p.Message = "Så er der fredagsbar!";
+                #endregion
+
+                ExerciseFlow.FinishExercise("exercise 31 - Observer pattern");
             }
             #endregion
 
