@@ -6,7 +6,6 @@ using ExerciseProject.Exercise21_Tusindfryd;
 using TotallySafeLib;
 using System.Speech.Synthesis;
 using CustomExceptionHandling;
-using ExerciseProject.Exercise31;
 
 namespace ExerciseProject
 {
@@ -43,8 +42,8 @@ namespace ExerciseProject
             // exercise28 ~ solved as one or multiple projects (TusindfrydWPF)
             // exercise29 ~ not solved
             // exercise30 ~ solved as one or multiple projects (TusindfrydWPF & WPFAndMVVM2 & WPFCommandBinding)
-            bool exercise31 = true; // alse in folder Exercise31
-            bool exercise32 = false;
+            bool exercise31 = true; // also in folder Exercise31
+            bool exercise32 = true; // also in folder Exercise32
 
             #region Exercise 3 - C# Data
             if (exercise3) {
@@ -555,12 +554,11 @@ namespace ExerciseProject
 
             #region Exercise 31 - Observer Pattern
             if (exercise31) {
-                #region Exercise 4
-                var p = new Academy("UCL");
+                var p = new Exercise31.Academy("UCL");
 
-                var s1 = new Student(p, "Jens");
-                var s2 = new Student(p, "Niels");
-                var s3 = new Student(p, "Susan");
+                var s1 = new Exercise31.Student(p, "Jens");
+                var s2 = new Exercise31.Student(p, "Niels");
+                var s3 = new Exercise31.Student(p, "Susan");
 
                 p.Attach(s1);
                 p.Attach(s2);
@@ -571,9 +569,31 @@ namespace ExerciseProject
                 p.Detach(s2);
 
                 p.Message = "Så er der fredagsbar!";
-                #endregion
 
                 ExerciseFlow.FinishExercise("exercise 31 - Observer pattern");
+            }
+            #endregion
+
+            #region Exercise 32 - Observer Pattern #2
+            if (exercise32)
+            {
+                Exercise32.Academy p = new Exercise32.Academy("UCL", "Seebladsgade");
+
+                Exercise32.Student s1 = new Exercise32.Student(p, "Jens");
+                Exercise32.Student s2 = new Exercise32.Student(p, "Niels");
+                Exercise32.Student s3 = new Exercise32.Student(p, "Susan");
+
+                p.Attach(s1);
+                p.Attach(s2);
+                p.Attach(s3);
+
+                p.Message = "Så er der julefrokost!";
+
+                p.Detach(s2);
+
+                p.Message = "Så er der fredagsbar!";
+
+                ExerciseFlow.FinishExercise("exercise 32 - Observer pattern #2");
             }
             #endregion
 
