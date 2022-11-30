@@ -44,6 +44,7 @@ namespace ExerciseProject
             // exercise29 ~ not solved
             // exercise30 ~ solved as one or multiple projects (TusindfrydWPF & WPFAndMVVM2 & WPFCommandBinding)
             bool exercise31 = true; // alse in folder Exercise31
+            bool exercise32 = false;
 
             #region Exercise 3 - C# Data
             if (exercise3) {
