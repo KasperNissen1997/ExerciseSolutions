@@ -41,6 +41,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFCommandBinding", "WPFCom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverPatternTestProject", "ObserverPatternTestProject\ObserverPatternTestProject.csproj", "{14F299E3-74EA-4351-8C38-1D255E971BA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesTestProject", "DelegatesTestProject\DelegatesTestProject.csproj", "{A5D51D11-5366-4883-AB2F-59C352B2494B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{14F299E3-74EA-4351-8C38-1D255E971BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14F299E3-74EA-4351-8C38-1D255E971BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14F299E3-74EA-4351-8C38-1D255E971BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D51D11-5366-4883-AB2F-59C352B2494B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D51D11-5366-4883-AB2F-59C352B2494B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D51D11-5366-4883-AB2F-59C352B2494B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D51D11-5366-4883-AB2F-59C352B2494B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,6 +137,7 @@ Global
 		{74FE099E-3776-4BB5-B2A7-E01F162AF1B6} = {7A0EF2CE-69EF-43F5-A9C1-79F57160BD01}
 		{688E3EE9-A8AB-41BA-9E07-DAD7C4CAAF3C} = {7A0EF2CE-69EF-43F5-A9C1-79F57160BD01}
 		{14F299E3-74EA-4351-8C38-1D255E971BA0} = {9007DD22-50A2-4904-8FFC-9ADB4CBE1975}
+		{A5D51D11-5366-4883-AB2F-59C352B2494B} = {9007DD22-50A2-4904-8FFC-9ADB4CBE1975}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F022833-9C96-4457-9B80-2F9F0FB52353}

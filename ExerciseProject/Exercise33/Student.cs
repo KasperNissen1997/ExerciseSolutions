@@ -1,14 +1,14 @@
 ﻿using System;
 
-namespace ExerciseProject.Exercise32
+namespace ExerciseProject.Exercise33
 {
     public class Student : Person, IObserver
     {
-        private ISubject academy;
+        private Academy academy;
 
         public string Message { get; set; }
 
-        public Student(ISubject academy, string name) : base(name) 
+        public Student(Academy academy, string name) : base(name) 
         {
             this.academy = academy;
         }
