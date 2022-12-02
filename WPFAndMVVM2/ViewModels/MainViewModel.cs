@@ -25,7 +25,7 @@ namespace WPFAndMVVM2.ViewModels
             } 
             set { 
                 _selectedPerson = value;
-                OnPropertyChanged("SelectedPerson");
+                OnPropertyChanged(nameof(SelectedPerson));
             } 
         }
 
