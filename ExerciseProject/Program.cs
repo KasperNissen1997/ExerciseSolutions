@@ -44,7 +44,8 @@ namespace ExerciseProject
             // exercise30 ~ solved as one or multiple projects (TusindfrydWPF & WPFAndMVVM2 & WPFCommandBinding)
             bool exercise31 = false; // also in folder Exercise31
             bool exercise32 = false; // also in folder Exercise32
-            bool exercise33 = true; // also in folder Exercise33
+            bool exercise33 = false; // also in folder Exercise33
+            bool exercise34 = true; // also in folder Exercise33
 
             #region Exercise 3 - C# Data
             if (exercise3) {
@@ -619,6 +620,29 @@ namespace ExerciseProject
                 p.Message = "Så er der fredagsbar!";
 
                 ExerciseFlow.FinishExercise("exercise 33 - Delegates");
+            }
+            #endregion
+
+            #region Exercise 34 - Events
+            if (exercise34)
+            {
+                Exercise34.Academy p = new Exercise34.Academy("UCL", "Seebladsgade");
+
+                Exercise34.Student s1 = new Exercise34.Student("Jens");
+                Exercise34.Student s2 = new Exercise34.Student("Niels");
+                Exercise34.Student s3 = new Exercise34.Student("Susan");
+
+                p.PropertyChanged += s1.Update;
+                p.PropertyChanged += s2.Update;
+                p.PropertyChanged += s3.Update;
+
+                p.Message = "Så er der julefrokost!";
+
+                p.PropertyChanged -= s2.Update;
+
+                p.Message = "Så er der fredagsbar!";
+
+                ExerciseFlow.FinishExercise("exercise 34 - Events");
             }
             #endregion
 
