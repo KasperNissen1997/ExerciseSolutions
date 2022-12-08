@@ -41,7 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFCommandBinding", "WPFCom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverPatternTestProject", "ObserverPatternTestProject\ObserverPatternTestProject.csproj", "{14F299E3-74EA-4351-8C38-1D255E971BA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesTestProject", "DelegatesTestProject\DelegatesTestProject.csproj", "{A5D51D11-5366-4883-AB2F-59C352B2494B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesTestProject", "DelegatesTestProject\DelegatesTestProject.csproj", "{A5D51D11-5366-4883-AB2F-59C352B2494B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADT", "ADT\ADT.csproj", "{387BC824-3BB4-4695-9A80-789E3F3E18BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{A5D51D11-5366-4883-AB2F-59C352B2494B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5D51D11-5366-4883-AB2F-59C352B2494B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5D51D11-5366-4883-AB2F-59C352B2494B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{387BC824-3BB4-4695-9A80-789E3F3E18BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{387BC824-3BB4-4695-9A80-789E3F3E18BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{387BC824-3BB4-4695-9A80-789E3F3E18BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{387BC824-3BB4-4695-9A80-789E3F3E18BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,6 +144,7 @@ Global
 		{688E3EE9-A8AB-41BA-9E07-DAD7C4CAAF3C} = {7A0EF2CE-69EF-43F5-A9C1-79F57160BD01}
 		{14F299E3-74EA-4351-8C38-1D255E971BA0} = {9007DD22-50A2-4904-8FFC-9ADB4CBE1975}
 		{A5D51D11-5366-4883-AB2F-59C352B2494B} = {9007DD22-50A2-4904-8FFC-9ADB4CBE1975}
+		{387BC824-3BB4-4695-9A80-789E3F3E18BF} = {19E6EFC0-DE93-408F-9874-7937CCD42B3D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F022833-9C96-4457-9B80-2F9F0FB52353}
