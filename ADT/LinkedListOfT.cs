@@ -1,11 +1,11 @@
 ﻿namespace ADT
 {
-    public class LinkedList
+    public class LinkedList<T>
     {
         // code provided by our educators
         private class Node
         {
-            public object Data { get; set; }
+            public T Data { get; set; }
             public Node Next { get; set; }
 
             public override string ToString()
@@ -19,23 +19,23 @@
         private int _count;
         public int Count { get { return _count; } }
 
-        public object First
+        public T First
         {
             get
             {
-                return (Count == 0) ? null : ItemAt(0);
+                return (Count == 0) ? default(T) : ItemAt(0);
             }
         }
 
-        public object Last
+        public T Last
         {
             get
             {
-                return (Count == 0) ? null : ItemAt(Count - 1);
+                return (Count == 0) ? default(T) : ItemAt(Count - 1);
             }
         }
 
-        public void InsertAt(int index, object o)
+        public void InsertAt(int index, T o)
         {
             if (index > Count && index < 0)
                 throw new IndexOutOfRangeException();
@@ -54,12 +54,12 @@
             _count++;
         }
 
-        public void Insert(object o)
+        public void Insert(T o)
         {
             InsertAt(0, o);
         }
 
-        public void Append(object o)
+        public void Append(T o)
         {
             InsertAt(Count, o);
         }
@@ -76,7 +76,7 @@
             _count--;
         }
 
-        public object ItemAt(int index)
+        public T ItemAt(int index)
         {
             Node currentNode = head;
 
