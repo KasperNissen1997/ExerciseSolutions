@@ -46,6 +46,8 @@ namespace ExerciseProject
             bool exercise32 = false; // also in folder Exercise32
             bool exercise33 = false; // also in folder Exercise33
             bool exercise34 = true; // also in folder Exercise33
+            // exercise35 ~ solved elsewhere
+            // exercise36 ~ solved as one or multiple projects (ADT & ADTTestProject)
 
             #region Exercise 3 - C# Data
             if (exercise3) {
