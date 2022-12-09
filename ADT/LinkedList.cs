@@ -1,4 +1,6 @@
-﻿namespace ADT
+﻿using System.Collections.Generic;
+
+namespace ADT
 {
     public class LinkedList
     {
@@ -23,6 +25,17 @@
         {
             get
             {
+                //if (Count != 0)
+                //{
+                //    return ItemAt(0);
+                //}
+                //else
+                //{
+                //    return null;
+                //}
+
+                // ternary conditional operator
+                // condition ? if true : if false
                 return (Count == 0) ? null : ItemAt(0);
             }
         }
@@ -47,8 +60,8 @@
 
             Node newNode = new Node(); // create new node
             newNode.Data = o; // assign data as object 'o'
-            newNode.Next = currentNode.Next; // assign the next reference of our newNode to the currentNodes next reference
 
+            newNode.Next = currentNode.Next; // assign the next reference of our newNode to the currentNodes next reference
             currentNode.Next = newNode; // set the headers next node to our new node
 
             _count++;
@@ -91,19 +104,19 @@
             // return the sum of all 'ToString' from all nodes
 
             Node currentNode = head.Next; // first node that holds data
-            string finalString = string.Empty; // initialize the final string
+            string result = string.Empty; // initialize the final string
 
             while (currentNode != null) // while we're not at the end of the linked list
             {
-                finalString += currentNode.ToString(); // add the nodes ToString() to our string
+                result += currentNode.ToString(); // add the node's ToString() to our string
 
                 if (currentNode.Next != null) // if the currentNode is not the last
-                    finalString += "\n"; // add a newline
+                    result += "\n"; // add a newline
 
                 currentNode = currentNode.Next; // go to next node
             }
 
-            return finalString;
+            return result;
         }
     }
 }

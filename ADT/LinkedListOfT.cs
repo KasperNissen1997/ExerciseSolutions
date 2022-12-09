@@ -23,7 +23,7 @@
         {
             get
             {
-                return (Count == 0) ? default(T) : ItemAt(0);
+                return (Count == 0) ? default : ItemAt(0);
             }
         }
 
@@ -31,7 +31,7 @@
         {
             get
             {
-                return (Count == 0) ? default(T) : ItemAt(Count - 1);
+                return (Count == 0) ? default : ItemAt(Count - 1);
             }
         }
 
