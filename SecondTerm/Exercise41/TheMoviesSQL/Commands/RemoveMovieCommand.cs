@@ -29,10 +29,9 @@ namespace TheMoviesSQL.Commands
         {
             if (parameter is MainViewModel vm)
             {
-                vm.Movies.Remove(vm.SelectedMovie);
-                
                 vm.SelectedMovie.Delete();
 
+                vm.Movies.Remove(vm.SelectedMovie);
                 vm.SelectedMovie = null;
             }
             else

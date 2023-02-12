@@ -5,19 +5,23 @@ namespace TheMoviesSQL.MVVM.Models
 {
     public class Movie
     {
+        public int Identifier { get; }
+
         public string Title { get; set; }
-        public string Genres { get; set; }
+        public string Genre { get; set; }
         public TimeSpan Duration { get; set; }
         public string Instructor { get; set; }
-        public DateOnly PremiereDate { get; set; }
+        public DateTime PremiereDateTime { get; set; }
 
-        public Movie(string title, string genres, TimeSpan duration, string instructor, DateOnly premiereDate)
+        public Movie(int identifier, string title, string genre, TimeSpan duration, string instructor, DateTime premiereDateTime)
         {
+            Identifier = identifier;
+
             Title = title;
-            Genres = genres;
+            Genre = genre;
             Duration = duration;
             Instructor = instructor;
-            PremiereDate = premiereDate;
+            PremiereDateTime = premiereDateTime;
         }
 
         public override string ToString()
@@ -25,10 +29,10 @@ namespace TheMoviesSQL.MVVM.Models
             StringBuilder sb = new StringBuilder();
 
             sb.Append(Title + ";");
-            sb.Append(Genres + ";");
+            sb.Append(Genre + ";");
             sb.Append(Duration + ";");
             sb.Append(Instructor + ";");
-            sb.Append(PremiereDate);
+            sb.Append(PremiereDateTime);
 
             return sb.ToString();
         }

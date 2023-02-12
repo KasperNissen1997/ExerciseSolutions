@@ -28,9 +28,8 @@ namespace TheMoviesSQL.Commands
                     if (createMovieView.DataContext is AddMovieViewModel createMovieVM)
                     {
                         TimeSpan duration = new(createMovieVM.DurationHours, createMovieVM.DurationMinutes, 0);
-                        DateOnly premiereDate = DateOnly.FromDateTime(createMovieVM.PremiereDateTime);
 
-                        Movie movie = MovieRepository.Instance.Create(createMovieVM.Title, createMovieVM.Genre, duration, createMovieVM.Instructor, premiereDate);
+                        Movie movie = MovieRepository.Instance.Create(createMovieVM.Title, createMovieVM.Genre, duration, createMovieVM.Instructor, createMovieVM.PremiereDateTime);
 
                         MovieViewModel movieVM = new(movie);
 

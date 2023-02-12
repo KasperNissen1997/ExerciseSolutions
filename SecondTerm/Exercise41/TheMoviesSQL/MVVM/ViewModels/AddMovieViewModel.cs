@@ -93,10 +93,10 @@ namespace TheMoviesSQL.MVVM.ViewModels
                 if (String.IsNullOrEmpty(Genre))
                     return false;
 
-                if (DurationHours < 0 && DurationHours > 60)
+                if (DurationHours < 0 || DurationHours > 60)
                     return false;
 
-                if (DurationMinutes < 0 && DurationMinutes > 60)
+                if (DurationMinutes < 0 || DurationMinutes > 60)
                     return false;
 
                 if (String.IsNullOrEmpty(Instructor))

@@ -40,6 +40,41 @@ namespace TheMoviesSQL.MVVM.ViewModels
             }
         }
 
+        private int _selectedMovieDurationHours;
+        public int SelectedMovieDurationHours
+        {
+            get { return _selectedMovieDurationHours; }
+
+            set
+            {
+                _selectedMovieDurationHours = value;
+
+                OnPropertyChanged(nameof(SelectedMovieDurationHours));
+
+                if (SelectedMovie == null)
+                    return;
+
+                SelectedMovie.Duration = new(SelectedMovieDurationHours, SelectedMovie.Duration.Minutes, 0);
+            }
+        }
+        private int _selectedMovieDurationMinutes;
+        public int SelectedMovieDurationMinutes
+        {
+            get { return _selectedMovieDurationMinutes; }
+
+            set
+            {
+                _selectedMovieDurationMinutes = value;
+
+                OnPropertyChanged(nameof(SelectedMovieDurationMinutes));
+
+                if (SelectedMovie == null)
+                    return;
+
+                SelectedMovie.Duration = new(SelectedMovie.Duration.Hours, SelectedMovieDurationMinutes, 0);
+            }
+        }
+
         #region Commands
         public AddMovieCommand AddMovieCommand { get; set; } = new();
         public RemoveMovieCommand RemoveMovieCommand { get; set; } = new();

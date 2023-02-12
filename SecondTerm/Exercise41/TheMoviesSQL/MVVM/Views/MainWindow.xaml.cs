@@ -18,8 +18,6 @@ namespace TheMoviesSQL.MVVM.Views
             if (DataContext is MainViewModel vm)
                 foreach (MovieViewModel movieVM in vm.Movies)
                     movieVM.UpdateSource();
-
-            MovieRepository.Instance.Save();
         }
     }
 }
