@@ -31,10 +31,10 @@
         <Label Content="Movie Details:"/>
 
         <Label Grid.Row="2" Content="Title:" FontSize="18"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="10,0,10,0" Text="{Binding Title}" FontSize="18" VerticalAlignment="Center" d:Text="Joker"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="10,0,10,0" Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" FontSize="18" VerticalAlignment="Center" d:Text="Joker"/>
 
         <Label Grid.Row="4" Content="Genre(s):" FontSize="18"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Margin="10,0,10,0" Text="{Binding Genre}" FontSize="18" VerticalAlignment="Center" d:Text="Crime, Drama, Thriller"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="10,0,10,0" Text="{Binding Genre, UpdateSourceTrigger=PropertyChanged}" FontSize="18" VerticalAlignment="Center" d:Text="Crime, Drama, Thriller"/>
 
         <Grid Grid.Row="6" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
@@ -50,18 +50,18 @@
             <Label Grid.Row="6" Content="Duration:" FontSize="18"/>
 
             <Label Grid.Column="1" Margin="5,0,0,0" Content="Hours:"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="10,0,10,0" Text="{Binding DurationHours}" FontSize="18" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="10,0,10,0" Text="{Binding DurationHours, UpdateSourceTrigger=PropertyChanged}" FontSize="18" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
 
             <Label Grid.Column="2" Margin="5,0,0,0" Content="Minutes:"/>
-            <TextBox Grid.Row="1" Grid.Column="2" Margin="10,0,10,0" Text="{Binding DurationMinutes}" FontSize="18" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Margin="10,0,10,0" Text="{Binding DurationMinutes, UpdateSourceTrigger=PropertyChanged}" FontSize="18" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
         </Grid>
 
         <Label Grid.Row="8" Content="Instructor:" FontSize="18"/>
-        <TextBox Grid.Row="8" Grid.Column="1" Margin="10,0,10,0" Text="{Binding Instructor}" FontSize="18" VerticalAlignment="Center" d:Text="Todd Philips"/>
+        <TextBox Grid.Row="8" Grid.Column="1" Margin="10,0,10,0" Text="{Binding Instructor, UpdateSourceTrigger=PropertyChanged}" FontSize="18" VerticalAlignment="Center" d:Text="Todd Philips"/>
 
         <Label Grid.Row="10" Content="Premiere Date:" FontSize="18"/>
-        <DatePicker Grid.Row="10" Grid.Column="1" Margin="10,0,10,0" SelectedDate="{Binding PremiereDateTime}" FontSize="18" VerticalAlignment="Center"/>
+        <DatePicker Grid.Row="10" Grid.Column="1" Margin="10,0,10,0" SelectedDate="{Binding PremiereDateTime, UpdateSourceTrigger=PropertyChanged}" FontSize="18" VerticalAlignment="Center"/>
 
-        <Button Grid.ColumnSpan="2" Grid.Row="11" Content="Create Movie" Margin="10" FontSize="18" Click="Button_Click"/>
+        <Button Grid.ColumnSpan="2" Grid.Row="11" Content="Create Movie" Margin="0,10,10,0" IsEnabled="{Binding HasAllRequiredInfo}" FontSize="18" Click="Button_Click"/>
     </Grid>
 </Window>
