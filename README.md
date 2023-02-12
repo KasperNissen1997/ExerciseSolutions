@@ -1,4 +1,4 @@
-# Intrudoctions
+# Introductions
 This repository is a collection of all the solutions to the exercises handed out in the Programming course, at the [Computer Science education](https://www.ucl.dk/uddannelser/datamatiker) at [UCL](https://www.ucl.dk/) in Odense, Denmark. It is currently a work in progress, with updates happening regularly, following the pace the exercises are handed out at. 
 
 All the solutions in this repository are made by myself, or in close partnership with a groupmember, and are **not guarenteed to be correct**. They may also showcase bad practices, faultily implemented patterns or other abnormalities. This is of course not the intention. These examples are kept in the repository, in the hopes that they may show how my understanding of certain concepts deepen as time goes on.
