@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExerciseFlowLib\ExerciseFlowLib.csproj" />
-    <ProjectReference Include="..\TotallySafeLib\TotallySafeLib.csproj" />
+    <ProjectReference Include="..\LibraryProjects\ExerciseFlowLib\ExerciseFlowLib.csproj" />
+    <ProjectReference Include="..\LibraryProjects\TotallySafeLib\TotallySafeLib.csproj" />
   </ItemGroup>
 
 </Project>
