@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Windows.Input;
-using TheMovies.MVVM.Models;
-using TheMovies.MVVM.ViewModels;
-using TheMovies.MVVM.ViewModels.Persistence;
-using TheMovies.MVVM.Views;
+using TheMoviesSQL.MVVM.Models;
+using TheMoviesSQL.MVVM.ViewModels;
+using TheMoviesSQL.MVVM.ViewModels.Persistence;
+using TheMoviesSQL.MVVM.Views;
 
-namespace TheMovies.Commands
+namespace TheMoviesSQL.Commands
 {
     public class AddMovieCommand : ICommand
     {
@@ -28,9 +28,8 @@ namespace TheMovies.Commands
                     if (createMovieView.DataContext is AddMovieViewModel createMovieVM)
                     {
                         TimeSpan duration = new(createMovieVM.DurationHours, createMovieVM.DurationMinutes, 0);
-                        DateOnly premiereDate = DateOnly.FromDateTime(createMovieVM.PremiereDateTime);
 
-                        Movie movie = MovieRepository.Instance.Create(createMovieVM.Title, createMovieVM.Genre, duration, createMovieVM.Instructor, premiereDate);
+                        Movie movie = MovieRepository.Instance.Create(createMovieVM.Title, createMovieVM.Genre, duration, createMovieVM.Instructor, createMovieVM.PremiereDateTime);
 
                         MovieViewModel movieVM = new(movie);
 

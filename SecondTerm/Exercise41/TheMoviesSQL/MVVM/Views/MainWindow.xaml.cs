@@ -1,8 +1,8 @@
 ﻿using System.Windows;
-using TheMovies.MVVM.ViewModels;
-using TheMovies.MVVM.ViewModels.Persistence;
+using TheMoviesSQL.MVVM.ViewModels;
+using TheMoviesSQL.MVVM.ViewModels.Persistence;
 
-namespace TheMovies.MVVM.Views
+namespace TheMoviesSQL.MVVM.Views
 {
     public partial class MainWindow : Window
     {
@@ -18,8 +18,6 @@ namespace TheMovies.MVVM.Views
             if (DataContext is MainViewModel vm)
                 foreach (MovieViewModel movieVM in vm.Movies)
                     movieVM.UpdateSource();
-
-            MovieRepository.Instance.Save();
         }
     }
 }

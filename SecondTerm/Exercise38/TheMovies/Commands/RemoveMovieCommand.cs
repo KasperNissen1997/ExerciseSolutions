@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
-using TheMovies.MVVM.ViewModels;
+using TheMoviesSQL.MVVM.ViewModels;
 
-namespace TheMovies.Commands
+namespace TheMoviesSQL.Commands
 {
     public class RemoveMovieCommand : ICommand
     {

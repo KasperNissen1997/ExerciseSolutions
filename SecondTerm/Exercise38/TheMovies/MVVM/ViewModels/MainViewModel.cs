@@ -5,11 +5,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TheMovies.Commands;
-using TheMovies.MVVM.Models;
-using TheMovies.MVVM.ViewModels.Persistence;
+using TheMoviesSQL.Commands;
+using TheMoviesSQL.MVVM.Models;
+using TheMoviesSQL.MVVM.ViewModels.Persistence;
 
-namespace TheMovies.MVVM.ViewModels
+namespace TheMoviesSQL.MVVM.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
-using TheMovies.MVVM.Models;
-using TheMovies.MVVM.ViewModels.Persistence;
+using System.Globalization;
+using TheMoviesSQL.MVVM.Models;
+using TheMoviesSQL.MVVM.ViewModels.Persistence;
 
-namespace TheMovies.MVVM.ViewModels
+namespace TheMoviesSQL.MVVM.ViewModels
 {
     public class MovieViewModel : INotifyPropertyChanged
     {
@@ -53,15 +54,15 @@ namespace TheMovies.MVVM.ViewModels
                 OnPropertyChanged(nameof(Instructor));
             }
         }
-        private string _premiereDate;
-        public string PremiereDate
+        private string _premiereDateTime;
+        public string PremiereDateTime
         {
-            get { return _premiereDate; }
+            get { return _premiereDateTime; }
 
             set
             {
-                _premiereDate = value;
-                OnPropertyChanged(nameof(PremiereDate));
+                _premiereDateTime = value;
+                OnPropertyChanged(nameof(PremiereDateTime));
             }
         }
 
@@ -82,19 +83,21 @@ namespace TheMovies.MVVM.ViewModels
             this.source = source;
 
             Title = source.Title;
-            Genre = new(source.Genres);
+            Genre = new(source.Genre);
             Duration = source.Duration;
             Instructor = source.Instructor;
-            PremiereDate = source.PremiereDate.ToString();
+            PremiereDateTime = source.PremiereDateTime.ToString("yyyy-MM-dd");
         }
 
         public void UpdateSource()
         {
             source.Title = Title;
-            source.Genres = Genre;
+            source.Genre = Genre;
             source.Duration = Duration;
             source.Instructor = Instructor;
-            source.PremiereDate = DateOnly.Parse(PremiereDate);
+            source.PremiereDateTime = DateTime.ParseExact(PremiereDateTime, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+
+            MovieRepository.Instance.Update(source);
         }
 
         public void Delete()

@@ -5,11 +5,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TheMovies.Commands;
-using TheMovies.MVVM.Models;
-using TheMovies.MVVM.ViewModels.Persistence;
+using TheMoviesSQL.Commands;
+using TheMoviesSQL.MVVM.Models;
+using TheMoviesSQL.MVVM.ViewModels.Persistence;
 
-namespace TheMovies.MVVM.ViewModels
+namespace TheMoviesSQL.MVVM.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
@@ -37,6 +37,41 @@ namespace TheMovies.MVVM.ViewModels
             {
                 _selectedMovie = value;
                 OnPropertyChanged(nameof(SelectedMovie));
+            }
+        }
+
+        private int _selectedMovieDurationHours;
+        public int SelectedMovieDurationHours
+        {
+            get { return _selectedMovieDurationHours; }
+
+            set
+            {
+                _selectedMovieDurationHours = value;
+
+                OnPropertyChanged(nameof(SelectedMovieDurationHours));
+
+                if (SelectedMovie == null)
+                    return;
+
+                SelectedMovie.Duration = new(SelectedMovieDurationHours, SelectedMovie.Duration.Minutes, 0);
+            }
+        }
+        private int _selectedMovieDurationMinutes;
+        public int SelectedMovieDurationMinutes
+        {
+            get { return _selectedMovieDurationMinutes; }
+
+            set
+            {
+                _selectedMovieDurationMinutes = value;
+
+                OnPropertyChanged(nameof(SelectedMovieDurationMinutes));
+
+                if (SelectedMovie == null)
+                    return;
+
+                SelectedMovie.Duration = new(SelectedMovie.Duration.Hours, SelectedMovieDurationMinutes, 0);
             }
         }
 

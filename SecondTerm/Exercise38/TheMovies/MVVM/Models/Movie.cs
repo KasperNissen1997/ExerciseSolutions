@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace TheMovies.MVVM.Models
+namespace TheMoviesSQL.MVVM.Models
 {
     public class Movie
     {

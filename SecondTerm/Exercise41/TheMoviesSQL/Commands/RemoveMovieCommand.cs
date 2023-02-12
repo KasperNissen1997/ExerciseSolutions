@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
-using TheMovies.MVVM.ViewModels;
+using TheMoviesSQL.MVVM.ViewModels;
 
-namespace TheMovies.Commands
+namespace TheMoviesSQL.Commands
 {
     public class RemoveMovieCommand : ICommand
     {
@@ -29,10 +29,9 @@ namespace TheMovies.Commands
         {
             if (parameter is MainViewModel vm)
             {
-                vm.Movies.Remove(vm.SelectedMovie);
-                
                 vm.SelectedMovie.Delete();
 
+                vm.Movies.Remove(vm.SelectedMovie);
                 vm.SelectedMovie = null;
             }
             else
