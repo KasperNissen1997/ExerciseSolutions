@@ -6,7 +6,7 @@ All the solutions in this repository are made by myself, or in close partnership
 # Navigating the Solutions
 Many of the exercises were intended to be solved within their own standalone C# solution. This means that when merging them all into one one-stop VS Studio solution, the solution has been structured in a categorized manner, to help find the solution to any specific exercise. 
 
-All exercises fromt the first term are located in the folder aptly named "First Term". Exercises from the second term are located in the folder "Second term" etc.
+All exercises fromt the first term are located in the folder aptly named [First Term](FirstTerm). Exercises from the second term are located in the folder [Second term](SecondTerm) etc.
 
 ## First Term Solutions
 All exercises that do not require their own files, are solved within the [Program](FirstTerm/ExerciseProject/Program.cs) class in the ExerciseProject, with the ability to toggle which exercise's solution should be executed being at the top of the file.
