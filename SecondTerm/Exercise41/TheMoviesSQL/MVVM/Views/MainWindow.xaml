@@ -14,7 +14,7 @@
         xmlns:viewmodels="clr-namespace:TheMoviesSQL.MVVM.ViewModels"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
-        Title="MainWindow" Height="400" Width="1000" Closed="OnWindowClosed">
+        Title="MainWindow" Height="400" MinHeight="400" Width="1000" MinWidth="620" Closed="OnWindowClosed">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition MinWidth="300"/>
