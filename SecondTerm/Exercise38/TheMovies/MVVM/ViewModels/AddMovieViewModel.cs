@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace TheMoviesSQL.MVVM.ViewModels
+namespace TheMovies.MVVM.ViewModels
 {
     public class AddMovieViewModel : INotifyPropertyChanged
     {

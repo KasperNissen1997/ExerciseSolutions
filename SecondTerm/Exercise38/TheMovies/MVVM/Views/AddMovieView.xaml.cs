@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using TheMoviesSQL.MVVM.ViewModels;
+using TheMovies.MVVM.ViewModels;
 
-namespace TheMoviesSQL.MVVM.Views
+namespace TheMovies.MVVM.Views
 {
     public partial class AddMovieView : Window
     {

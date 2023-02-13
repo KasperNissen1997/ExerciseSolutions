@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Windows.Input;
-using TheMoviesSQL.MVVM.Models;
-using TheMoviesSQL.MVVM.ViewModels;
-using TheMoviesSQL.MVVM.ViewModels.Persistence;
-using TheMoviesSQL.MVVM.Views;
+using TheMovies.MVVM.Models;
+using TheMovies.MVVM.ViewModels;
+using TheMovies.MVVM.ViewModels.Persistence;
+using TheMovies.MVVM.Views;
 
-namespace TheMoviesSQL.Commands
+namespace TheMovies.Commands
 {
     public class AddMovieCommand : ICommand
     {

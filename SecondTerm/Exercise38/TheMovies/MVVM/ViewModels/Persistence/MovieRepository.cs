@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using TheMoviesSQL.MVVM.Models;
+using TheMovies.MVVM.Models;
 
-namespace TheMoviesSQL.MVVM.ViewModels.Persistence
+namespace TheMovies.MVVM.ViewModels.Persistence
 {
     public class MovieRepository
     {

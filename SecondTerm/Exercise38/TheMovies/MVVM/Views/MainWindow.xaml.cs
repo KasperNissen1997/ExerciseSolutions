@@ -1,8 +1,8 @@
 ﻿using System.Windows;
-using TheMoviesSQL.MVVM.ViewModels;
-using TheMoviesSQL.MVVM.ViewModels.Persistence;
+using TheMovies.MVVM.ViewModels;
+using TheMovies.MVVM.ViewModels.Persistence;
 
-namespace TheMoviesSQL.MVVM.Views
+namespace TheMovies.MVVM.Views
 {
     public partial class MainWindow : Window
     {

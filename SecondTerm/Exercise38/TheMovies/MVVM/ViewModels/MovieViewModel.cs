@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
-using TheMoviesSQL.MVVM.Models;
-using TheMoviesSQL.MVVM.ViewModels.Persistence;
+using TheMovies.MVVM.Models;
+using TheMovies.MVVM.ViewModels.Persistence;
 
-namespace TheMoviesSQL.MVVM.ViewModels
+namespace TheMovies.MVVM.ViewModels
 {
     public class MovieViewModel : INotifyPropertyChanged
     {
