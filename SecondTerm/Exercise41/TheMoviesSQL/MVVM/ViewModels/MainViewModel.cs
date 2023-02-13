@@ -37,6 +37,11 @@ namespace TheMoviesSQL.MVVM.ViewModels
             {
                 _selectedMovie = value;
                 OnPropertyChanged(nameof(SelectedMovie));
+
+                SelectedMovieDurationHours = SelectedMovie.Duration.Hours;
+                SelectedMovieDurationMinutes = SelectedMovie.Duration.Minutes;
+                OnPropertyChanged(nameof(SelectedMovieDurationHours));
+                OnPropertyChanged(nameof(SelectedMovieDurationMinutes));
             }
         }
 
