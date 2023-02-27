@@ -12,5 +12,10 @@ namespace PetParadise
         public string Breed { get; set; }
         public DateTime DOB { get; set; }
         public double Weight { get; set; }
+
+        public override string ToString()
+        {
+            return $"{PetId}: {Name}, {PetType}, {Breed}, {DOB}, {Weight}";
+        }
     }
 }

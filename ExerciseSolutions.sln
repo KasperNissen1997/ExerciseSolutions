@@ -63,6 +63,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise44", "Exercise44", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetParadise", "SecondTerm\Exercise44\PetParadise\PetParadise.csproj", "{A9949008-3982-4B09-BCBA-834AF2D0AB4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetParadiseTestProject", "SecondTerm\Exercise44\PetParadiseTestProject\PetParadiseTestProject.csproj", "{103A2B91-BC54-4AD5-8835-6CED31BD1EC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -157,6 +159,10 @@ Global
 		{A9949008-3982-4B09-BCBA-834AF2D0AB4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9949008-3982-4B09-BCBA-834AF2D0AB4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9949008-3982-4B09-BCBA-834AF2D0AB4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{103A2B91-BC54-4AD5-8835-6CED31BD1EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{103A2B91-BC54-4AD5-8835-6CED31BD1EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{103A2B91-BC54-4AD5-8835-6CED31BD1EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{103A2B91-BC54-4AD5-8835-6CED31BD1EC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -190,6 +196,7 @@ Global
 		{925FBAC8-9A67-4A65-8102-692AADBC5F8E} = {722059F8-65A6-40D4-A713-CAD90C2F2BA3}
 		{848C643A-F2A7-413D-9B77-4528FE6BBF85} = {94D9EB79-6B34-49B9-88FF-60F47D6B9F98}
 		{A9949008-3982-4B09-BCBA-834AF2D0AB4D} = {848C643A-F2A7-413D-9B77-4528FE6BBF85}
+		{103A2B91-BC54-4AD5-8835-6CED31BD1EC1} = {848C643A-F2A7-413D-9B77-4528FE6BBF85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F022833-9C96-4457-9B80-2F9F0FB52353}

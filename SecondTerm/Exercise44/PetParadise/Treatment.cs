@@ -10,5 +10,10 @@ namespace PetParadise
         public string Service { get; set; }
         public DateTime Date { get; set; }
         public double Charge { get; set; }
+
+        public override string ToString()
+        {
+            return $"{TreatId}: {Service} on {Date} costs {Charge}";
+        }
     }
 }
