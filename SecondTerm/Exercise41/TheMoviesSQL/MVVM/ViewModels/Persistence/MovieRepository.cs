@@ -43,7 +43,7 @@ namespace TheMoviesSQL.MVVM.ViewModels.Persistence
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand("SELECT MovieId, Title, Genre, Duration, Instructor, PremiereDate from MOVIE", connection);
+                SqlCommand command = new SqlCommand("SELECT MovieId, Title, Genre, Duration, Instructor, PremiereDate from THEMOVIES_MOVIE", connection);
 
                 using (SqlDataReader dr = command.ExecuteReader())
                 {
@@ -72,7 +72,7 @@ namespace TheMoviesSQL.MVVM.ViewModels.Persistence
             {
                 connection.Open();
 
-                SqlCommand command = new("INSERT INTO MOVIE (Title, Genre, Duration, Instructor, PremiereDate) VALUES (@Title, @Genre, @Duration, @Instructor, @PremiereDate) SELECT @@IDENTITY", connection);
+                SqlCommand command = new("INSERT INTO THEMOVIES_MOVIE (Title, Genre, Duration, Instructor, PremiereDate) VALUES (@Title, @Genre, @Duration, @Instructor, @PremiereDate) SELECT @@IDENTITY", connection);
 
                 command.Parameters.Add("@Title", SqlDbType.NVarChar).Value = title;
                 command.Parameters.Add("@Genre", SqlDbType.NVarChar).Value = genre;
@@ -113,7 +113,7 @@ namespace TheMoviesSQL.MVVM.ViewModels.Persistence
             {
                 connection.Open();
 
-                SqlCommand command = new("UPDATE MOVIE SET Title=@Title, Genre=@Genre, Duration=@Duration, Instructor=@Instructor, PremiereDate=@PremiereDate WHERE MovieId=@Identifier", connection);
+                SqlCommand command = new("UPDATE THEMOVIES_MOVIE SET Title=@Title, Genre=@Genre, Duration=@Duration, Instructor=@Instructor, PremiereDate=@PremiereDate WHERE MovieId=@Identifier", connection);
 
                 command.Parameters.Add("@Title", SqlDbType.NVarChar).Value = movie.Title;
                 command.Parameters.Add("@Genre", SqlDbType.NVarChar).Value = movie.Genre;
@@ -135,7 +135,7 @@ namespace TheMoviesSQL.MVVM.ViewModels.Persistence
             {
                 connection.Open();
 
-                SqlCommand command = new("SELECT DisplayId FROM DISPLAY WHERE MovieId=@MovieIdentifier", connection);
+                SqlCommand command = new("SELECT DisplayId FROM THEMOVIES_DISPLAY WHERE MovieId=@MovieIdentifier", connection);
                 command.Parameters.Add("@MovieIdentifier", SqlDbType.Int).Value = movie.Identifier;
 
                 List<int> displayIdentifiers = new();
@@ -153,17 +153,17 @@ namespace TheMoviesSQL.MVVM.ViewModels.Persistence
                 {
                     displayIdentifierParameter.Value = displayIdentifier;
 
-                    command.CommandText = "DELETE FROM HALL_DISPLAY WHERE DisplayId=@DisplayIdentifier";
+                    command.CommandText = "DELETE FROM THEMOVIES_HALL_DISPLAY WHERE DisplayId=@DisplayIdentifier";
                     command.ExecuteNonQuery();
 
-                    command.CommandText = "DELETE FROM BOOKING WHERE DisplayId=@DisplayIdentifier";
+                    command.CommandText = "DELETE FROM THEMOVIES_BOOKING WHERE DisplayId=@DisplayIdentifier";
                     command.ExecuteNonQuery();
                 }
 
-                command.CommandText = "DELETE FROM DISPLAY WHERE MovieId=@MovieIdentifier";
+                command.CommandText = "DELETE FROM THEMOVIES_DISPLAY WHERE MovieId=@MovieIdentifier";
                 command.ExecuteNonQuery();
 
-                command.CommandText = "DELETE FROM MOVIE WHERE MovieId=@MovieIdentifier";
+                command.CommandText = "DELETE FROM THEMOVIES_MOVIE WHERE MovieId=@MovieIdentifier";
                 command.ExecuteNonQuery();
             }
             
