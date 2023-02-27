@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Text;
 
 namespace PetParadise
 {
     public class PetRepo
     {
+        // private readonly string connectionString = ConfigurationManager.ConnectionStrings["DatabaseServerInstance"].ConnectionString;
+        private readonly string connectionString = "Server=10.56.8.36; Database=DB_2023_36; User Id=STUDENT_36; Password=OPENDB_36";
+
         private List<Pet> pets = new List<Pet>();
 
         public PetRepo()
         {
-            // Load all pet data from database via SQL statements and populate pet repository
-
-            // IMPLEMENT THIS!
+            pets = GetAll();
         }
 
         public int Add(Pet pet)
@@ -28,21 +32,71 @@ namespace PetParadise
         }
         public List<Pet> GetAll()
         {
-            // Retrieve all pets from database
+            List<Pet> result = new();
 
-            List<Pet> result = new List<Pet>();
+            using (SqlConnection connection = new(connectionString))
+            {
+                connection.Open();
 
-            // IMPLEMENT THIS!
+                SqlCommand command = new SqlCommand("SELECT * FROM PETPARADISE_PET", connection);
+
+                using (SqlDataReader dr = command.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        Pet pet = new()
+                        {
+                            PetId = int.Parse(dr["PetId"].ToString()),
+                            Name = dr["PetName"].ToString(),
+                            PetType = (PetTypes) Enum.Parse(typeof(PetTypes), dr["PetType"].ToString()),
+                            Breed = dr["PetBreed"].ToString(),
+                            Weight = double.Parse(dr["PetWeight"].ToString())
+                        };
+
+                        string dob = dr["PetDOB"].ToString();
+
+                        if (!string.IsNullOrEmpty(dob))
+                            pet.DOB = DateTime.Parse(dob);
+
+                        result.Add(pet);
+                    }
+                }
+            }
 
             return result;
         }
         public Pet GetById(int id)
         {
-            // Get pet by id from database
-
             Pet result = null;
 
-            // IMPLEMENT THIS!
+            using (SqlConnection connection = new(connectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand("SELECT * FROM PETPARADISE_PET WHERE PetId = @PetId", connection);
+
+                command.Parameters.Add("@PetId", SqlDbType.Int).Value = id;
+
+                using (SqlDataReader dr = command.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        result = new()
+                        {
+                            PetId = int.Parse(dr["PetId"].ToString()),
+                            Name = dr["PetName"].ToString(),
+                            PetType = (PetTypes) Enum.Parse(typeof(PetTypes), dr["PetType"].ToString()),
+                            Breed = dr["PetBreed"].ToString(),
+                            Weight = double.Parse(dr["PetWeight"].ToString())
+                        };
+
+                        string dob = dr["PetDOB"].ToString();
+
+                        if (!string.IsNullOrEmpty(dob))
+                            result.DOB = DateTime.Parse(dob);
+                    }
+                }
+            }
 
             return result;
         }

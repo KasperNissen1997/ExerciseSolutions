@@ -10,7 +10,7 @@ namespace PetParadise
         public string Name { get; set; }
         public PetTypes PetType { get; set; }
         public string Breed { get; set; }
-        public DateTime DOB { get; set; }
+        public DateTime? DOB { get; set; }
         public double Weight { get; set; }
 
         public override string ToString()

@@ -14,7 +14,7 @@ namespace PetParadise
 
         public override string ToString()
         {
-            return $"{OwnerId}: {FirstName} {LastName} -T: {Phone} - M: {Email}";
+            return $"{OwnerId}: {FirstName} {LastName} - T: {Phone} - M: {Email}";
         }
     }
 }
