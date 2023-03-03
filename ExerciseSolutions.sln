@@ -63,7 +63,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise44", "Exercise44", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetParadise", "SecondTerm\Exercise44\PetParadise\PetParadise.csproj", "{A9949008-3982-4B09-BCBA-834AF2D0AB4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetParadiseTestProject", "SecondTerm\Exercise44\PetParadiseTestProject\PetParadiseTestProject.csproj", "{103A2B91-BC54-4AD5-8835-6CED31BD1EC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetParadiseTestProject", "SecondTerm\Exercise44\PetParadiseTestProject\PetParadiseTestProject.csproj", "{103A2B91-BC54-4AD5-8835-6CED31BD1EC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
