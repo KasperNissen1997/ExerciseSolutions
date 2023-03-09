@@ -28,7 +28,7 @@ namespace ModelPersistence.Persistence
             throw new NotImplementedException();
         }
 
-        public SubstituteOrder Create(int hours, string schoolPhone)
+        public SubstituteOrder Create(int hours, int schoolPhone)
         {
             SchoolRepository schoolRepo = new();
 
@@ -41,7 +41,7 @@ namespace ModelPersistence.Persistence
                 SqlCommand command = new("INSERT INTO LÆRERVIKAREN_SUBSTITUTE_ORDER (Hours, Phone) VALUES (@hours, @schoolPhone) SELECT @@IDENTITY", connection);
 
                 command.Parameters.Add("@hours", SqlDbType.Int).Value = hours;
-                command.Parameters.Add("@schoolPhone", SqlDbType.NVarChar).Value = schoolPhone;
+                command.Parameters.Add("@schoolPhone", SqlDbType.Int).Value = schoolPhone;
 
                 int identifier = Convert.ToInt32(command.ExecuteScalar());
 
@@ -73,7 +73,7 @@ namespace ModelPersistence.Persistence
                     {
                         int identifier = int.Parse(dataReader["OrderId"].ToString());
                         int hours = int.Parse(dataReader["Hours"].ToString());
-                        string schoolPhone = dataReader["Phone"].ToString();
+                        int schoolPhone = int.Parse(dataReader["Phone"].ToString());
 
                         School school = schoolRepo.Retrieve(schoolPhone);
 

@@ -95,8 +95,9 @@ namespace ModelPersistence.Persistence
             {
                 connection.Open();
 
-                SqlCommand command = new("UPDATE TABLE LÆRERVIKAREN_SCHOOL SET Name = @name, Address = @address WHERE Phone = @phone", connection);
-               
+                SqlCommand command = new("UPDATE LÆRERVIKAREN_SCHOOL SET Name = @name, Address = @address WHERE Phone = @phone", connection);
+
+                command.Parameters.Add("@phone", SqlDbType.Int).Value = school.Phone;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = school.Name;
                 command.Parameters.Add("@address", SqlDbType.NVarChar).Value = school.Address;
 
