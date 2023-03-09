@@ -57,6 +57,8 @@ namespace PetParadise
 
                         if (!string.IsNullOrEmpty(dob))
                             pet.DOB = DateTime.Parse(dob);
+                        else
+                            pet.DOB = DateTime.MinValue;
 
                         result.Add(pet);
                     }
