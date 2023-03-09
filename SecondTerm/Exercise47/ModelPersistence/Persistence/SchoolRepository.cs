@@ -28,7 +28,7 @@ namespace ModelPersistence.Persistence
             throw new NotImplementedException();
         }
 
-        public School Create(string phone, string name, string address)
+        public School Create(int phone, string name, string address)
         {
             School school;
 
@@ -38,7 +38,7 @@ namespace ModelPersistence.Persistence
 
                 SqlCommand command = new("INSERT INTO LÆRERVIKAREN_SCHOOL (Phone, Name, Address) VALUES (@phone, @name, @address)", connection);
 
-                command.Parameters.Add("@phone", SqlDbType.NVarChar).Value = phone;
+                command.Parameters.Add("@phone", SqlDbType.Int).Value = phone;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
                 command.Parameters.Add("@address", SqlDbType.NVarChar).Value = address;
 
@@ -66,7 +66,7 @@ namespace ModelPersistence.Persistence
                 {
                     while (dataReader.Read())
                     {
-                        string phone = dataReader["Phone"].ToString();
+                        int phone = int.Parse(dataReader["Phone"].ToString());
                         string name = dataReader["Name"].ToString();
                         string address = dataReader["Address"].ToString();
 
@@ -80,7 +80,7 @@ namespace ModelPersistence.Persistence
             return result;
         }
 
-        public School Retrieve(string phoneNumber)
+        public School Retrieve(int phoneNumber)
         {
             foreach (School school in schools)
                 if (school.Phone == phoneNumber)

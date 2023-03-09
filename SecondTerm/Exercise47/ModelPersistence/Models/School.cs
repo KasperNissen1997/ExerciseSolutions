@@ -9,11 +9,11 @@ namespace ModelPersistence.Models
     public class School
     {
         // Properties
-        public string Phone { get; set; }
+        public int Phone { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
 
-        public School (string phone, string name, string address)
+        public School (int phone, string name, string address)
         {
             Phone = phone;
             Name = name;
