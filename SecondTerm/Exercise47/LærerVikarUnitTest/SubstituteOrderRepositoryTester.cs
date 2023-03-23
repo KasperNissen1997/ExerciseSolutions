@@ -13,7 +13,7 @@ namespace LærerVikarUnitTest
         [TestMethod]
         public void TestMethod1()
         {
-
+            // No test methods have been made for the substitute repository, as it closely resembles the school repository.
         }
     }
 }
