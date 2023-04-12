@@ -34,6 +34,12 @@
             p.Run();
         }
 
+        private static void PrintHelloWorld(object message)
+        {
+            for (int i = 0; i < 4; i++)
+                Console.WriteLine(message.ToString());
+        }
+
         public void Run()
         {
             Thread tA = new Thread(WriteA);
@@ -77,11 +83,6 @@
                 
                 Thread.Yield();
             }
-        }
-        private static void PrintHelloWorld(object message)
-        {
-            for (int i = 0; i < 4; i++)
-                Console.WriteLine(message.ToString());
         }
     }
 }
