@@ -16,21 +16,21 @@
             Thread lambdaThread = new((message) =>
             {
                 for (int i = 0; i < 4; i++)
-                    Console.WriteLine(message.ToString());
+                    Console.WriteLine(message);
             });
 
             // Anonymous method
-            Thread anonymousThread = new Thread(delegate (object message)
+            Thread anonymousThread = new Thread(delegate (object? message)
             {
                 for (int i = 0; i < 4; i++)
-                    Console.WriteLine(message.ToString());
+                    Console.WriteLine(message ?? "");
             });
 
             methodThread.Start("Hello world (Method)");
             lambdaThread.Start("Hello world (Lambda)");
             anonymousThread.Start("Hello world (Anonymous method)");
 
-            Program p = new Program();
+            Program p = new();
             p.Run();
         }
 
@@ -49,7 +49,7 @@
             tA.Start();
             tB.Start();
             tA.Join();
-            // tB.Join();
+            tB.Join();
             Console.Write("\nPress a key ....");
             Console.ReadKey();
         }
