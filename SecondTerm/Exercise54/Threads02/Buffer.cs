@@ -6,7 +6,6 @@
         private int capacity;
 
         private object bufferLock = new();
-        private bool _isBufferLockTaken;
 
         public Buffer(int capacity)
         {
