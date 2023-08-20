@@ -9,115 +9,117 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LibraryProjects", "LibraryP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPFProjects", "WPFProjects", "{7A0EF2CE-69EF-43F5-A9C1-79F57160BD01}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FirstTerm", "FirstTerm", "{E64CB7CD-73BE-453B-9341-91F678134B0C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1stTerm", "1stTerm", "{E64CB7CD-73BE-453B-9341-91F678134B0C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecondTerm", "SecondTerm", "{94D9EB79-6B34-49B9-88FF-60F47D6B9F98}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2ndTerm", "2ndTerm", "{94D9EB79-6B34-49B9-88FF-60F47D6B9F98}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciseFlowLib", "FirstTerm\LibraryProjects\ExerciseFlowLib\ExerciseFlowLib.csproj", "{34C12340-A2A2-46D4-9678-F5683A3D300D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciseFlowLib", "1stTerm\LibraryProjects\ExerciseFlowLib\ExerciseFlowLib.csproj", "{34C12340-A2A2-46D4-9678-F5683A3D300D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TotallySafeLib", "FirstTerm\LibraryProjects\TotallySafeLib\TotallySafeLib.csproj", "{2B5C09C8-DE95-408C-8CA2-ACD720483A84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TotallySafeLib", "1stTerm\LibraryProjects\TotallySafeLib\TotallySafeLib.csproj", "{2B5C09C8-DE95-408C-8CA2-ACD720483A84}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADT", "FirstTerm\ADT\ADT.csproj", "{816C386C-8FDA-413E-85F5-4CE33F6954A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADT", "1stTerm\ADT\ADT.csproj", "{816C386C-8FDA-413E-85F5-4CE33F6954A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADTTestProject", "FirstTerm\TestProjects\ADTTestProject\ADTTestProject.csproj", "{0E3FB919-7BA4-477A-8BE5-A5F0C1BC47A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADTTestProject", "1stTerm\TestProjects\ADTTestProject\ADTTestProject.csproj", "{0E3FB919-7BA4-477A-8BE5-A5F0C1BC47A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorTestProject", "FirstTerm\TestProjects\CalculatorTestProject\CalculatorTestProject.csproj", "{9C1014FB-3A8B-4A57-A543-E11BD954852D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorTestProject", "1stTerm\TestProjects\CalculatorTestProject\CalculatorTestProject.csproj", "{9C1014FB-3A8B-4A57-A543-E11BD954852D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesTestProject", "FirstTerm\TestProjects\DelegatesTestProject\DelegatesTestProject.csproj", "{DCC055C3-A8D3-472A-8534-CE48E86ED9D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesTestProject", "1stTerm\TestProjects\DelegatesTestProject\DelegatesTestProject.csproj", "{DCC055C3-A8D3-472A-8534-CE48E86ED9D5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DisaheimTestProject", "FirstTerm\TestProjects\DisaheimTestProject\DisaheimTestProject.csproj", "{12E2034F-E8A6-4215-B055-B7C3A5B0497A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DisaheimTestProject", "1stTerm\TestProjects\DisaheimTestProject\DisaheimTestProject.csproj", "{12E2034F-E8A6-4215-B055-B7C3A5B0497A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverPatternTestProject", "FirstTerm\TestProjects\ObserverPatternTestProject\ObserverPatternTestProject.csproj", "{315DC204-C747-4826-95FD-2BEBAAE5ABE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverPatternTestProject", "1stTerm\TestProjects\ObserverPatternTestProject\ObserverPatternTestProject.csproj", "{315DC204-C747-4826-95FD-2BEBAAE5ABE0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrangeTreeTestProject", "FirstTerm\TestProjects\OrangeTreeTestProject\OrangeTreeTestProject.csproj", "{3CB3058F-B8BD-4934-B1EB-1C36A72E37DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrangeTreeTestProject", "1stTerm\TestProjects\OrangeTreeTestProject\OrangeTreeTestProject.csproj", "{3CB3058F-B8BD-4934-B1EB-1C36A72E37DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistenceTestProject", "FirstTerm\TestProjects\PersistenceTestProject\PersistenceTestProject.csproj", "{2F935A9C-FD9B-444C-BA89-DBFB7B373A0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistenceTestProject", "1stTerm\TestProjects\PersistenceTestProject\PersistenceTestProject.csproj", "{2F935A9C-FD9B-444C-BA89-DBFB7B373A0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBankTest", "FirstTerm\TestProjects\SimpleBankTest\SimpleBankTest.csproj", "{A2E3C1EB-81F0-4A21-9E89-33F5E4772975}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBankTest", "1stTerm\TestProjects\SimpleBankTest\SimpleBankTest.csproj", "{A2E3C1EB-81F0-4A21-9E89-33F5E4772975}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheHundredAcreWoodTestProject", "FirstTerm\TestProjects\TheHundredAcreWoodTestProject\TheHundredAcreWoodTestProject.csproj", "{B1E3BCB5-69B9-4EC0-A4AE-F7A7AC633093}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheHundredAcreWoodTestProject", "1stTerm\TestProjects\TheHundredAcreWoodTestProject\TheHundredAcreWoodTestProject.csproj", "{B1E3BCB5-69B9-4EC0-A4AE-F7A7AC633093}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TusindfrydWPF", "FirstTerm\WPFProjects\TusindfrydWPF\TusindfrydWPF.csproj", "{2522AEF1-0D21-4D01-9561-E7C5AA1FEC81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TusindfrydWPF", "1stTerm\WPFProjects\TusindfrydWPF\TusindfrydWPF.csproj", "{2522AEF1-0D21-4D01-9561-E7C5AA1FEC81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFAndMVVM1", "FirstTerm\WPFProjects\WPFAndMVVM1\WPFAndMVVM1.csproj", "{310B913A-1A2E-4048-B6CE-EF1794139652}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFAndMVVM1", "1stTerm\WPFProjects\WPFAndMVVM1\WPFAndMVVM1.csproj", "{310B913A-1A2E-4048-B6CE-EF1794139652}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFAndMVVM2", "FirstTerm\WPFProjects\WPFAndMVVM2\WPFAndMVVM2.csproj", "{B9B374BC-02B2-4F5D-81FA-FB82FC5E797F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFAndMVVM2", "1stTerm\WPFProjects\WPFAndMVVM2\WPFAndMVVM2.csproj", "{B9B374BC-02B2-4F5D-81FA-FB82FC5E797F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFCommandBinding", "FirstTerm\WPFProjects\WPFCommandBinding\WPFCommandBinding.csproj", "{40A7082A-9A1B-4A6A-BC2F-A213AB7206A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFCommandBinding", "1stTerm\WPFProjects\WPFCommandBinding\WPFCommandBinding.csproj", "{40A7082A-9A1B-4A6A-BC2F-A213AB7206A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFInteractiveGUI", "FirstTerm\WPFProjects\WPFInteractiveGUI\WPFInteractiveGUI.csproj", "{B238DC0E-8744-42E1-B60F-CF1D499A2E6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFInteractiveGUI", "1stTerm\WPFProjects\WPFInteractiveGUI\WPFInteractiveGUI.csproj", "{B238DC0E-8744-42E1-B60F-CF1D499A2E6F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFSimpleGUI", "FirstTerm\WPFProjects\WPFSimpleGUI\WPFSimpleGUI.csproj", "{39AF0CA1-BA23-4048-9612-8AD20F7DA8CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFSimpleGUI", "1stTerm\WPFProjects\WPFSimpleGUI\WPFSimpleGUI.csproj", "{39AF0CA1-BA23-4048-9612-8AD20F7DA8CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciseProject", "FirstTerm\ExerciseProject\ExerciseProject.csproj", "{C9C3806E-E878-4223-8639-14D3788D8EC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciseProject", "1stTerm\ExerciseProject\ExerciseProject.csproj", "{C9C3806E-E878-4223-8639-14D3788D8EC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise38", "Exercise38", "{783A49E2-A9F9-443A-96C6-40C0A7934FA9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheMovies", "SecondTerm\Exercise38\TheMovies\TheMovies.csproj", "{AFAE00BC-AD77-47B9-803C-6305CB64C145}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheMovies", "2ndTerm\Exercise38\TheMovies\TheMovies.csproj", "{AFAE00BC-AD77-47B9-803C-6305CB64C145}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise41", "Exercise41", "{722059F8-65A6-40D4-A713-CAD90C2F2BA3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheMoviesSQL", "SecondTerm\Exercise41\TheMoviesSQL\TheMoviesSQL.csproj", "{925FBAC8-9A67-4A65-8102-692AADBC5F8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheMoviesSQL", "2ndTerm\Exercise41\TheMoviesSQL\TheMoviesSQL.csproj", "{925FBAC8-9A67-4A65-8102-692AADBC5F8E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise44", "Exercise44", "{848C643A-F2A7-413D-9B77-4528FE6BBF85}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetParadise", "SecondTerm\Exercise44\PetParadise\PetParadise.csproj", "{A9949008-3982-4B09-BCBA-834AF2D0AB4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetParadise", "2ndTerm\Exercise44\PetParadise\PetParadise.csproj", "{A9949008-3982-4B09-BCBA-834AF2D0AB4D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetParadiseTestProject", "SecondTerm\Exercise44\PetParadiseTestProject\PetParadiseTestProject.csproj", "{103A2B91-BC54-4AD5-8835-6CED31BD1EC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetParadiseTestProject", "2ndTerm\Exercise44\PetParadiseTestProject\PetParadiseTestProject.csproj", "{103A2B91-BC54-4AD5-8835-6CED31BD1EC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise47", "Exercise47", "{79215ACC-AEAC-4D45-A261-B5CEBBE60A52}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LærerVikaren", "SecondTerm\Exercise47\LærerVikaren\LærerVikaren.csproj", "{1F5A87D6-1045-4D00-912A-2BC9C31C8B45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LærerVikaren", "2ndTerm\Exercise47\LærerVikaren\LærerVikaren.csproj", "{1F5A87D6-1045-4D00-912A-2BC9C31C8B45}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelPersistence", "SecondTerm\Exercise47\ModelPersistence\ModelPersistence.csproj", "{31770DF5-6252-463D-AA86-D5B22A7B6B92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelPersistence", "2ndTerm\Exercise47\ModelPersistence\ModelPersistence.csproj", "{31770DF5-6252-463D-AA86-D5B22A7B6B92}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LærerVikarUnitTest", "SecondTerm\Exercise47\LærerVikarUnitTest\LærerVikarUnitTest.csproj", "{B9EB075E-741F-4E49-98DC-D6E183A5ED3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LærerVikarUnitTest", "2ndTerm\Exercise47\LærerVikarUnitTest\LærerVikarUnitTest.csproj", "{B9EB075E-741F-4E49-98DC-D6E183A5ED3B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise48", "Exercise48", "{EE57ED8A-E504-48F5-B6B2-97CE71BBF8CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BonusAppTestProject", "SecondTerm\Exercise48\BonusAppTestProject\BonusAppTestProject.csproj", "{DEB522D4-8AC2-42D5-8C07-6CBC3944C89A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BonusAppTestProject", "2ndTerm\Exercise48\BonusAppTestProject\BonusAppTestProject.csproj", "{DEB522D4-8AC2-42D5-8C07-6CBC3944C89A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise49", "Exercise49", "{59C4EF7A-5BAF-4078-9A0F-7BB87A1FCE74}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionMethods", "SecondTerm\Exercise49\ExtensionMethods\ExtensionMethods.csproj", "{B624882E-7D10-46CA-9B2E-9B93C700B276}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionMethods", "2ndTerm\Exercise49\ExtensionMethods\ExtensionMethods.csproj", "{B624882E-7D10-46CA-9B2E-9B93C700B276}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionMethodsTestProject", "SecondTerm\Exercise49\ExtensionMethodsTestProject\ExtensionMethodsTestProject.csproj", "{CB8FE9BD-CE8C-41F5-ACB3-B1ACF0B1DCBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionMethodsTestProject", "2ndTerm\Exercise49\ExtensionMethodsTestProject\ExtensionMethodsTestProject.csproj", "{CB8FE9BD-CE8C-41F5-ACB3-B1ACF0B1DCBA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise50", "Exercise50", "{5C3EA33A-32E6-452F-A4CB-A6266D1E560A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BonusAppLINQ", "SecondTerm\Exercise50\BonusAppLINQ\BonusAppLINQ.csproj", "{27F92350-C032-47DF-A6DF-620A77D576E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BonusAppLINQ", "2ndTerm\Exercise50\BonusAppLINQ\BonusAppLINQ.csproj", "{27F92350-C032-47DF-A6DF-620A77D576E6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BonusAppLINQTestProject", "SecondTerm\Exercise50\BonusAppLINQTestProject\BonusAppLINQTestProject.csproj", "{38BB4F5C-D616-490C-A20A-5D3BC2A503DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BonusAppLINQTestProject", "2ndTerm\Exercise50\BonusAppLINQTestProject\BonusAppLINQTestProject.csproj", "{38BB4F5C-D616-490C-A20A-5D3BC2A503DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BonusApp", "SecondTerm\Exercise48\BonusApp\BonusApp.csproj", "{C904F190-1EFC-4AFA-9BB2-BA71CC5238AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BonusApp", "2ndTerm\Exercise48\BonusApp\BonusApp.csproj", "{C904F190-1EFC-4AFA-9BB2-BA71CC5238AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise51", "Exercise51", "{19680E9F-D509-4CB4-AEF6-98057C555A25}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Process01", "SecondTerm\Exercise51\Process01\Process01.csproj", "{ECA7C972-5EC7-4D3A-BD0D-5BDE9DFD4E13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Process01", "2ndTerm\Exercise51\Process01\Process01.csproj", "{ECA7C972-5EC7-4D3A-BD0D-5BDE9DFD4E13}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduling", "SecondTerm\Exercise51\Scheduling\Scheduling.csproj", "{F567BD96-F071-4489-ACD9-61A57C8DC095}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduling", "2ndTerm\Exercise51\Scheduling\Scheduling.csproj", "{F567BD96-F071-4489-ACD9-61A57C8DC095}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchedulingTestProject", "SecondTerm\Exercise51\SchedulingTestProject\SchedulingTestProject.csproj", "{CB96668B-55B9-473D-9ED9-C9F808D0A74F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchedulingTestProject", "2ndTerm\Exercise51\SchedulingTestProject\SchedulingTestProject.csproj", "{CB96668B-55B9-473D-9ED9-C9F808D0A74F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise52", "Exercise52", "{57EA43E0-CC3D-4D68-94A5-C834CB58A93A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Process01_2", "SecondTerm\Exercise52\Process01_2\Process01_2.csproj", "{9EFBC4E2-8404-4428-AAE4-9FBAD9EF52F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Process01_2", "2ndTerm\Exercise52\Process01_2\Process01_2.csproj", "{9EFBC4E2-8404-4428-AAE4-9FBAD9EF52F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduling_2", "SecondTerm\Exercise52\Scheduling_2\Scheduling_2.csproj", "{DB121D93-6690-426D-8C16-BAC87CE28013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduling_2", "2ndTerm\Exercise52\Scheduling_2\Scheduling_2.csproj", "{DB121D93-6690-426D-8C16-BAC87CE28013}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchedulingTestProject_2", "SecondTerm\Exercise52\SchedulingTestProject_2\SchedulingTestProject_2.csproj", "{2AB7BD29-6F6C-4A07-B4A1-6E7BD3CFC271}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchedulingTestProject_2", "2ndTerm\Exercise52\SchedulingTestProject_2\SchedulingTestProject_2.csproj", "{2AB7BD29-6F6C-4A07-B4A1-6E7BD3CFC271}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise53", "Exercise53", "{E63B6E31-E2CF-40BD-82D0-6D9F0AAE0764}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Threads01", "SecondTerm\Exercise53\Threads01\Threads01.csproj", "{58493FD2-B22C-4B5A-8FE7-C7B68FE8594B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Threads01", "2ndTerm\Exercise53\Threads01\Threads01.csproj", "{58493FD2-B22C-4B5A-8FE7-C7B68FE8594B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise54", "Exercise54", "{5FA7E1F5-BEEB-493E-A8CF-506CA6449928}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Threads02", "SecondTerm\Exercise54\Threads02\Threads02.csproj", "{0350B3DE-5BB2-4C54-A21A-A07C24AE7202}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Threads02", "2ndTerm\Exercise54\Threads02\Threads02.csproj", "{0350B3DE-5BB2-4C54-A21A-A07C24AE7202}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise54Semaphore", "Exercise54Semaphore", "{7908BD5B-B1BE-4ACA-8F88-598B3C289F7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsSemaphore", "SecondTerm\Exercise54Semaphore\ThreadsSemaphore\ThreadsSemaphore.csproj", "{EB41B07F-D125-4240-AAF3-27F4EB0A90B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadsSemaphore", "2ndTerm\Exercise54Semaphore\ThreadsSemaphore\ThreadsSemaphore.csproj", "{EB41B07F-D125-4240-AAF3-27F4EB0A90B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3rdTerm", "3rdTerm", "{04D07E4C-32A2-4466-97B2-06509B3288B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
