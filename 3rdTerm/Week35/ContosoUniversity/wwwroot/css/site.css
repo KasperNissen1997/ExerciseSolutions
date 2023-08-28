@@ -20,3 +20,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.custom-jumbotron{
+    background-color: lightgray;
+    padding: 40px;
+    border-radius: 8px;
+}
