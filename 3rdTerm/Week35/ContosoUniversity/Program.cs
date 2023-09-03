@@ -1,6 +1,5 @@
 using ContosoUniversity.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace ContosoUniversity
 {
