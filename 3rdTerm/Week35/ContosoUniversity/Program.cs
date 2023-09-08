@@ -1,7 +1,7 @@
-using ContosoUniversity.Data;
+using ContosoUniversity1.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContosoUniversity
+namespace ContosoUniversity1
 {
     public class Program
     {

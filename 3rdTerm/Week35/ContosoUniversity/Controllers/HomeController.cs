@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ContosoUniversity.Data;
-using ContosoUniversity.Models.SchoolViewModels;
+using ContosoUniversity1.Data;
+using ContosoUniversity1.Models.SchoolViewModels;
 using Microsoft.Extensions.Logging;
-using ContosoUniversity.Models;
+using ContosoUniversity1.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace ContosoUniversity.Controllers
+namespace ContosoUniversity1.Controllers
 {
     public class HomeController : Controller
     {

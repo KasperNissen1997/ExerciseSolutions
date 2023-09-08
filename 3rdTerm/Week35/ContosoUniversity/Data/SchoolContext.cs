@@ -1,7 +1,7 @@
-﻿using ContosoUniversity.Models;
+﻿using ContosoUniversity1.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContosoUniversity.Data
+namespace ContosoUniversity1.Data
 {
     public class SchoolContext : DbContext
     {
