@@ -24,6 +24,9 @@ namespace ContosoUniversity2.Models
 
         public int? InstructorID { get; set; }
 
+        // Used to detect concurrency conflicts
+        public byte[] RowVersion { get; set; }
+
         public Instructor Administrator { get; set; }
         public ICollection<Course> Courses { get; set; }
     }

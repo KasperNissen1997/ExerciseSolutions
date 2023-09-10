@@ -82,11 +82,14 @@ namespace ContosoUniversity2.Controllers
             var course = await _context.Courses
                 .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.CourseID == id);
+
             if (course == null)
             {
                 return NotFound();
             }
+
             PopulateDepartmentsDropDownList(course.DepartmentID);
+
             return View(course);
         }
 
