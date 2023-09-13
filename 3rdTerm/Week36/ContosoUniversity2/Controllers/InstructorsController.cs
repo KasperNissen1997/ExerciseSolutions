@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ContosoUniversity2.Data;
 using ContosoUniversity2.Models;
 using ContosoUniversity2.Models.SchoolViewModels;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ContosoUniversity2.Controllers
 {
@@ -90,18 +91,33 @@ namespace ContosoUniversity2.Controllers
             if (selectedCourses != null)
             {
                 instructor.CourseAssignments = new List<CourseAssignment>();
-                foreach (var course in selectedCourses)
+
+                foreach (string course in selectedCourses)
                 {
-                    var courseToAdd = new CourseAssignment { InstructorID = instructor.ID, CourseID = int.Parse(course) };
+                    CourseAssignment courseToAdd = new()
+                    {
+                        InstructorID = instructor.ID,
+                        CourseID = int.Parse(course),
+                        Instructor = instructor,
+                        Course = await _context.Courses.SingleAsync(c => c.CourseID == int.Parse(course))
+                    };
+
                     instructor.CourseAssignments.Add(courseToAdd);
                 }
             }
             if (ModelState.IsValid)
             {
                 _context.Add(instructor);
+
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
+            else
+            {
+                List<ModelError> allErrors = ModelState.Values.SelectMany(v => v.Errors).ToList();
+            }
+
             PopulateAssignedCourseData(instructor);
             return View(instructor);
         }
