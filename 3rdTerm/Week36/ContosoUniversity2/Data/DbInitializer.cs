@@ -64,6 +64,7 @@ namespace ContosoUniversity2.Data
             }
             context.SaveChanges();
 
+            // TODO: Add the initialization of the byte[] in some way.
             var departments = new Department[]
             {
                 new Department { Name = "English",     Budget = 350000,
