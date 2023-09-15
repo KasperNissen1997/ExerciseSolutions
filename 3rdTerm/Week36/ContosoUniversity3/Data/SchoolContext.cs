@@ -1,13 +1,14 @@
 ﻿using ContosoUniversity3.Models;
+using ContosoUniversity3.Models.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ContosoUniversity3.Data
 {
-    public class SchoolContext : DbContext
+    public class SchoolContext : IdentityDbContext<ContosoUser>
     {
-        public SchoolContext(DbContextOptions<SchoolContext> options) : base(options)
-        {
-        }
+        public SchoolContext(DbContextOptions<SchoolContext> options) : base(options) { }
 
         public DbSet<Course> Courses { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
@@ -20,6 +21,8 @@ namespace ContosoUniversity3.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Course>().ToTable("Course");
             modelBuilder.Entity<Enrollment>().ToTable("Enrollment");
             modelBuilder.Entity<Student>().ToTable("Student");

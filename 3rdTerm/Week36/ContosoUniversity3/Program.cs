@@ -1,5 +1,7 @@
 using ContosoUniversity3.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using ContosoUniversity3.Models.Identity;
 
 namespace ContosoUniversity3
 {
@@ -11,6 +13,8 @@ namespace ContosoUniversity3
 
             builder.Services.AddDbContext<SchoolContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolContext") ?? throw new InvalidOperationException("Connection string 'SchoolContext' not found.")));
+
+            builder.Services.AddDefaultIdentity<ContosoUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<SchoolContext>();
             
             // Should only be enabled in the dev environment.
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -54,6 +58,8 @@ namespace ContosoUniversity3
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            app.MapRazorPages();
 
             app.Run();
         }
