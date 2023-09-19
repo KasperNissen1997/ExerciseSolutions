@@ -1,6 +1,6 @@
 ﻿namespace WeatherForecast.Models
 {
-    public class WeatherForecastRequestVM
+    public class ForecastRequestVM
     {
         public string CityName { get; set; } = string.Empty;
         public string? StateCode { get; set; }

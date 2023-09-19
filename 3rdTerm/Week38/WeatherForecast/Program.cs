@@ -1,4 +1,4 @@
-using WeatherForecast.Models;
+using WeatherForecast.Utility;
 
 namespace WeatherForecast
 {
@@ -8,15 +8,12 @@ namespace WeatherForecast
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            HttpClient httpClient = new HttpClient();
-            ApiKey apiKey = new() 
-            {
-                Name = (string) builder.Configuration.GetValue(typeof(string), "openWeatherMapApiKey") 
-            };
+            // Retrieve the API key from the configuration file.
+            string? retrievedApiKey = builder.Configuration.GetValue<string>("openWeatherMapApiKey");
+            ApiKey openWeatherMapApiKey = new("OpenWeatherMap", retrievedApiKey != null ? retrievedApiKey : "");
 
             // Add services to the container.
-            builder.Services.AddSingleton(typeof(HttpClient), httpClient);
-            builder.Services.AddSingleton(typeof(ApiKey), apiKey);
+            builder.Services.AddSingleton(typeof(ApiKey), openWeatherMapApiKey);
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
