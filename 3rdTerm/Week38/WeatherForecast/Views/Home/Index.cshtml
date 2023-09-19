@@ -1,0 +1,32 @@
+﻿@model WeatherForecast.Models.WeatherForecastRequestVM;
+
+@{
+    ViewData["Title"] = "Weather Forecast";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form asp-action="PostRequest">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group col-md-6">
+            <label asp-for="CityName" class="control-label"></label>
+            <input asp-for="CityName" class="form-control" />
+            <span asp-validation-for="CityName" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="StateCode" class="control-label"></label>
+            <input asp-for="StateCode" class="form-control" />
+            <span asp-validation-for="StateCode" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="CountryCode" class="control-label"></label>
+            <input asp-for="CountryCode" class="form-control" />
+            <span asp-validation-for="CountryCode" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="submit" value="PostRequest" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
