@@ -1,4 +1,4 @@
-﻿@model ForecastRequestVM;
+﻿@model ForecastVM;
 
 @{
     ViewData["Title"] = "Weather Forecast";
@@ -10,23 +10,53 @@
     <form asp-action="Forecast">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="CityName" class="control-label"></label>
-            <input asp-for="CityName" class="form-control" />
-            <span asp-validation-for="CityName" class="text-danger"></span>
+            <label asp-for="RequestVM.CityName" class="control-label"></label>
+            <input asp-for="RequestVM.CityName" class="form-control" />
+            <span asp-validation-for="RequestVM.CityName" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label asp-for="StateCode" class="control-label"></label>
-            <input asp-for="StateCode" class="form-control" />
-            <span asp-validation-for="StateCode" class="text-danger"></span>
+            <label asp-for="RequestVM.StateCode" class="control-label"></label>
+            <input asp-for="RequestVM.StateCode" class="form-control" />
+            <span asp-validation-for="RequestVM.StateCode" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label asp-for="CountryCode" class="control-label"></label>
-            <input asp-for="CountryCode" class="form-control" />
-            <span asp-validation-for="CountryCode" class="text-danger"></span>
+            <label asp-for="RequestVM.CountryCode" class="control-label"></label>
+            <input asp-for="RequestVM.CountryCode" class="form-control" />
+            <span asp-validation-for="RequestVM.CountryCode" class="text-danger"></span>
         </div>
         <br />
         <div class="form-group">
             <input type="submit" value="See weather forecast" class="btn btn-primary" />
         </div>
     </form>
+    <div>
+        <h4>WeatherDataRoot</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ResultVM.CurrentWeatherData.Temperature)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ResultVM.CurrentWeatherData.Temperature)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ResultVM.CurrentWeatherData.TemperatureFeelsLike)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ResultVM.CurrentWeatherData.TemperatureFeelsLike)
+            </dd>
+            @* <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CurrentWeatherData.WeatherDataEntries[0].Title)
+            </dt>
+            <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CurrentWeatherData.WeatherDataEntries[0].Title)
+            </dd>
+            <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CurrentWeatherData.WeatherDataEntries[0].Description)
+            </dt>
+            <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CurrentWeatherData.WeatherDataEntries[0].Description)
+            </dd>*@
+        </dl>
+    </div>
 </div>

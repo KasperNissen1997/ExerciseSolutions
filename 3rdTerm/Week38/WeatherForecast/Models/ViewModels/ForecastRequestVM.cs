@@ -1,4 +1,4 @@
-﻿namespace WeatherForecast.Models
+﻿namespace WeatherForecast.Models.ViewModels
 {
     public class ForecastRequestVM
     {

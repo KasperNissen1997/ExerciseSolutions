@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Net.Http;
 using System.Text.Json;
-using WeatherForecast.Models;
+using WeatherForecast.Models.ViewModels;
 using WeatherForecast.Utility;
 
 namespace WeatherForecast.Controllers
@@ -26,41 +27,21 @@ namespace WeatherForecast.Controllers
         }
 
         [HttpPost, ActionName("Forecast")]
-        public async Task<IActionResult> PostForecast(ForecastRequestVM request)
+        public async Task<IActionResult> PostForecast(ForecastVM forecast)
         {
-            HttpResponseMessage response = await _httpClient.GetAsync($"http://api.openweathermap.org/geo/1.0/direct?q={request.CityName},{request.StateCode},{request.CountryCode}&limit=1&appid={_apiKey.Value}");
-            string responseString = await response.Content.ReadAsStringAsync();
+            GeoCodingCoordSet[]? coordSets = await _httpClient.GetFromJsonAsync<GeoCodingCoordSet[]>($"http://api.openweathermap.org/geo/1.0/direct?q={forecast.RequestVM.CityName},{forecast.RequestVM.StateCode},{forecast.RequestVM.CountryCode}&limit=1&appid={_apiKey.Value}");
+            ForecastResultVM? forecastResult = await _httpClient.GetFromJsonAsync<ForecastResultVM>($"https://api.openweathermap.org/data/3.0/onecall?lat={coordSets[0].Latitude}&lon={coordSets[0].Longitude}&exclude=minutely,hourly,daily,alerts&appid={_apiKey.Value}");
 
-            var options = new JsonSerializerOptions
+            if (forecastResult == null)
             {
-                PropertyNameCaseInsensitive = true
-            };
+                ModelState.AddModelError("", "Something unexpected happened.");
 
-            LatLonCoordSet? requestCoordSet = JsonSerializer.Deserialize<LatLonCoordSet>(responseString, options);
-
-            if (requestCoordSet == null)
-            {
-                ModelState.AddModelError("BadGeoCodingRequest", "No location was found with the associated city name, state code and/or country code.");
-                return View();
+                return View("./Views/Home/Index.cshtml");
             }
 
-            response = await _httpClient.GetAsync($"https://api.openweathermap.org/data/3.0/onecall?lat={requestCoordSet.Lat}&lon={requestCoordSet.Lon}&exclude=minutely,hourly,alerts&appid={_apiKey.Value}");
-            responseString = await response.Content.ReadAsStringAsync();
+            forecast.ResultVM = forecastResult;
 
-            return View();
-
-            //LatLonCoordSet? coordSet = await _httpClient.GetFromJsonAsync<LatLonCoordSet>($"http://api.openweathermap.org/geo/1.0/direct?q={request.CityName},{request.StateCode},{request.CountryCode}&limit=1&appid={_apiKey.Value}");
-
-            //if (coordSet == null) 
-            //{
-            //    ModelState.AddModelError("BadGeoCodingRequest", "No location was found with the associated city name, state code and/or country code.");
-
-            //    return View();
-            //}
-
-            //Forecast? forecast = await _httpClient.GetFromJsonAsync<Forecast>($"https://api.openweathermap.org/data/3.0/onecall?lat={coordSet.lat}&lon={coordSet.lon}&exclude=minutely,hourly,alerts&appid={_apiKey.Value}");
-
-            //return View();
+            return View("./Views/Home/Index.cshtml", forecast);
         }
 
         public IActionResult Privacy()
@@ -71,7 +52,7 @@ namespace WeatherForecast.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorVM { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
