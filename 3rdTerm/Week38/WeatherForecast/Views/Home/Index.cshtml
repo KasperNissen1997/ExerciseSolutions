@@ -4,20 +4,23 @@
     ViewData["Title"] = "Weather Forecast";
 }
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
     <div style="width: 50%; margin:auto">
         <form asp-action="Forecast">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="text-start">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </div>
             <div class="form-group">
                 <label asp-for="RequestVM.CityName" class="control-label"></label>
                 <input asp-for="RequestVM.CityName" class="form-control" />
                 <span asp-validation-for="RequestVM.CityName" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <label asp-for="RequestVM.StateCode" class="control-label"></label>
                 <input asp-for="RequestVM.StateCode" class="form-control" />
                 <span asp-validation-for="RequestVM.StateCode" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <label asp-for="RequestVM.CountryCode" class="control-label"></label>
                 <input asp-for="RequestVM.CountryCode" class="form-control" />
@@ -35,7 +38,7 @@
     @if (Model != null)
     {
         <div>
-            <h4 class="text-center">Forecast for @Model.RequestVM.CityName</h4>
+            <h4 class="text-center display-4">Forecast for @Model.RequestVM.CityName</h4>
             <hr />
             <table class="table">
                 <tr>
@@ -54,8 +57,7 @@
                             @Html.DisplayFor(modelItem => item.WeatherDataEntries![0].TitleizedDescription)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Temperatures.DayCelsius) ~ Feels like
-                            @Html.DisplayFor(modelItem => item.TemperaturesFeelsLike.DayCelsius)
+                            <p>@Html.DisplayFor(modelItem => item.Temperatures.DayCelsius) <i>(Feels like @Html.DisplayFor(modelItem => item.TemperaturesFeelsLike.DayCelsius))</i></p>
                         </td>
                     </tr>
                 }

@@ -9,6 +9,6 @@ namespace WeatherForecast.Models.ViewModels
         [DisplayName("State Code")]
         public string? StateCode { get; set; }
         [DisplayName("Country Code")]
-        public string CountryCode { get; set; } = string.Empty;
+        public string? CountryCode { get; set; } = string.Empty;
     }
 }
