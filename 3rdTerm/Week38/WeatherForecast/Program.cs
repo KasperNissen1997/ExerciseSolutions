@@ -13,7 +13,7 @@ namespace WeatherForecast
             ApiKey openWeatherMapApiKey = new("OpenWeatherMap", retrievedApiKey != null ? retrievedApiKey : "");
 
             // Add services to the container.
-            builder.Services.AddSingleton(typeof(ApiKey), openWeatherMapApiKey);
+            builder.Services.AddSingleton(typeof(IApiKey), openWeatherMapApiKey);
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
