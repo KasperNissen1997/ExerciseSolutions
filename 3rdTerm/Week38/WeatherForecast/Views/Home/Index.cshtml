@@ -3,60 +3,63 @@
 @{
     ViewData["Title"] = "Weather Forecast";
 }
-
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <form asp-action="Forecast">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="RequestVM.CityName" class="control-label"></label>
-            <input asp-for="RequestVM.CityName" class="form-control" />
-            <span asp-validation-for="RequestVM.CityName" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="RequestVM.StateCode" class="control-label"></label>
-            <input asp-for="RequestVM.StateCode" class="form-control" />
-            <span asp-validation-for="RequestVM.StateCode" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="RequestVM.CountryCode" class="control-label"></label>
-            <input asp-for="RequestVM.CountryCode" class="form-control" />
-            <span asp-validation-for="RequestVM.CountryCode" class="text-danger"></span>
-        </div>
-        <br />
-        <div class="form-group">
-            <input type="submit" value="See weather forecast" class="btn btn-primary" />
-        </div>
-    </form>
-    <div>
-        <h4>WeatherDataRoot</h4>
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.ResultVM.CurrentWeatherData.Temperature)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.ResultVM.CurrentWeatherData.Temperature)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.ResultVM.CurrentWeatherData.TemperatureFeelsLike)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.ResultVM.CurrentWeatherData.TemperatureFeelsLike)
-            </dd>
-            @* <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CurrentWeatherData.WeatherDataEntries[0].Title)
-            </dt>
-            <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CurrentWeatherData.WeatherDataEntries[0].Title)
-            </dd>
-            <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CurrentWeatherData.WeatherDataEntries[0].Description)
-            </dt>
-            <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CurrentWeatherData.WeatherDataEntries[0].Description)
-            </dd>*@
-        </dl>
+    <div style="width: 50%; margin:auto">
+        <form asp-action="Forecast">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RequestVM.CityName" class="control-label"></label>
+                <input asp-for="RequestVM.CityName" class="form-control" />
+                <span asp-validation-for="RequestVM.CityName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequestVM.StateCode" class="control-label"></label>
+                <input asp-for="RequestVM.StateCode" class="form-control" />
+                <span asp-validation-for="RequestVM.StateCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequestVM.CountryCode" class="control-label"></label>
+                <input asp-for="RequestVM.CountryCode" class="form-control" />
+                <span asp-validation-for="RequestVM.CountryCode" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="See weather forecast" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
+</div>
+<br />
+<div>
+    @if (Model != null)
+    {
+        <div>
+            <h4 class="text-center">Forecast for @Model.RequestVM.CityName</h4>
+            <hr />
+            <table class="table">
+                <tr>
+                    <th>Date</th>
+                    <th>@Html.DisplayNameFor(model => model.ResultVM.DailyWeather![0].WeatherDataEntries![0].Description)</th>
+                    <th>@Html.DisplayNameFor(model => model.ResultVM.DailyWeather![0].Temperatures)</th>
+                </tr>
+                @foreach (var item in Model.ResultVM.DailyWeather!)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateFormatted)
+                        </td>
+                        <td>
+                            <img src="@item.WeatherDataEntries![0].IconUrl" height="40" width="40">
+                            @Html.DisplayFor(modelItem => item.WeatherDataEntries![0].TitleizedDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Temperatures.DayCelsius) ~ Feels like
+                            @Html.DisplayFor(modelItem => item.TemperaturesFeelsLike.DayCelsius)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    }
 </div>

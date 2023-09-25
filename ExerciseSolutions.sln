@@ -139,7 +139,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoUniversity2", "3rdTe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Week38", "Week38", "{EE0C5457-1E55-441A-BDF4-9A73DFF1F2C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast", "3rdTerm\Week38\WeatherForecast\WeatherForecast.csproj", "{E473F98A-4DEF-4AD8-B885-37112A9A3FE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast", "3rdTerm\Week38\WeatherForecast\WeatherForecast.csproj", "{E473F98A-4DEF-4AD8-B885-37112A9A3FE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

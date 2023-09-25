@@ -1,4 +1,6 @@
-﻿namespace WeatherForecast.Models.ViewModels
+﻿using System.ComponentModel;
+
+namespace WeatherForecast.Models.ViewModels
 {
     public class ForecastVM
     {
