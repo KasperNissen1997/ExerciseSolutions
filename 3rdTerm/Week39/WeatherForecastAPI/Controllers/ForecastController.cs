@@ -12,7 +12,7 @@ namespace WeatherForecastAPI.Controllers
         private readonly IConfiguration _config;
         private HttpClient _httpClient;
 
-        private IApiKey _apiKey;
+        private IApiKey _openWeatherApiKey;
 
         public ForecastController(ILogger<ForecastController> logger, IConfiguration config, HttpClient httpClient)
         {
@@ -21,10 +21,10 @@ namespace WeatherForecastAPI.Controllers
 
             _httpClient = httpClient;
 
-            string? apiKey = _config["apiKey"];
+            string? openWeatherApiKey = _config["openWeatherApiKey"];
 
-            if (!string.IsNullOrEmpty(apiKey))
-                _apiKey = new ApiKey("openWeather", apiKey);
+            if (!string.IsNullOrEmpty(openWeatherApiKey))
+                _openWeatherApiKey = new ApiKey("openWeatherApiKey", openWeatherApiKey);
             else
                 throw new Exception("Can't retrieve API key from user secrets!");
         }
@@ -33,12 +33,12 @@ namespace WeatherForecastAPI.Controllers
         [HttpGet("{cityName}"), ActionName("Forecast")]
         public async Task<IActionResult> PostForecast(string cityName, string? stateCode, string? countryCode)
         {
-            GeoCodingResult[]? geoCodingResults = await _httpClient.GetFromJsonAsync<GeoCodingResult[]>($"http://api.openweathermap.org/geo/1.0/direct?q={cityName},{stateCode},{countryCode}&limit=1&appid={_apiKey.Value}");
+            GeoCodingResult[]? geoCodingResults = await _httpClient.GetFromJsonAsync<GeoCodingResult[]>($"http://api.openweathermap.org/geo/1.0/direct?q={cityName},{stateCode},{countryCode}&limit=1&appid={_openWeatherApiKey.Value}");
 
             if (geoCodingResults!.Count() == 0)
                 return BadRequest();
 
-            ForecastResultVM? forecastResult = await _httpClient.GetFromJsonAsync<ForecastResultVM>($"https://api.openweathermap.org/data/3.0/onecall?lat={geoCodingResults[0].Latitude}&lon={geoCodingResults[0].Longitude}&exclude=current,minutely,hourly,alerts&appid={_apiKey.Value}");
+            ForecastResultVM? forecastResult = await _httpClient.GetFromJsonAsync<ForecastResultVM>($"https://api.openweathermap.org/data/3.0/onecall?lat={geoCodingResults[0].Latitude}&lon={geoCodingResults[0].Longitude}&exclude=current,minutely,hourly,alerts&appid={_openWeatherApiKey.Value}");
             
             if (forecastResult == null)
                 return BadRequest();

@@ -1,24 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using System.Net.Http;
-using System.Text.Json;
 using WeatherForecast.Models.ViewModels;
-using WeatherForecast.Utility;
 
 namespace WeatherForecast.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private HttpClient _httpClient;
-        private readonly IApiKey _apiKey;
+        private readonly HttpClient _httpClient;
 
-        public HomeController(ILogger<HomeController> logger, IApiKey apiKey)
+        public HomeController(ILogger<HomeController> logger, HttpClient httpClient)
         {
             _logger = logger;
-            _apiKey = apiKey;
-
-            _httpClient = new();
+            _httpClient = httpClient;
         }
 
         public IActionResult Index()

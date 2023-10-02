@@ -1,5 +1,3 @@
-using WeatherForecast.Utility;
-
 namespace WeatherForecast
 {
     public class Program
@@ -8,12 +6,8 @@ namespace WeatherForecast
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Retrieve the API key from the configuration file.
-            string? retrievedApiKey = builder.Configuration.GetValue<string>("openWeatherMapApiKey");
-            ApiKey openWeatherMapApiKey = new("OpenWeatherMap", retrievedApiKey != null ? retrievedApiKey : "");
-
             // Add services to the container.
-            builder.Services.AddSingleton(typeof(IApiKey), openWeatherMapApiKey);
+            builder.Services.AddSingleton(typeof(HttpClient), new HttpClient());
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
