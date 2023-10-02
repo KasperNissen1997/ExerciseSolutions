@@ -56,7 +56,7 @@ namespace WeatherForecastAPI.Controllers
         public async Task<IActionResult> PostForecast(string cityName, string? stateCode, string? countryCode)
         {
             // GEOCODING ---------------------------------
-            string apiUrl = $"http://api.openweathermap.org/geo/1.0/direct?q={cityName},{stateCode},{countryCode}&limit=1&appid={_openWeatherApiKey.Value}";
+            string apiUrl = $"https://api.openweathermap.org/geo/1.0/direct?q={cityName},{stateCode},{countryCode}&limit=1&appid={_openWeatherApiKey.Value}";
 
             ApiCallData? apiCallData = await _context.StoredApiCallData
                 .Where(apiCall => apiCall.ApiName == ApiName.OpenWeatherGeoCoding.ToString())
