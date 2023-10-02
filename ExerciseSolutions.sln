@@ -153,6 +153,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuktionsServer", "3rdTerm\W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools", "3rdTerm\Week39\OnlineAuktionshus\Tools\Tools.csproj", "{BC3FEA11-760F-48A9-812D-D386551AB1F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecastAPI", "3rdTerm\Week39\WeatherForecastAPI\WeatherForecastAPI.csproj", "{17AC2BC1-827B-449E-96DB-685E409E8988}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -359,6 +361,10 @@ Global
 		{BC3FEA11-760F-48A9-812D-D386551AB1F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC3FEA11-760F-48A9-812D-D386551AB1F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC3FEA11-760F-48A9-812D-D386551AB1F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17AC2BC1-827B-449E-96DB-685E409E8988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17AC2BC1-827B-449E-96DB-685E409E8988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17AC2BC1-827B-449E-96DB-685E409E8988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17AC2BC1-827B-449E-96DB-685E409E8988}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -436,6 +442,7 @@ Global
 		{33FC365A-7A64-49E8-8B41-DE9D34AF80BD} = {CD09630A-EC19-4156-949A-56F0B9C82BCC}
 		{A326C31D-67D1-4D8D-8F43-5033612A5254} = {CD09630A-EC19-4156-949A-56F0B9C82BCC}
 		{BC3FEA11-760F-48A9-812D-D386551AB1F4} = {CD09630A-EC19-4156-949A-56F0B9C82BCC}
+		{17AC2BC1-827B-449E-96DB-685E409E8988} = {757E6ECC-E370-46FA-8779-5854E7631C06}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F022833-9C96-4457-9B80-2F9F0FB52353}
