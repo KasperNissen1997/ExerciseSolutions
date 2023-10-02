@@ -33,12 +33,19 @@ namespace WeatherForecastAPI.Controllers
         [HttpGet("{cityName}"), ActionName("Forecast")]
         public async Task<IActionResult> PostForecast(string cityName, string? stateCode, string? countryCode)
         {
-            GeoCodingCoordSet[]? coordSets = await _httpClient.GetFromJsonAsync<GeoCodingCoordSet[]>($"http://api.openweathermap.org/geo/1.0/direct?q={cityName},{stateCode},{countryCode}&limit=1&appid={_apiKey.Value}");
+            GeoCodingResult[]? geoCodingResults = await _httpClient.GetFromJsonAsync<GeoCodingResult[]>($"http://api.openweathermap.org/geo/1.0/direct?q={cityName},{stateCode},{countryCode}&limit=1&appid={_apiKey.Value}");
 
-            if (coordSets.Count() == 0)
+            if (geoCodingResults!.Count() == 0)
                 return BadRequest();
 
-            ForecastResultVM? forecastResult = await _httpClient.GetFromJsonAsync<ForecastResultVM>($"https://api.openweathermap.org/data/3.0/onecall?lat={coordSets[0].Latitude}&lon={coordSets[0].Longitude}&exclude=current,minutely,hourly,alerts&appid={_apiKey.Value}");
+            ForecastResultVM? forecastResult = await _httpClient.GetFromJsonAsync<ForecastResultVM>($"https://api.openweathermap.org/data/3.0/onecall?lat={geoCodingResults[0].Latitude}&lon={geoCodingResults[0].Longitude}&exclude=current,minutely,hourly,alerts&appid={_apiKey.Value}");
+            
+            if (forecastResult == null)
+                return BadRequest();
+
+            forecastResult.CityName = geoCodingResults[0].CityName;
+            forecastResult.CountryName = geoCodingResults[0].CountryName;
+            forecastResult.RegionName = geoCodingResults[0].RegionName;
 
             return Ok(forecastResult);
         }

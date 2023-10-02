@@ -6,6 +6,10 @@ namespace WeatherForecastAPI.Models.ViewModels
 {
     public class ForecastResultVM
     {
+        public string CityName { get; set; } = string.Empty;
+        public string CountryName { get; set; } = string.Empty;
+        public string RegionName { get; set; } = string.Empty;
+
         [JsonPropertyName("current")]
         public CurrentWeatherData? CurrentWeather { get; set; }
         [JsonPropertyName("daily")]

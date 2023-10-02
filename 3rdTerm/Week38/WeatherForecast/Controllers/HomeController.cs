@@ -26,12 +26,17 @@ namespace WeatherForecast.Controllers
             return View();
         }
 
-        [HttpPost, ActionName("Forecast")]
-        public async Task<IActionResult> PostForecast(ForecastVM forecast)
+        public async Task<IActionResult> ForecastDetails(string cityName, string? stateCode, string? countryCode)
         {
-            forecast.ResultVM = await _httpClient.GetFromJsonAsync<ForecastResultVM>($"https://localhost:7209/api/Forecast/{forecast.RequestVM.CityName}?stateCode={forecast.RequestVM.StateCode}&countryCode={forecast.RequestVM.CountryCode}");
+            ForecastResultVM? forecast = await _httpClient.GetFromJsonAsync<ForecastResultVM>($"https://localhost:7209/api/Forecast/{cityName}?stateCode={stateCode}&countryCode={countryCode}");
+            
+            return View(forecast);
+        }
 
-            return View(nameof(Index), forecast);
+        [ActionName("Forecast")]
+        public IActionResult Forecast(ForecastRequestVM forecast)
+        {
+            return RedirectToAction(nameof(ForecastDetails), new { forecast.CityName, forecast.StateCode, forecast.CountryCode });
         }
 
         public IActionResult Privacy()
