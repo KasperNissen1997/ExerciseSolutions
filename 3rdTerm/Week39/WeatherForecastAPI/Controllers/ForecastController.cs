@@ -1,4 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
+using WeatherForecastAPI.Data;
+using WeatherForecastAPI.Models;
 using WeatherForecastAPI.Models.ViewModels;
 using WeatherForecastAPI.Utility;
 
@@ -11,16 +15,18 @@ namespace WeatherForecastAPI.Controllers
         private readonly ILogger<ForecastController> _logger;
         private readonly IConfiguration _config;
         private HttpClient _httpClient;
+        private WeatherForecastContext _context;
 
         private IApiKey _openWeatherApiKey;
         private IApiKey _stormGlassApiKey;
 
-        public ForecastController(ILogger<ForecastController> logger, IConfiguration config, HttpClient httpClient)
+        public ForecastController(ILogger<ForecastController> logger, IConfiguration config, HttpClient httpClient, WeatherForecastContext context)
         {
             _logger = logger;
             _config = config;
 
             _httpClient = httpClient;
+            _context = context;
 
             _openWeatherApiKey = GetApiKey(ApiKeyName.OpenWeather);
             _stormGlassApiKey = GetApiKey(ApiKeyName.StormGlass);
@@ -49,21 +55,57 @@ namespace WeatherForecastAPI.Controllers
         [HttpGet("{cityName}"), ActionName("Forecast")]
         public async Task<IActionResult> PostForecast(string cityName, string? stateCode, string? countryCode)
         {
-            GeoCodingResult[]? geoCodingResults = await _httpClient.GetFromJsonAsync<GeoCodingResult[]>($"http://api.openweathermap.org/geo/1.0/direct?q={cityName},{stateCode},{countryCode}&limit=1&appid={_openWeatherApiKey.Value}");
+            // GEOCODING ---------------------------------
+            string apiUrl = $"http://api.openweathermap.org/geo/1.0/direct?q={cityName},{stateCode},{countryCode}&limit=1&appid={_openWeatherApiKey.Value}";
 
-            if (geoCodingResults!.Count() == 0)
-                return BadRequest();
+            ApiCallData? apiCallData = await _context.StoredApiCallData
+                .SingleOrDefaultAsync(apiCall => apiCall.Name == ApiName.OpenWeatherGeoCoding.ToString() && apiCall.Url == apiUrl);
 
-            ForecastResultVM? forecastResult = await _httpClient.GetFromJsonAsync<ForecastResultVM>($"https://api.openweathermap.org/data/3.0/onecall?lat={geoCodingResults[0].Latitude}&lon={geoCodingResults[0].Longitude}&exclude=current,minutely,hourly,alerts&appid={_openWeatherApiKey.Value}");
+            GeoCodingResult[]? geoCodingResults;
+
+            if (apiCallData != null)
+                geoCodingResults = JsonSerializer.Deserialize<GeoCodingResult[]>(apiCallData.JsonData!); // Use the data stored in the database.
+            else
+            {
+                geoCodingResults = await _httpClient.GetFromJsonAsync<GeoCodingResult[]>(apiUrl); // Send a new API call.
+
+                _context.StoredApiCallData.Add(new(ApiName.OpenWeatherGeoCoding.ToString(), DateTime.Now, apiUrl, JsonSerializer.Serialize(geoCodingResults)));
+            }
             
-            if (forecastResult == null)
+            // If no locations could be found using the provided search parameters, we let them know they messed up - bad request, yeah buddy.
+            if (geoCodingResults!.Length == 0)
                 return BadRequest();
 
-            forecastResult.CityName = geoCodingResults[0].CityName;
-            forecastResult.CountryName = geoCodingResults[0].CountryName;
-            forecastResult.RegionName = geoCodingResults[0].RegionName;
 
-            return Ok(forecastResult);
+            // OPENWEATHER ---------------------------------
+            apiUrl = $"https://api.openweathermap.org/data/3.0/onecall?lat={geoCodingResults[0].Latitude}&lon={geoCodingResults[0].Longitude}&exclude=current,minutely,hourly,alerts&appid={_openWeatherApiKey.Value}";
+
+            apiCallData = await _context.StoredApiCallData
+                .SingleOrDefaultAsync(apiCall => apiCall.Name == ApiName.OpenWeatherOneCall.ToString() && apiCall.Url == apiUrl);
+
+            ForecastResultVM? oneCallResult;
+
+            if (apiCallData?.CallDateTime.Date == DateTime.Now.Date)
+                oneCallResult = JsonSerializer.Deserialize<ForecastResultVM>(apiCallData.JsonData!); // Use the data stored in the database.
+            else
+            {
+                oneCallResult = await _httpClient.GetFromJsonAsync<ForecastResultVM>(apiUrl); // Send a new API call.
+
+                _context.StoredApiCallData.Add(new(ApiName.OpenWeatherOneCall.ToString(), DateTime.Now, apiUrl, JsonSerializer.Serialize(oneCallResult!)));
+            }
+
+            // Same as before here - if something happened to the data we've received, blame the user!
+            if (oneCallResult == null)
+                return BadRequest();
+
+            oneCallResult.CityName = geoCodingResults[0].CityName;
+            oneCallResult.CountryName = geoCodingResults[0].CountryName;
+            oneCallResult.RegionName = geoCodingResults[0].RegionName;
+
+            if (_context.ChangeTracker.HasChanges())
+                await _context.SaveChangesAsync();
+
+            return Ok(oneCallResult);
         }
     }
 }
