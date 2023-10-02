@@ -12,7 +12,7 @@ namespace WeatherForecastAPI.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ApiCallData>()
-                .HasKey(key => new { key.Name, key.Url });
+                .HasKey(key => new { key.ApiName, key.CallUrl, key.CallDateTime });
 
             base.OnModelCreating(modelBuilder);
         }

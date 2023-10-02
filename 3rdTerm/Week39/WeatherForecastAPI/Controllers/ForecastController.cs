@@ -59,12 +59,13 @@ namespace WeatherForecastAPI.Controllers
             string apiUrl = $"http://api.openweathermap.org/geo/1.0/direct?q={cityName},{stateCode},{countryCode}&limit=1&appid={_openWeatherApiKey.Value}";
 
             ApiCallData? apiCallData = await _context.StoredApiCallData
-                .SingleOrDefaultAsync(apiCall => apiCall.Name == ApiName.OpenWeatherGeoCoding.ToString() && apiCall.Url == apiUrl);
+                .Where(apiCall => apiCall.ApiName == ApiName.OpenWeatherGeoCoding.ToString())
+                .SingleOrDefaultAsync(apiCall => apiCall.CallUrl == apiUrl);
 
             GeoCodingResult[]? geoCodingResults;
 
             if (apiCallData != null)
-                geoCodingResults = JsonSerializer.Deserialize<GeoCodingResult[]>(apiCallData.JsonData!); // Use the data stored in the database.
+                geoCodingResults = JsonSerializer.Deserialize<GeoCodingResult[]>(apiCallData.CallJsonData!); // Use the data stored in the database.
             else
             {
                 geoCodingResults = await _httpClient.GetFromJsonAsync<GeoCodingResult[]>(apiUrl); // Send a new API call.
@@ -81,12 +82,14 @@ namespace WeatherForecastAPI.Controllers
             apiUrl = $"https://api.openweathermap.org/data/3.0/onecall?lat={geoCodingResults[0].Latitude}&lon={geoCodingResults[0].Longitude}&exclude=current,minutely,hourly,alerts&appid={_openWeatherApiKey.Value}";
 
             apiCallData = await _context.StoredApiCallData
-                .SingleOrDefaultAsync(apiCall => apiCall.Name == ApiName.OpenWeatherOneCall.ToString() && apiCall.Url == apiUrl);
+                .Where(apiCall => apiCall.ApiName == ApiName.OpenWeatherOneCall.ToString())
+                .Where(apiCall => apiCall.CallUrl == apiUrl)
+                .SingleOrDefaultAsync(apiCall => apiCall.CallDateTime.Date == DateTime.Now.Date);
 
             ForecastResultVM? oneCallResult;
 
             if (apiCallData?.CallDateTime.Date == DateTime.Now.Date)
-                oneCallResult = JsonSerializer.Deserialize<ForecastResultVM>(apiCallData.JsonData!); // Use the data stored in the database.
+                oneCallResult = JsonSerializer.Deserialize<ForecastResultVM>(apiCallData.CallJsonData!); // Use the data stored in the database.
             else
             {
                 oneCallResult = await _httpClient.GetFromJsonAsync<ForecastResultVM>(apiUrl); // Send a new API call.

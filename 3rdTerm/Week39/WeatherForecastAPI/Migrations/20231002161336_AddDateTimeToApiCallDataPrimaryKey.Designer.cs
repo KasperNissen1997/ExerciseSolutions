@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WeatherForecastAPI.Data;
 
@@ -11,9 +12,11 @@ using WeatherForecastAPI.Data;
 namespace WeatherForecastAPI.Migrations
 {
     [DbContext(typeof(WeatherForecastContext))]
-    partial class WeatherForecastContextModelSnapshot : ModelSnapshot
+    [Migration("20231002161336_AddDateTimeToApiCallDataPrimaryKey")]
+    partial class AddDateTimeToApiCallDataPrimaryKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

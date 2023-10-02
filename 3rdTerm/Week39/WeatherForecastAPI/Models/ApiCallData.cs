@@ -8,27 +8,26 @@ namespace WeatherForecastAPI.Models
         /// <summary>
         /// The name of the API that was called.
         /// </summary>
-        public string Name { get; set; }
-
+        public string ApiName { get; set; }
         /// <summary>
-        /// The <see cref="DateTime"/> of the API call.
+        /// The <see cref="System.DateTime"/> of the API call.
         /// </summary>
         public DateTime CallDateTime { get; set; }
         /// <summary>
         /// The URL of the API call.
         /// </summary>
-        public string Url { get; set; }
+        public string CallUrl { get; set; }
         /// <summary>
         /// The data that the API call returned.
         /// </summary>
-        public string? JsonData { get; set; }
+        public string? CallJsonData { get; set; }
 
-        public ApiCallData(string name, DateTime callDateTime, string url, string? jsonData)
+        public ApiCallData(string apiName, DateTime callDateTime, string callUrl, string? callJsonData)
         {
-            Name = name;
+            ApiName = apiName;
             CallDateTime = callDateTime;
-            Url = url;
-            JsonData = jsonData;
+            CallUrl = callUrl;
+            CallJsonData = callJsonData;
         }
     }
 }
