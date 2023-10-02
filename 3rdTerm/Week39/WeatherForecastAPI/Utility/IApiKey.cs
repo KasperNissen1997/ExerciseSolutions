@@ -2,7 +2,7 @@
 {
     public interface IApiKey
     {
-        public string Name { get; }
+        public ApiKeyName Name { get; }
         public string Value { get; }
     }
 }

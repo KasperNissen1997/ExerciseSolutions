@@ -13,6 +13,7 @@ namespace WeatherForecastAPI.Controllers
         private HttpClient _httpClient;
 
         private IApiKey _openWeatherApiKey;
+        private IApiKey _stormGlassApiKey;
 
         public ForecastController(ILogger<ForecastController> logger, IConfiguration config, HttpClient httpClient)
         {
@@ -21,14 +22,29 @@ namespace WeatherForecastAPI.Controllers
 
             _httpClient = httpClient;
 
-            string? openWeatherApiKey = _config["openWeatherApiKey"];
-
-            if (!string.IsNullOrEmpty(openWeatherApiKey))
-                _openWeatherApiKey = new ApiKey("openWeatherApiKey", openWeatherApiKey);
-            else
-                throw new Exception("Can't retrieve API key from user secrets!");
+            _openWeatherApiKey = GetApiKey(ApiKeyName.OpenWeather);
+            _stormGlassApiKey = GetApiKey(ApiKeyName.StormGlass);
         }
 
+        /// <summary>
+        /// Retrieves the matching API key stored in the user secrets service.
+        /// </summary>
+        /// <param name="apiKeyName">The <see cref="ApiKeyName"/> matching the API key that should be retrieved.</param>
+        /// <returns>A <see cref="ApiKey"/> object containing the value of the API key.</returns>
+        /// <exception cref="NotSupportedException">Thrown if no API key matching <paramref name="apiKeyName"/> has been registered in the user secrets service.</exception>
+        private ApiKey GetApiKey(ApiKeyName apiKeyName)
+        {
+            string userSecretApiKeyName = apiKeyName switch
+            {
+                ApiKeyName.OpenWeather => "openWeatherApiKey",
+                ApiKeyName.StormGlass => "stormGlassApiKey",
+                _ => throw new NotSupportedException("No registered user secret API key of type: " + apiKeyName),
+            };
+
+            string? apiKey = _config[userSecretApiKeyName];
+
+            return new(apiKeyName, apiKey!);
+        }
 
         [HttpGet("{cityName}"), ActionName("Forecast")]
         public async Task<IActionResult> PostForecast(string cityName, string? stateCode, string? countryCode)

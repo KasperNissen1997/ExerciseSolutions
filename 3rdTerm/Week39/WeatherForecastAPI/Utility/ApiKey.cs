@@ -2,11 +2,11 @@
 {
     public class ApiKey : IApiKey
     {
-        public string Name { get; set; }
+        public ApiKeyName Name { get; set; }
 
         public string Value { get; set; }
 
-        public ApiKey(string name, string value)
+        public ApiKey(ApiKeyName name, string value)
         {
             Name = name;
             Value = value;
