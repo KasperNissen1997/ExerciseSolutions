@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.Text.Json;
 using WeatherForecastAPI.Data;
 using WeatherForecastAPI.Models;
@@ -52,11 +53,11 @@ namespace WeatherForecastAPI.Controllers
             return new(apiKeyName, apiKey!);
         }
 
-        [HttpGet("{cityName}"), ActionName("Forecast")]
-        public async Task<IActionResult> PostForecast(string cityName, string? stateCode, string? countryCode)
+        [HttpGet("{city}"), ActionName("Forecast")]
+        public async Task<IActionResult> PostForecast(string city, string? state, string? countryCode, string? unitType)
         {
             // GEOCODING ---------------------------------
-            string apiUrl = $"https://api.openweathermap.org/geo/1.0/direct?q={cityName},{stateCode},{countryCode}&limit=1&appid={_openWeatherApiKey.Value}";
+            string apiUrl = $"https://api.openweathermap.org/geo/1.0/direct?q={city},{state},{countryCode}&limit=1&appid={_openWeatherApiKey.Value}";
 
             ApiCallData? apiCallData = await _context.StoredApiCallData
                 .Where(apiCall => apiCall.ApiName == ApiName.OpenWeatherGeoCoding.ToString())
@@ -77,9 +78,13 @@ namespace WeatherForecastAPI.Controllers
             if (geoCodingResults!.Length == 0)
                 return BadRequest();
 
+            GeoCodingResult geoCodingResult = geoCodingResults.First();
 
             // OPENWEATHER ---------------------------------
-            apiUrl = $"https://api.openweathermap.org/data/3.0/onecall?lat={geoCodingResults[0].Latitude}&lon={geoCodingResults[0].Longitude}&exclude=current,minutely,hourly,alerts&appid={_openWeatherApiKey.Value}";
+            if (unitType.IsNullOrEmpty())
+                unitType = "standard";
+
+            apiUrl = $"https://api.openweathermap.org/data/3.0/onecall?lat={geoCodingResult.Latitude}&lon={geoCodingResult.Longitude}&units={unitType}&exclude=current,minutely,hourly,alerts&appid={_openWeatherApiKey.Value}";
 
             apiCallData = await _context.StoredApiCallData
                 .Where(apiCall => apiCall.ApiName == ApiName.OpenWeatherOneCall.ToString())
