@@ -13,9 +13,9 @@ namespace WeatherForecast.Models.ViewModels
         [DisplayName("Country Code")]
         public string? CountryCode { get; set; }
 
-        [DisplayName("Amount of Days")]
+        [DisplayName("Included amount of Days")]
         public int DayCount { get; set; }
         [DisplayName("Unit Type")]
-        public string UnitType { get; set; }
+        public string UnitType { get; set; } = string.Empty;
     }
 }

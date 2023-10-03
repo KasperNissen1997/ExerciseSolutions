@@ -56,13 +56,13 @@
                     <label asp-for="DayCount" class="form-label"></label>
                     <select asp-for="DayCount" class="form-control">
                         <option value="0">Only today</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
+                        <option value="1">1 day ahead</option>
+                        <option value="2">2 days ahead</option>
+                        <option value="3">3 days ahead</option>
+                        <option value="4">4 days ahead</option>
+                        <option value="5">5 days ahead</option>
+                        <option value="6">6 days ahead</option>
+                        <option value="7">A week ahead</option>
                     </select>
                     <span asp-validation-for="DayCount" class="text-danger"></span>
                 </div>

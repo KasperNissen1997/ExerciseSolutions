@@ -27,7 +27,7 @@ namespace WeatherForecast.Controllers
             if (forecast?.DailyWeather == null)
                 return RedirectToAction(nameof(Index));
 
-            forecast.DailyWeather.RemoveRange(dayCount, forecast.DailyWeather.Count - dayCount);
+            forecast.DailyWeather.RemoveRange(dayCount, forecast.DailyWeather.Count - (dayCount + 1));
 
             return View(forecast);
         }
