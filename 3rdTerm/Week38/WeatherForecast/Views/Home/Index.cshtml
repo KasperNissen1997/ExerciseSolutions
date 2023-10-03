@@ -3,34 +3,73 @@
 @{
     ViewData["Title"] = "Weather Forecast";
 }
-<div class="text-center">
-    <h1 class="display-2">Enter details here</h1>
+<div>
+    <h1 class="display-2 text-center">Weather forecasts for any city!</h1>
     <br />
-    <div style="width: 50%; margin:auto">
+    <div style="width: 75%; margin:auto">
         <form asp-action="Forecast">
             <div class="text-start">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             </div>
-            <div class="form-group">
-                <label asp-for="CityName" class="control-label"></label><label style="color: red">*</label>
-                <input asp-for="CityName" class="form-control" />
-                <span asp-validation-for="CityName" class="text-danger"></span>
+            <div>
+                <h1 class="display-6">Location details</h1>
+                <div class="form-group">
+                    <input asp-for="City" type="text" class="form-control" placeholder="City" required />
+                    <small class="form-text text-muted">
+                        The name of the city.
+                    </small>
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col form-group">
+                        <input asp-for="State" type="text" class="form-control" placeholder="State" />
+                        <small class="form-text text-muted">
+                            The state or region of the city.
+                        </small>
+                        <span asp-validation-for="State" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="col form-group">
+                        <input asp-for="CountryCode" type="text" class="form-control" placeholder="Country code" />
+                        <small class="form-text text-muted">
+                            The countrys unique 2-digit code.
+                        </small>
+                        <span asp-validation-for="CountryCode" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <h1 class="display-6">Other details</h1>
+            <div class="row">
+                <div class="form-group col">
+                    <label asp-for="UnitType" class="form-label"></label>
+                    <select asp-for="UnitType" class="form-control">
+                        <option>Metric</option>
+                        <option>Imperial</option>
+                        <option>US Standard</option>
+                    </select>
+                    <span asp-validation-for="UnitType" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group col">
+                    <label asp-for="DayCount" class="form-label"></label>
+                    <select asp-for="DayCount" class="form-control">
+                        <option value="0">Only today</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                    </select>
+                    <span asp-validation-for="DayCount" class="text-danger"></span>
+                </div>
             </div>
             <br />
             <div class="form-group">
-                <label asp-for="StateCode" class="control-label"></label>
-                <input asp-for="StateCode" class="form-control" />
-                <span asp-validation-for="StateCode" class="text-danger"></span>
-            </div>
-            <br />
-            <div class="form-group">
-                <label asp-for="CountryCode" class="control-label"></label>
-                <input asp-for="CountryCode" class="form-control" />
-                <span asp-validation-for="CountryCode" class="text-danger"></span>
-            </div>
-            <br />
-            <div class="form-group">
-                <input type="submit" value="See weather forecast" class="btn btn-primary" />
+                <input type="submit" value="See weather forecast" class="btn btn-primary btn-lg col-md-12" />
             </div>
         </form>
     </div>

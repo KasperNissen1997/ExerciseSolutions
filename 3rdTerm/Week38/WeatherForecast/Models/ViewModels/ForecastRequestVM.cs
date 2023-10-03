@@ -1,19 +1,21 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace WeatherForecast.Models.ViewModels
 {
     public class ForecastRequestVM
     {
-        [DisplayName("City Name")]
-        public string CityName { get; set; } = string.Empty;
-        [DisplayName("State Code")]
-        public string? StateCode { get; set; }
+        [DisplayName("City")]
+        [Required]
+        public string City { get; set; } = string.Empty;
+        [DisplayName("State")]
+        public string? State { get; set; }
         [DisplayName("Country Code")]
-        public string? CountryCode { get; set; } = string.Empty;
+        public string? CountryCode { get; set; }
 
         [DisplayName("Amount of Days")]
         public int DayCount { get; set; }
         [DisplayName("Unit Type")]
-        public UnitType UnitType { get; set; }
+        public string UnitType { get; set; }
     }
 }

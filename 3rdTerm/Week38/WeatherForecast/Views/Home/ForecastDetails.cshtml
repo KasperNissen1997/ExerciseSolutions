@@ -14,7 +14,7 @@
                 <tr>
                     <th>Date</th>
                     <th>@Html.DisplayNameFor(model => model.DailyWeather![0].WeatherDataEntries![0].Description)</th>
-                    <th>@Html.DisplayNameFor(model => model.DailyWeather![0].Temperatures)</th>
+                    <th>@Html.DisplayNameFor(model => model.DailyWeather![0].TemperatureData)</th>
                 </tr>
                 @foreach (var item in Model.DailyWeather!)
                 {
@@ -27,7 +27,7 @@
                             @Html.DisplayFor(modelItem => item.WeatherDataEntries![0].TitleizedDescription)
                         </td>
                         <td>
-                            <p>@Html.DisplayFor(modelItem => item.Temperatures.DayCelsius) <i>(Feels like @Html.DisplayFor(modelItem => item.TemperaturesFeelsLike.DayCelsius))</i></p>
+                            <p>@Html.DisplayFor(modelItem => item.TemperatureData.Day) <i>(Feels like @Html.DisplayFor(modelItem => item.TemperatureFeelsLikeData.Day))</i></p>
                         </td>
                     </tr>
                 }

@@ -20,17 +20,22 @@ namespace WeatherForecast.Controllers
             return View();
         }
 
-        public async Task<IActionResult> ForecastDetails(string cityName, string? stateCode, string? countryCode)
+        public async Task<IActionResult> ForecastDetails(string city, string? state, string? countryCode, string unitType, int dayCount)
         {
-            ForecastResultVM? forecast = await _httpClient.GetFromJsonAsync<ForecastResultVM>($"https://localhost:7209/api/Forecast/{cityName}?stateCode={stateCode}&countryCode={countryCode}");
-            
+            ForecastResultVM? forecast = await _httpClient.GetFromJsonAsync<ForecastResultVM>($"https://localhost:7209/api/Forecast/{city}?stateCode={state}&countryCode={countryCode}&unitType={unitType}");
+
+            if (forecast?.DailyWeather == null)
+                return RedirectToAction(nameof(Index));
+
+            forecast.DailyWeather.RemoveRange(dayCount, forecast.DailyWeather.Count - dayCount);
+
             return View(forecast);
         }
 
         [ActionName("Forecast")]
         public IActionResult Forecast(ForecastRequestVM forecast)
         {
-            return RedirectToAction(nameof(ForecastDetails), new { forecast.CityName, forecast.StateCode, forecast.CountryCode });
+            return RedirectToAction(nameof(ForecastDetails), new { forecast.City, forecast.State, forecast.CountryCode, forecast.UnitType, forecast.DayCount });
         }
 
         public IActionResult Privacy()

@@ -48,43 +48,34 @@ namespace WeatherForecast.Models.ViewModels
         public class DailyWeatherData : WeatherDataBase
         {
             [JsonPropertyName("temp")]
-            [DisplayName("Temperature (°C)"), DisplayFormat(DataFormatString = "{0:0.0}")]
-            public TemperatureData Temperatures { get; set; } = new();
+            [DisplayName("Temperature"), DisplayFormat(DataFormatString = "{0:0.0}")]
+            public TemperatureData TemperatureData { get; set; } = new();
             [JsonPropertyName("feels_like")]
-            public TemperatureData TemperaturesFeelsLike { get; set; } = new();
+            public TemperatureData TemperatureFeelsLikeData { get; set; } = new();
         }
 
         public class TemperatureData
         {
             [JsonPropertyName("day")]
-            public double DayKelvin { get; set; }
+            [DisplayFormat(DataFormatString = "{0:0.0}")]
+            public double Day { get; set; }
             [JsonPropertyName("night")]
-            public double NightKelvin { get; set; }
+            [DisplayFormat(DataFormatString = "{0:0.0}")]
+            public double Night { get; set; }
             [JsonPropertyName("eve")]
-            public double EveningKelvin { get; set; }
+            [DisplayFormat(DataFormatString = "{0:0.0}")]
+            public double Evening { get; set; }
             [JsonPropertyName("morn")]
-            public double MorningKelvin { get; set; }
-
-            [DisplayName("Day"), DisplayFormat(DataFormatString = "{0:0.0}")]
-            public double DayCelsius { get => DayKelvin - 273.15; }
-            [DisplayName("Night"), DisplayFormat(DataFormatString = "{0:0.0}")]
-            public double NightCelsius { get => NightKelvin - 273.15; }
-            [DisplayName("Evening"), DisplayFormat(DataFormatString = "{0:0.0}")]
-            public double EveningCelsius { get => EveningKelvin - 273.15; }
-            [DisplayName("Morning"), DisplayFormat(DataFormatString = "{0:0.0}")]
-            public double MorningCelsius { get => MorningKelvin - 273.15; }
+            [DisplayFormat(DataFormatString = "{0:0.0}")]
+            public double Morning { get; set; }
         }
 
         public class CurrentWeatherData : WeatherDataBase
         {
             [JsonPropertyName("temp")]
-            public double TemperatureKelvin { get; set; }
+            public double Temperature { get; set; }
             [JsonPropertyName("feels_like")]
-            public double TemperatureFeelsLikeKelvin { get; set; }
-
-            [DisplayName("Temperature (°C)"), DisplayFormat(DataFormatString = "{0:0.0}")]
-            public double TemperatureCelsius { get => TemperatureKelvin - 273.15; }
-            public double TemperatureFeelsLikeCelsius { get => TemperatureFeelsLikeKelvin - 273.15; }
+            public double TemperatureFeelsLike { get; set; }
         }
 
         public class WeatherDataEntry

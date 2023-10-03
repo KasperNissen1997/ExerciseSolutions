@@ -28,10 +28,10 @@ namespace WeatherForecastAPI.Models.ViewModels
         public class DailyWeatherData : WeatherDataBase
         {
             [JsonPropertyName("temp")]
-            [DisplayName("Temperature"), DisplayFormat(DataFormatString = "{0:0.0}")]
-            public TemperatureData Temperatures { get; set; } = new();
+            [DisplayFormat(DataFormatString = "{0:0.0}")]
+            public TemperatureData TemperatureData { get; set; } = new();
             [JsonPropertyName("feels_like")]
-            public TemperatureData TemperaturesFeelsLike { get; set; } = new();
+            public TemperatureData TemperatureFeelsLikeData { get; set; } = new();
         }
 
         public class TemperatureData
@@ -56,7 +56,7 @@ namespace WeatherForecastAPI.Models.ViewModels
             [DisplayFormat(DataFormatString = "{0:0.0}")]
             public double Temperature { get; set; }
             [JsonPropertyName("feels_like")]
-            [DisplayName("Feels like"), DisplayFormat(DataFormatString = "{0:0.0}")]
+            [DisplayFormat(DataFormatString = "{0:0.0}")]
             public double TemperatureFeelsLike { get; set; }
         }
 
