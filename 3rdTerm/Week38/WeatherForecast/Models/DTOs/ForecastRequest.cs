@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace WeatherForecast.Models.ViewModels
+namespace WeatherForecast.Models.DTOs
 {
-    public class ForecastRequestVM
+    public class ForecastRequest
     {
         [DisplayName("City")]
         [Required]

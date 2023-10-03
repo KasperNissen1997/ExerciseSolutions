@@ -1,4 +1,4 @@
-namespace WeatherForecast.Models.ViewModels
+namespace WeatherForecast.Models.DTOs
 {
     public class ErrorVM
     {

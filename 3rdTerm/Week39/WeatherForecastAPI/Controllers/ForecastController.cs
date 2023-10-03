@@ -4,7 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text.Json;
 using WeatherForecastAPI.Data;
 using WeatherForecastAPI.Models;
-using WeatherForecastAPI.Models.ViewModels;
+using WeatherForecastAPI.Models.DTOs;
 using WeatherForecastAPI.Utility;
 
 namespace WeatherForecastAPI.Controllers
@@ -91,13 +91,13 @@ namespace WeatherForecastAPI.Controllers
                 .Where(apiCall => apiCall.CallUrl == apiUrl)
                 .SingleOrDefaultAsync(apiCall => apiCall.CallDateTime.Date == DateTime.Now.Date);
 
-            ForecastResultVM? oneCallResult;
+            ForecastResult? oneCallResult;
 
             if (apiCallData?.CallDateTime.Date == DateTime.Now.Date)
-                oneCallResult = JsonSerializer.Deserialize<ForecastResultVM>(apiCallData.CallJsonData!); // Use the data stored in the database.
+                oneCallResult = JsonSerializer.Deserialize<ForecastResult>(apiCallData.CallJsonData!); // Use the data stored in the database.
             else
             {
-                oneCallResult = await _httpClient.GetFromJsonAsync<ForecastResultVM>(apiUrl); // Send a new API call.
+                oneCallResult = await _httpClient.GetFromJsonAsync<ForecastResult>(apiUrl); // Send a new API call.
 
                 _context.StoredApiCallData.Add(new(ApiName.OpenWeatherOneCall.ToString(), DateTime.Now, apiUrl, JsonSerializer.Serialize(oneCallResult!)));
             }

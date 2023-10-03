@@ -1,4 +1,4 @@
-﻿@model ForecastResultVM
+﻿@model ForecastResult
 
 @{
     ViewData["Title"] = Model.CityName;
@@ -10,13 +10,22 @@
         <div>
             <h1 class="text-center display-6">Forecast for @Model.CityName, @Model.RegionName, @Model.CountryName!</h1>
             <hr />
+            @using (Html.BeginForm())
+            {
+                <p>
+                    Include only clear days? @Html.CheckBox("OnlyClearSkies")
+                    <input type="submit" value="Only good vibes!" />
+                </p>
+            }
             <table class="table">
                 <tr>
-                    <th>Date</th>
-                    <th>@Html.DisplayNameFor(model => model.DailyWeather![0].WeatherDataEntries![0].Description)</th>
-                    <th>@Html.DisplayNameFor(model => model.DailyWeather![0].TemperatureData)</th>
+                    <th>
+                        @Html.ActionLink("Date", "ForecastDetails", new { sortOrder = ViewBag.DateSortOrder })
+                    </th>
+                    <th>@Html.DisplayNameFor(model => model.DailyWeatherEntries![0].WeatherDataEntries![0].Description)</th>
+                    <th>@Html.DisplayNameFor(model => model.DailyWeatherEntries![0].TemperatureData)</th>
                 </tr>
-                @foreach (var item in Model.DailyWeather!)
+                @foreach (var item in Model.FilteredDailyWeatherEntries!)
                 {
                     <tr>
                         <td>
