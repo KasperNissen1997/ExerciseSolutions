@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WeatherForecast.Models.DTOs
 {
-    public class ForecastRequest
+    public class ForecastRequestDTO
     {
         [DisplayName("City")]
         [Required]

@@ -1,7 +1,7 @@
-﻿@model ForecastResult
+﻿@model ForecastResultDTO
 
 @{
-    ViewData["Title"] = Model.CityName;
+    ViewData["Title"] = Model != null ? Model.CityName : "";
 }
 
 <div>
@@ -13,17 +13,19 @@
             @using (Html.BeginForm())
             {
                 <p>
-                    Include only clear days? @Html.CheckBox("OnlyClearSkies")
+                    Include only clear days? @Html.CheckBox("goodTimes")
                     <input type="submit" value="Only good vibes!" />
                 </p>
             }
             <table class="table">
                 <tr>
-                    <th>
-                        @Html.ActionLink("Date", "ForecastDetails", new { sortOrder = ViewBag.DateSortOrder })
-                    </th>
-                    <th>@Html.DisplayNameFor(model => model.DailyWeatherEntries![0].WeatherDataEntries![0].Description)</th>
-                    <th>@Html.DisplayNameFor(model => model.DailyWeatherEntries![0].TemperatureData)</th>
+                    <th>@Html.ActionLink(nameof(ForecastResultDTO.DailyWeatherData.Date), "ForecastDetails", new { sortOrder = ViewBag.DateSortOrder })</th>
+                    <th>@Html.DisplayNameFor(model => model.DailyWeatherEntries![0].Summary)</th>
+                    <th>@Html.ActionLink(nameof(ForecastResultDTO.DailyWeatherData.TemperatureData), "ForecastDetails", new { sortOrder = ViewBag.TemperatureSortOrder })</th>
+                    <th>@Html.ActionLink(nameof(ForecastResultDTO.DailyWeatherData.RainFall) + " (volume)", "ForecastDetails", new { sortOrder = ViewBag.RainFallSortOrder })</th>
+                    <th>@Html.ActionLink(nameof(ForecastResultDTO.DailyWeatherData.WindSpeed), "ForecastDetails", new { sortOrder = ViewBag.WindSpeedSortOrder })</th>
+                    <th>@Html.ActionLink(nameof(ForecastResultDTO.DailyWeatherData.Sunrise), "ForecastDetails", new { sortOrder = ViewBag.SunriseSortOrder })</th>
+                    <th>@Html.ActionLink(nameof(ForecastResultDTO.DailyWeatherData.Sunset), "ForecastDetails", new { sortOrder = ViewBag.SunsetSortOrder })</th>
                 </tr>
                 @foreach (var item in Model.FilteredDailyWeatherEntries!)
                 {
@@ -37,6 +39,18 @@
                         </td>
                         <td>
                             <p>@Html.DisplayFor(modelItem => item.TemperatureData.Day) <i>(Feels like @Html.DisplayFor(modelItem => item.TemperatureFeelsLikeData.Day))</i></p>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RainFall)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WindSpeed)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sunrise)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sunset)
                         </td>
                     </tr>
                 }

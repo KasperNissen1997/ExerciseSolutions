@@ -1,12 +1,11 @@
 ﻿using Humanizer;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Globalization;
 using System.Text.Json.Serialization;
 
 namespace WeatherForecast.Models.DTOs
 {
-    public class ForecastResult
+    public class ForecastResultDTO
     {
         public string CityName { get; set; } = string.Empty;
         public string CountryName { get; set; } = string.Empty;

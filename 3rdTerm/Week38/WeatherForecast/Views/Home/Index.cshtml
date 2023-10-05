@@ -1,4 +1,4 @@
-﻿@model ForecastRequest;
+﻿@model ForecastRequestDTO;
 
 @{
     ViewData["Title"] = "Weather Forecast";
@@ -55,22 +55,28 @@
                 <div class="form-group col">
                     <label asp-for="DayCount" class="form-label"></label>
                     <select asp-for="DayCount" class="form-control">
-                        <option value="0">Only today</option>
-                        <option value="1">1 day ahead</option>
-                        <option value="2">2 days ahead</option>
-                        <option value="3">3 days ahead</option>
-                        <option value="4">4 days ahead</option>
-                        <option value="5">5 days ahead</option>
-                        <option value="6">6 days ahead</option>
                         <option value="7">A week ahead</option>
+                        <option value="6">6 days ahead</option>
+                        <option value="5">5 days ahead</option>
+                        <option value="4">4 days ahead</option>
+                        <option value="3">3 days ahead</option>
+                        <option value="2">2 days ahead</option>
+                        <option value="1">1 day ahead</option>
+                        <option value="0">Only today</option>
                     </select>
                     <span asp-validation-for="DayCount" class="text-danger"></span>
                 </div>
             </div>
             <br />
             <div class="form-group">
-                <input type="submit" value="See weather forecast" class="btn btn-primary btn-lg col-md-12" />
+                @*<input type="submit" value="See weather forecast" class="btn btn-primary btn-lg col-md-12" />*@
+                <button type="submit" class="btn btn-primary btn-lg col-md-12" onclick="displayButtonSpinner()">See weather forecast
+                    <span id="buttonSpinner" class="spinner-border spinner-border-sm" style="display:none" role="status" aria-hidden="true"></span>
+                </button>
             </div>
         </form>
+        
+        @*<partial name="_LoadingPartial" />*@
+
     </div>
 </div>
