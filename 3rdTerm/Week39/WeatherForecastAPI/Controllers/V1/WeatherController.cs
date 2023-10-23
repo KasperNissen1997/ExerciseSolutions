@@ -7,20 +7,21 @@ using WeatherForecastAPI.Models;
 using WeatherForecastAPI.Models.DTOs;
 using WeatherForecastAPI.Utility;
 
-namespace WeatherForecastAPI.Controllers
+namespace WeatherForecastAPI.Controllers.V1
 {
     [ApiController]
-    [Route("api/[controller]")]
-    public class ForecastController : Controller
+    [Route("api/v{version:apiVersion}/[controller]/")]
+    [ApiVersion("1.0")]
+    public class WeatherController : Controller
     {
-        private readonly ILogger<ForecastController> _logger;
+        private readonly ILogger<WeatherController> _logger;
         private readonly IConfiguration _config;
         private HttpClient _httpClient;
 
         private IApiKey _openWeatherApiKey;
         private IApiKey _stormGlassApiKey;
 
-        public ForecastController(ILogger<ForecastController> logger, IConfiguration config, HttpClient httpClient)
+        public WeatherController(ILogger<WeatherController> logger, IConfiguration config, HttpClient httpClient)
         {
             _logger = logger;
             _config = config;
@@ -52,13 +53,13 @@ namespace WeatherForecastAPI.Controllers
 
         [ResponseCache(Duration = 3600)]
         [HttpGet("{city}"), ActionName("Forecast")]
-        public async Task<IActionResult> PostForecast(string city, string? state, string? countryCode, string? unitType)
+        public async Task<IActionResult> GetForecast(string city, string? state, string? countryCode, string? unitType)
         {
             // GEOCODING ---------------------------------
             string apiUrl = $"https://api.openweathermap.org/geo/1.0/direct?q={city},{state},{countryCode}&limit=1&appid={_openWeatherApiKey.Value}";
 
             GeoCodingResult[]? geoCodingResults = await _httpClient.GetFromJsonAsync<GeoCodingResult[]>(apiUrl); // Send a new API call.
-            
+
             // If no locations could be found using the provided search parameters, we let them know they messed up - bad request, yeah buddy.
             if (geoCodingResults!.Length == 0)
                 return BadRequest();
