@@ -1,5 +1,6 @@
 ﻿@page "/fetchdata"
 @inject HttpClient Http
+@using Models.ViewModels;
 
 <PageTitle>Weather forecast</PageTitle>
 
@@ -18,18 +19,18 @@ else
             <tr>
                 <th>Date</th>
                 <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
+                <th>Temp. (K)</th>
                 <th>Summary</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (ForecastResultVM.DailyWeatherData dailyWeatherData in forecasts.DailyWeather!)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td>@dailyWeatherData.Date.ToShortDateString()</td>
+                    <td>@dailyWeatherData.Temperatures.DayCelsius</td>
+                    <td>@dailyWeatherData.Temperatures.DayKelvin</td>
+                    <td>@dailyWeatherData.WeatherDataEntries!.FirstOrDefault()!.Description</td>
                 </tr>
             }
         </tbody>
@@ -37,11 +38,11 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private ForecastResultVM? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        forecasts = await Http.GetFromJsonAsync<ForecastResultVM>("https://localhost:7209/api/Forecast/Otterup");
     }
 
     public class WeatherForecast
